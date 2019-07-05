@@ -1,0 +1,16 @@
+"Window": {
+	backgroundImage:'/img/images/mainback.jpg',
+	exitOnClose : true,
+	navBarHidden : true,
+	fullscreen : true,
+	height : Ti.UI.FILL,
+	width : Ti.UI.FILL,
+	// tabBarHidden : true,
+//	orientationModes: [
+//		Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT
+//	]
+}
+
+"#speciesWin" : {
+	backgroundColor : "black"
+}

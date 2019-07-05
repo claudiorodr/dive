@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="loading">
+		<!--ImageView id="animations" start="animation" duration= "0.02"/--> 
+		<View class="styled" id="clicks"></View>
+		<View class="styled" id="clicksMoans"></View>
+		<View class="styled" id="moans"></View>
+		<View class="styled" id="moansWhistles"></View>
+		<View class="styled" id="whistles"></View>
+	</Window>
+</Alloy>

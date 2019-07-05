@@ -1,0 +1,124 @@
+// =====
+// INDEX
+	"#register" : {
+		//exitOnClose : true,
+		//navBarHidden : true,
+		//fullscreen : true,
+		//height:Ti.UI.FILL,
+		//width:Ti.UI.FILL,
+		backgroundColor : "white",
+		//tabBarHidden : true,
+		
+	}
+			"#indexContainer" : {
+			layout : "vertical"
+		}
+			"#header" : {
+				layout : "vertical",
+				height : "33.33%",
+				top : 0
+			}
+				"#logo" : {
+					top : "10%",
+					height : 100,
+					width : 100,
+					backgroundImage : "/img/logo.png",
+				}
+				"#create" : {
+					top : "5%",
+					textAlign : "center",
+					font : {
+						fontFamily : 'Smoolthan-Bold',
+						fontSize : 18
+					},
+					color : "#000080",
+					text : L('create_account', "Wave Dive")
+				}
+			"#body" : {
+				layout : "vertical",
+				height : "66.66%",
+				top : "0"
+			}
+				".input" : {
+					top : 0,
+					width : "30%",
+					textAlign : "center",
+					font : {
+						fontFamily : 'Smoolthan-Bold',
+						fontSize : 16
+					},
+					color : "#000080",
+					hintTextColor : "gray",
+					backgroundColor : "#EEEEEE",
+					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					borderColor : "#000080",
+					borderRadius : 0,
+					height : 50,
+					keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+					returnKeyType : Titanium.UI.RETURNKEY_NEXT
+					
+				}
+				
+				"#email" : {
+					hintText : L('email_hintText', "EMAIL"),
+				}
+				"#password" : {
+					passwordMask : true,
+					hintText : L('pass_hintText', "PASSWORD"),
+				}
+				"#pass_confirm" : {
+					passwordMask : true,
+					hintText : L('pass_hintText', "CONFIRM PASSWORD"),
+				}
+				"#first_name" : {
+					hintText : L('email_hintText', "FIRST NAME"),
+				}
+				"#last_name" : {
+					hintText : L('email_hintText', "LAST NAME"),
+				}
+				"#phone" : {
+					hintText : L('email_hintText', "PHONE"),
+					keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+				}
+				"#country" : {
+					//hintText : L('email_hintText', "COUNTRY"),
+				}
+				"#column1" : {
+						hintText : L('email_hintText', "COUNTRY"),
+					}		
+				"#gender" : {
+					hintText : L('email_hintText', "GENDER"),
+				}
+				"#b_day" : {
+					hintText : L('email_hintText', "BIRTHDAY"),
+					dateTimeColor : "gray"
+				}				
+				"#note" : {
+					hintText : L('email_hintText', "NOTE"),
+				}
+				
+				"#sign_up" : {
+					top : "8%",
+					width : "30%",
+					textAlign : "center",
+					font : {
+						fontFamily : 'Smoolthan-Bold',
+						fontSize : 16
+					},
+					color : "white",
+					title : "SIGN UP!",
+					backgroundColor : "#000080",
+					borderColor : "#EEEEEE",
+					borderRadius : 0,
+					height : 50,
+				}				
+				"#reg_btn" : {
+					top : "5%",
+					textAlign : "center", 
+						font : {
+							fontFamily : 'Smoolthan-Bold',
+							fontSize : 24
+						},
+					color : "#000080", 
+					text : L('signup_text', "REGISTER")
+				}

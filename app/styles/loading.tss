@@ -1,0 +1,15 @@
+
+"#loading" : {
+  		//exitOnClose : true,
+		//navBarHidden : true,
+		//fullscreen : true,
+		//height:Ti.UI.FILL,
+		//width:Ti.UI.FILL,
+		backgroundColor : "white",
+		//tabBarHidden : true,
+}
+
+".styled" : {
+	width : "40%",
+	height : "40%"
+}

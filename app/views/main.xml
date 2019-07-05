@@ -1,0 +1,9 @@
+<Alloy>
+	<TabGroup>
+		<ActionBar platform="android" logo="/img/images/appicon2.png" />
+		<Require src="survey"/>
+		<Require src="sites"/>
+		<Require src="gallery"/>
+		<!-- <Require src="settings"/> -->
+	</TabGroup>
+</Alloy>

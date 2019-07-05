@@ -1,0 +1,29 @@
+<Alloy>
+	<Tab id="sitesTab" title="Sites">  
+		<Window id="sitesWin" title="Dive Sites">
+			<Module id="mapview" module="ti.map" onClick="report" method="createView">
+				<!--<Annotation id="AzulDivingCenter" myId="1337" />
+				<Annotation id="HaliotisDivingCenter" myId="1338" />
+				<Annotation id="MadeiraOceeanos" myId="1339" />
+				<Annotation id="MadeiraDivingCenter" myId="1340" />
+				<Annotation id="AtalaiaDivingCenter" myId="1341" />
+				<Annotation id="MantaDivingCenter" myId="1342" />
+				<Annotation id="MeroDivingClub" myId="1343" />
+				<Annotation id="ScubaMadeira" myId="1344" />
+				<Annotation id="Arena" myId="1345" />
+				<Annotation id="Carlton_Housereef" myId="1346" />
+				<Annotation id="Pestana_Palms_Housereef" myId="1347" />
+				<Annotation id="Spot_Lavafinger" myId="1348" />
+				<Annotation id="Spot_T_Reef_Mamas" myId="1349" />
+				<Annotation id="Carlton_Housereef_Spot" myId="1350" />
+				<Annotation id="Ponta_da_Gale" myId="1351" />
+				<Annotation id="Wreck_Bowbelle" myId="1352" />
+				<Annotation id="Reis_Magos" myId="1353" />
+				<Annotation id="Gorgulho" myId="1354" />
+				<Annotation id="Garajau" myId="1355" />-->			
+		</Module>
+			
+			<!-- <Label>Dive Sites</Label> -->
+		</Window>
+	</Tab>
+</Alloy>

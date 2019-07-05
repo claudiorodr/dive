@@ -1,0 +1,8 @@
+<Alloy>
+	<Window id="specieInfoWin" title="Specie Details">
+		<View class="container">
+			<Label></Label>
+			<View id="image" ></View>
+		</View>
+	</Window>
+</Alloy>

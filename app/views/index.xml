@@ -1,0 +1,26 @@
+<Alloy>
+	<Window id="login">
+		<View id="indexContainer">
+			<View id="header">
+				<Button id="logo" onClick="loginRegister"></Button>
+				<Label id="create"></Label>
+			</View>
+			<View id="body">
+				<TextField id="email"></TextField>
+				<TextField id="pass"></TextField>
+				<View id="linkContainer">
+					<Label id="forgotPass"></Label>
+					<Label id="register" onClick="register"></Label>
+					<Button id="log_in" onClick="loginRegister"></Button>
+				</View>
+			</View>
+			<View id="footer">
+				<Switch id="loginSwitch"></Switch>
+				<Label id="agree"></Label>
+				<Label id="terms"></Label>
+				<Label id="privacy"></Label>
+								<!--<Label id="register" onClick="loginRegister"></Label>-->
+			</View>
+		</View>
+	</Window>
+</Alloy>

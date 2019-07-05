@@ -1,0 +1,68 @@
+"Window": {
+	backgroundColor : "white",
+	exitOnClose : true,
+	navBarHidden : true,
+	fullscreen : true,
+	height : Ti.UI.FILL,
+	width : Ti.UI.FILL,
+	// tabBarHidden : true,
+	orientationModes: [
+		Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT
+	]
+}
+
+"#mapview": {
+	
+    region: {
+        latitude: 32.74511,
+        longitude: -16.99232,
+        latitudeDelta: 1.11,
+        longitudeDelta: 1.11
+    },
+    
+    //annotations : [Alloy.Globals.Pin]
+    
+    
+}/*,
+"#Carlton_Housereef_Spot": {
+    latitude: 32.640902,
+    longitude: -16.921495,
+    title: "Carlton Housereef",
+    subtitle: "Rua do Gorgulho, Funchal",
+    pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+},
+"#Ponta_da_Gale": {
+    latitude: 32.7167, 
+    longitude: -17.1833,
+    title: "Ponta da Gale",
+    subtitle: "Caminho da Ribeira do Natal,nº30, Caniçal",
+    pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+},
+"#Wreck_Bowbelle": {
+    latitude: 32.699402, 
+    longitude: -17.136981,
+    title: "Wreck Bowbelle",
+    subtitle: "Largo Antonio Nobre | Hotel Madeira Carlton, Funchal",
+    pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+},
+"#Gorgulho": {
+    latitude: 32.634299, 
+    longitude: -16.934426,
+    title: "Gorgulho",
+    subtitle: " Rua do Gorgulho 17 | Pestana Palms, Funchal",
+    pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+},
+"#Reis_Magos": {
+    latitude: 32.646718, 
+    longitude: -16.823602,
+    title: "Reis Magos",
+    subtitle: "Rua Robert Baden Powell, Caniço de Baixo",
+    pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+},
+"#Garajau": {
+    latitude: 32.636274, 
+    longitude: -16.849485,
+    title: "Garajau",
+    subtitle: "Rua Robert Baden Powell, Caniço de Baixo",
+    pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+}*/

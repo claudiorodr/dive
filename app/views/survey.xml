@@ -1,0 +1,48 @@
+<Alloy>
+	<Tab id="surveyTab" title="Survey">
+		<Window id="surveyWin" title="Survey">
+			<Label id="surveyTitle">Survey</Label>
+			<Picker id="picker" selectionIndicator="true" useSpinner="true">
+				<PickerColumn id="column1" width="30%">			
+				</PickerColumn>
+				<Column id="column2">
+					<Row title="10 minutes"/>
+					<Row title="20 minutes"/>
+					<Row title="30 minutes"/>
+					<Row title="40 minutes"/>
+					<Row title="50 minutes"/>
+					<Row title="60 minutes"/>
+					<Row title="70 minutes"/>  
+					<Row title="80 minutes"/>
+					<Row title="90 minutes"/>
+					<Row title="100 minutes"/>
+					<Row title="110 minutes"/>
+					<Row title="120 minutes"/>
+				</Column>
+				<Column id="column3">
+					<Row title="2 divers"/>
+					<Row title="3 divers"/>
+					<Row title="4 divers"/>
+					<Row title="5 divers"/>
+					<Row title="6 divers"/>
+					<Row title="7 divers"/>
+					<Row title="8 divers"/>
+					<Row title="9 divers"/>
+					<Row title="10 divers"/>
+					<Row title="11 divers"/>
+					<Row title="12 divers"/>
+					<Row title="13 divers"/>
+					<Row title="14 divers"/>
+					<Row title="15 divers"/>
+					<Row title="16 divers"/>
+					<Row title="17 divers"/>
+					<Row title="18 divers"/>
+					<Row title="19 divers"/>
+					<Row title="20 divers"/>
+				</Column>
+			</Picker>
+		  <Button id="speciesBtn" onClick="openSpecies" title="Start survey"
+		  	bottom="8%" width="20%" height="50"></Button>
+		</Window>
+	</Tab>
+</Alloy>

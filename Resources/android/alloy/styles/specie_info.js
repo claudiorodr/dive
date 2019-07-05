@@ -1,0 +1,1 @@
+module.exports = [{"isApi":true,"priority":1000.005,"key":"Window","style":{backgroundImage:"/img/images/mainback.jpg",exitOnClose:false,navBarHidden:true,fullscreen:true,height:Ti.UI.FILL,width:Ti.UI.FILL,tabBarHidden:true,orientationModes:[Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,],}}];

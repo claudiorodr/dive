@@ -1,0 +1,7 @@
+<Alloy>
+	<Tab id="settingsTab" title="Settings">
+		<Window id="settingsWin" title="Settings">
+			<Label>Settings</Label>
+		</Window>
+	</Tab>
+</Alloy>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app 
+  xmlns:ti="http://ti.appcelerator.org">
+  <id>com.scubateam.oceanlife</id>
+  <name>Ocean Life</name>
+  <version>1.0</version>
+  <publisher>Scuba Team</publisher>
+  <url/>
+  <description>Sea Assessments</description>
+  <copyright>2019 by Scuba Team</copyright>
+  <icon>appicon.png</icon>
+  <fullscreen>false</fullscreen>
+  <navbar-hidden>true</navbar-hidden>
+  <analytics>false</analytics>
+  <guid>1015700c-af9d-4af2-9ccc-04558f1f5acc</guid>
+  <property name="ti.ui.defaultunit" type="string">dp</property>
+  <property name="run-on-main-thread" type="bool">true</property>
+  <ios>
+    <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+    <use-app-thinning>true</use-app-thinning>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <false/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+      </dict>
+    </plist>
+  </ios>
+  <android 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest>
+      <application>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="landscape">
+          <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+          </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="YourAppName" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <!--<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/><provider
+                    android:authorities="com.facebook.app.FacebookContentProvider2084165518310324"
+                    android:exported="true" android:name="com.facebook.FacebookContentProvider"/>-->
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.tianium.TiTranslucentActivity" android:screenOrientation="landscape" android:theme="@style/Theme.AppCompat.Translucent"/>
+        <activity android:configChanges="screenSize" android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:screenOrientation="landscape"/>
+        <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBjqbu7xbQWYawfuuZl1dCVrujjLqw98_0"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+      </application>
+    </manifest>
+  </android>
+  <modules>
+    <module platform="iphone">ti.map</module>
+    <module platform="android">ti.map</module>
+  </modules>
+  <deployment-targets>
+    <target device="windows">false</target>
+    <target device="android">true</target>
+    <target device="ipad">false</target>
+    <target device="iphone">false</target>
+  </deployment-targets>
+  <sdk-version>8.0.2.GA</sdk-version>
+  <plugins>
+    <plugin version="1.0">ti.alloy</plugin>
+  </plugins>
+  <property name="appc-app-id" type="string">5c5c05c3cf97e81b9c5644d1</property>
+  <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+  <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+  <property name="acs-oauth-secret-development" type="string">mZ0p177LAcaP1YwYHshdiPGUmmB7MiGW</property>
+  <property name="acs-oauth-key-development" type="string">Xrg43NYc0bs78eJoBf5m6onkArn4Le2l</property>
+  <property name="acs-api-key-development" type="string">7VX0y3SmNi9lvNMnOG4nBH1DdI1O4BEo</property>
+  <property name="acs-username-development" type="string">appc_app_user_dev</property>
+  <property name="acs-password-development" type="string">Eysu6T31xttf2OVJ6m</property>
+  <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+  <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+  <property name="acs-oauth-secret-production" type="string">e6uBHGaeSSOGcVupDzAxSpiqz2Azo5BM</property>
+  <property name="acs-oauth-key-production" type="string">D1Ju92qPa8IhvZslI497GU38bvCpE1Jj</property>
+  <property name="acs-api-key-production" type="string">jjkHXpzu2YEnd6hdrfSYarDnxB1K6Mok</property>
+  <property name="acs-username-production" type="string">appc_app_user</property>
+  <property name="acs-password-production" type="string">1F4qpBZ1Vkt8XwSzRV</property>
+  <property name="appc-org-id" type="string">119259278011987</property>
+  <property name="appc-creator-user-id" type="string">9ce8e7af-c19a-4cd4-aced-4978a70a1a5d</property>
+</ti:app>
