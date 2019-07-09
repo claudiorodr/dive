@@ -37,9 +37,9 @@ function Controller() {
   $.__views.sitesWin = Ti.UI.createWindow(
   { backgroundColor: "white", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "sitesWin", title: "Dive Sites" });
 
-  var __alloyId8 = [];
+  var __alloyId0 = [];
   $.__views.mapview = (require("ti.map").createView || Ti.UI.createView)(
-  { region: { latitude: 32.74511, longitude: -16.99232, latitudeDelta: 1.11, longitudeDelta: 1.11 }, annotations: __alloyId8, id: "mapview" });
+  { region: { latitude: 32.74511, longitude: -16.99232, latitudeDelta: 1.11, longitudeDelta: 1.11 }, annotations: __alloyId0, id: "mapview" });
 
   $.__views.sitesWin.add($.__views.mapview);
   report ? $.addListener($.__views.mapview, 'click', report) : __defers['$.__views.mapview!click!report'] = true;$.__views.sitesTab = Ti.UI.createTab(
@@ -58,8 +58,22 @@ function Controller() {
 
 
   function report(event) {
-    Ti.API.info('Annotation ' + event.title + ' clicked, ID: ' + event.annotation.myID);
+
   }
+
+
+
+  $.mapview.addEventListener('click', function (e) {
+
+
+    if (e.clicksource == 'leftPane') {
+      console.log("ola");
+
+      var species = Alloy.createController('species').getView();
+      species.open();
+      species = null;
+    }
+  });
 
   getTodoList();
 
@@ -115,7 +129,12 @@ function Controller() {
           title: Alloy.Globals.Sites[i],
           subtitle: Alloy.Globals.Address[i] + "\n" + Alloy.Globals.Depth[i],
           animate: true,
-          pincolor: Alloy.Globals.Map.ANNOTATION_BLUE });
+          pincolor: Alloy.Globals.Map.ANNOTATION_BLUE,
+          leftView: Ti.UI.createButton({
+            title: 'SEE MORE',
+            height: 32,
+            width: 70 }) });
+
 
 
 
