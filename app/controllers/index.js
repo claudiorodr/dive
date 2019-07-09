@@ -88,7 +88,7 @@
                     //if (!Alloy.Globals.checkErrors(e)) {
                     // REGISTER 
                         if (e.register == "OK") {
-
+ 
                             // set user
                                 Ti.App.Properties.setObject('user', e);
                                 console.log("-- POST - " + url + " - user REGISTERED");
@@ -130,9 +130,9 @@
                     posts.post(url, data, postFunction);
                     posts = null;
 				 
-                                var down = require('download');//Creating the local database
-                                down.downloadOneFile(url2, localFilepath);//, callBack_DownloadOneFileFinished);
-                                down = null;
+                var down = require('download');//Creating the local database
+                down.downloadOneFile(url2, localFilepath);//, callBack_DownloadOneFileFinished);
+                down = null;
             } 
         }
     }

@@ -258,8 +258,7 @@ function Controller() {
 
 
   function openSpecies() {
-    Alloy.Globals.Sites = [];
-    console.log(Alloy.Globals.Sites);
+    Alloy.Globals.Sites.length = 0;
     var selectedRow = $.picker.getSelectedRow(0).myId;
     var selectedRow1 = $.picker.getSelectedRow(1).title;
     var selectedRow2 = $.picker.getSelectedRow(2).title;

@@ -58,8 +58,7 @@ function getTodoList() {
 //4. showing data in picker row
 
 function openSpecies() {
-	Alloy.Globals.Sites = []; 
-	console.log(Alloy.Globals.Sites);
+	Alloy.Globals.Sites.length = 0; 
 	var selectedRow = $.picker.getSelectedRow(0).myId; //Value from picker 1
 	var selectedRow1 = $.picker.getSelectedRow(1).title; //Value from picker 2
 	var selectedRow2 = $.picker.getSelectedRow(2).title; //Value from picker 3

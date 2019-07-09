@@ -273,6 +273,7 @@ function checkJSON(_json) {
 //
 function insertData() {
     //if there is something in the textbox
+    if (Ti.Network.online) {
     var request = Ti.Network.createHTTPClient({
 
         onload: function(e) {
@@ -327,6 +328,30 @@ function insertData() {
     "max_depth" : "",
     "dive_id" : ""
     });
+    
+   }
+   else {
+   	var params = ({    	
+      
+    /*"user_id": "1",
+    "creature_id": args.img,
+    "abundance_value": Alloy.Globals.Species[4],
+    "number_diver": survey[2],
+    "dive_time": survey[1],
+    "diving_spot_id": survey[0],
+    "max_depth" : "1"*/
+    "user_id": "1",
+    "creature_id": "2",
+    "abundance_value": "ola",
+    "number_diver": "12",
+    "dive_time": "12",
+    "diving_spot_id": "1",
+    "max_depth" : "1" 
+    });
+
+   	Ti.App.Properties.setList('params',params);
+   	Ti.App.Properties.getList('params');
+   }
 
 };
 

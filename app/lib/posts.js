@@ -113,7 +113,7 @@
 									}
 									// Alloy.Globals.checkErrors(responseTextJSON);
 								}
-							console.log("-- POST - " + url + " - END");
+							console.log("-- POST - " + url + " - END"); 
 					},
 					onerror : function(e) {
 						Alloy.Globals.HandleErr(e, url);

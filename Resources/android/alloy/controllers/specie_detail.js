@@ -366,60 +366,85 @@ function Controller() {
 
   function insertData() {
 
-    var request = Ti.Network.createHTTPClient({
+    if (Ti.Network.online) {
+      var request = Ti.Network.createHTTPClient({
 
-      onload: function (e) {
+        onload: function (e) {
 
-        if (this.status == '200') {
+          if (this.status == '200') {
 
-          alert("all alright");
-
-
-        }
-
-      },
-
-      onerror: function (e) {
-        Ti.API.debug(e.error);
-        alert('There was an error during the conexion');
-      },
-
-      timeout: 1000 });
+            alert("all alright");
 
 
-    request.open("POST", "http://backend.tigerwhale.com/api/survey");
-    alert(Alloy.Globals.Species[4], survey[2], survey[1], survey[0]);
-    var params = {
+          }
+
+        },
+
+        onerror: function (e) {
+          Ti.API.debug(e.error);
+          alert('There was an error during the conexion');
+        },
+
+        timeout: 1000 });
 
 
-
+      request.open("POST", "http://backend.tigerwhale.com/api/survey");
+      alert(Alloy.Globals.Species[4], survey[2], survey[1], survey[0]);
+      var params = {
 
 
 
 
 
-      "user_id": "1",
-      "creature_id": "2",
-      "abundance_value": "ola",
-      "number_diver": "12",
-      "dive_time": "12",
-      "diving_spot_id": "1",
-      "max_depth": "1" };
 
 
-    request.send(params);
-    console.log(params);
 
-    params = {
-      "user_id": "",
-      "creature_id": "",
-      "abundance_value": "",
-      "number_diver": "",
-      "dive_time": "",
-      "diving_spot_id": "",
-      "max_depth": "",
-      "dive_id": "" };
+        "user_id": "1",
+        "creature_id": "2",
+        "abundance_value": "ola",
+        "number_diver": "12",
+        "dive_time": "12",
+        "diving_spot_id": "1",
+        "max_depth": "1" };
 
+
+      request.send(params);
+      console.log(params);
+
+      params = {
+        "user_id": "",
+        "creature_id": "",
+        "abundance_value": "",
+        "number_diver": "",
+        "dive_time": "",
+        "diving_spot_id": "",
+        "max_depth": "",
+        "dive_id": "" };
+
+
+    } else
+    {
+      var params = {
+
+
+
+
+
+
+
+
+        "user_id": "1",
+        "creature_id": "2",
+        "abundance_value": "ola",
+        "number_diver": "12",
+        "dive_time": "12",
+        "diving_spot_id": "1",
+        "max_depth": "1" };
+
+
+      Ti.App.Properties.setList('params', params);
+      Ti.App.Properties.getList('params');
+    }
 
   };
 
