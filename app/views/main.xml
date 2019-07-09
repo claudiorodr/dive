@@ -1,6 +1,6 @@
 <Alloy>
-	<TabGroup>
-		<ActionBar platform="android" logo="/img/images/appicon2.png" />
+	<TabGroup id = "speciesWin">
+		<ActionBar/>
 		<Require src="survey"/>
 		<Require src="sites"/>
 		<Require src="gallery"/>

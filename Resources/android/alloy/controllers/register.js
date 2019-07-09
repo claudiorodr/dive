@@ -98,11 +98,11 @@ function Controller() {
   { top: 0, width: "30%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 16 }, color: "#000080", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#000080", borderRadius: 0, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, id: "country", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.country);
-  var __alloyId6 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { top: 0, width: "30%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 16 }, color: "#000080", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#000080", borderRadius: 0, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, hintText: L('email_hintText', "COUNTRY"), id: "column1" });
 
-  __alloyId6.push($.__views.column1);
-  $.__views.country.add(__alloyId6);
+  __alloyId0.push($.__views.column1);
+  $.__views.country.add(__alloyId0);
   $.__views.note = Ti.UI.createTextField(
   { top: 0, width: "30%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 16 }, color: "#000080", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#000080", borderRadius: 0, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, hintText: L('email_hintText', "NOTE"), id: "note" });
 
@@ -130,7 +130,7 @@ function Controller() {
     timeout: 1000 });
 
 
-  sendit.open("GET", "http://backend.tigerwhale.com/api/diving-spot");
+  sendit.open("GET", "http://backend.tigerwhale.com/api/country");
   sendit.send();
 
 
@@ -189,9 +189,9 @@ function Controller() {
 
 
     Ti.App.Properties.setObject('user', {
-      "user_type": "user_person",
+      "userable_type": "UserPerson",
 
-      "email": "claudio.duarte.98@live.coms.pt",
+      "email": "claudio.duarte.98@live.com.pt",
       "password": "blablabla",
       "first_name": "claudio",
       "last_name": "rodrigues",
@@ -215,7 +215,7 @@ function Controller() {
 
 
 
-      if (e.success) {
+      if (e.success == true) {
 
 
         Ti.App.Properties.setObject('user', e);
@@ -223,9 +223,9 @@ function Controller() {
         console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
 
 
-        var db = require('db');
-        db.create();
-        db = null;
+
+
+
 
 
         alert("registered");

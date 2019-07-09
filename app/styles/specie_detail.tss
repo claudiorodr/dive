@@ -5,10 +5,7 @@
 	fullscreen : true,
 	height : Ti.UI.FILL,
 	width : Ti.UI.FILL,
-	tabBarHidden : true,
-	orientationModes: [
-	 Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT
-	]
+	tabBarHidden : true
 },
 
 "Picker": {

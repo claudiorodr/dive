@@ -9,7 +9,7 @@ var sendit = Ti.Network.createHTTPClient({
     timeout: 1000,
 });
 //Here you have to change it for your local ip  	
-sendit.open("GET", "http://backend.tigerwhale.com/api/diving-spot");
+sendit.open("GET", "http://backend.tigerwhale.com/api/country");
 sendit.send();
 
 
@@ -68,9 +68,9 @@ function register_user() {
 
     // store to user object
     Ti.App.Properties.setObject('user', {
-        "user_type": "user_person",
+        "userable_type": "UserPerson",
         //  "number_dives" = '0-10',
-        "email": "claudio.duarte.98@live.coms.pt", //$.email.value,
+        "email": "claudio.duarte.98@live.com.pt", //$.email.value,
         "password": "blablabla", //$.password.value,
         "first_name": "claudio", //"$.first_name.value,
         "last_name": "rodrigues", //$.last_name.value,
@@ -94,17 +94,17 @@ function register_user() {
 
 
         // REGISTER
-        if (e.success) {
+        if (e.success == true) { 
 
-            // set user
+            // set user 
             Ti.App.Properties.setObject('user', e);
             console.log("-- POST - " + url + " - user REGISTERED");
             console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
 
             // create db
-            var db = require('db'); //Creating the local database
-            db.create();
-            db = null;
+            //var db = require('db'); //Creating the local database
+            //db.create();
+            //db = null;
 
             // open info
             alert("registered");
@@ -116,7 +116,7 @@ function register_user() {
         // CLEAR
         url = null;
         data = null;
-        postFunction = null;
+        postFunction = null; 
     };
 
     var posts = require('posts');

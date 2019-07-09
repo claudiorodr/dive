@@ -35,7 +35,7 @@ function Controller() {
 
 
   $.__views.surveyWin = Ti.UI.createWindow(
-  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "surveyWin", title: "Survey" });
+  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, id: "surveyWin", title: "Survey" });
 
   $.__views.surveyTitle = Ti.UI.createLabel(
   { text: 'Survey', id: "surveyTitle" });

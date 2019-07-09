@@ -10,7 +10,10 @@
 		//tabBarHidden : true,    
 		navBarHidden:true,
     	tabBarHidden:true,
-    	fullscreen:true 
+    	fullscreen:true, 
+    	orientationModes: [
+		Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT
+	]
 		 
 	}
 		"#indexContainer" : {

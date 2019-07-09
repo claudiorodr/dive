@@ -37,23 +37,21 @@ function Controller() {
 	var __alloyId0 = [];$.__views.__alloyId1 = Alloy.createController('survey', { id: "__alloyId1", __parentSymbol: __parentSymbol });
 	__alloyId0.push($.__views.__alloyId1.getViewEx({ recurse: true }));$.__views.__alloyId2 = Alloy.createController('sites', { id: "__alloyId2", __parentSymbol: __parentSymbol });
 	__alloyId0.push($.__views.__alloyId2.getViewEx({ recurse: true }));$.__views.__alloyId3 = Alloy.createController('gallery', { id: "__alloyId3", __parentSymbol: __parentSymbol });
-	__alloyId0.push($.__views.__alloyId3.getViewEx({ recurse: true }));$.__views.main = Ti.UI.createTabGroup(
-	{ tabs: __alloyId0, id: "main" });
+	__alloyId0.push($.__views.__alloyId3.getViewEx({ recurse: true }));$.__views.speciesWin = Ti.UI.createTabGroup(
+	{ tabs: __alloyId0, id: "speciesWin" });
 
-	if (true) {
-		function __alloyId5() {
-			$.__views.main.removeEventListener('open', __alloyId5);
-			if ($.__views.main.activity) {
-				$.__views.main.activity.actionBar.logo = "/img/images/appicon2.png";
-			} else {
-				Ti.API.warn('You attempted to access an Activity on a lightweight Window or other');
-				Ti.API.warn('UI component which does not have an Android activity. Android Activities');
-				Ti.API.warn('are valid with only windows in TabGroups or heavyweight Windows.');
-			}
+	function __alloyId5() {
+		$.__views.speciesWin.removeEventListener('open', __alloyId5);
+		if ($.__views.speciesWin.activity) {
+
+		} else {
+			Ti.API.warn('You attempted to access an Activity on a lightweight Window or other');
+			Ti.API.warn('UI component which does not have an Android activity. Android Activities');
+			Ti.API.warn('are valid with only windows in TabGroups or heavyweight Windows.');
 		}
-		$.__views.main.addEventListener('open', __alloyId5);
 	}
-	$.__views.main && $.addTopLevelView($.__views.main);
+	$.__views.speciesWin.addEventListener('open', __alloyId5);
+	$.__views.speciesWin && $.addTopLevelView($.__views.speciesWin);
 	exports.destroy = function () {};
 
 

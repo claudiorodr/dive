@@ -35,7 +35,7 @@ function Controller() {
 
 
   $.__views.specieInfoWin = Ti.UI.createWindow(
-  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "specieInfoWin", title: "Specie Details" });
+  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieInfoWin", title: "Specie Details" });
 
   $.__views.specieInfoWin && $.addTopLevelView($.__views.specieInfoWin);
   $.__views.__alloyId16 = Ti.UI.createView(

@@ -11,7 +11,6 @@ $.mapview.addEventListener('click', function(e){
         // if user click on rightButton of annotaion
         //console.log(e.clicksource);
         if (e.clicksource == 'leftPane') { 
-            console.log("ola");
             //navGroup.open(detailWindow);
          var species = Alloy.createController('species').getView(); 
 			species.open();
@@ -71,7 +70,7 @@ function getTodoList() {
 		        latitude: lati,
 		        longitude: loni ,
 		        title: Alloy.Globals.Sites[i],  
-		        subtitle: Alloy.Globals.Address[i] + "\n" + Alloy.Globals.Depth[i], 
+		        subtitle: Alloy.Globals.Address[i] + "\n " + Alloy.Globals.Depth[i], 
 		        animate: true,
 		        pincolor: Alloy.Globals.Map.ANNOTATION_BLUE,
 		        leftView: Ti.UI.createButton({

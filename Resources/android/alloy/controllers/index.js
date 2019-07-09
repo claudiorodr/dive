@@ -35,7 +35,7 @@ function Controller() {
 
 
   $.__views.login = Ti.UI.createWindow(
-  { backgroundColor: "white", navBarHidden: true, tabBarHidden: true, fullscreen: true, id: "login" });
+  { backgroundColor: "white", navBarHidden: true, tabBarHidden: true, fullscreen: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "login" });
 
   $.__views.login && $.addTopLevelView($.__views.login);
   $.__views.indexContainer = Ti.UI.createView(
@@ -125,7 +125,7 @@ function Controller() {
 
   console.log('starting');
 
-  if (Ti.App.Properties.hasProperty("user")) {
+  if (!Ti.App.Properties.hasProperty("user")) {
 
 
     console.log('has user');

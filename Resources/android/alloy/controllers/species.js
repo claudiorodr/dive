@@ -35,7 +35,7 @@ function Controller() {
 
 
   $.__views.species = Ti.UI.createWindow(
-  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "species" });
+  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "species" });
 
   $.__views.species && $.addTopLevelView($.__views.species);
   var __alloyId18 = [];

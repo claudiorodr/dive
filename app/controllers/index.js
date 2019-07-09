@@ -5,7 +5,7 @@
 // open login 
     $.login.open(); 
 
-// animate 
+// animate  
     //var loading = Alloy.createController("loading").getView();
         //loading.open(); 
         //loading = null;
@@ -13,7 +13,7 @@
  
     console.log('starting');
 // user exists  
-    if (Ti.App.Properties.hasProperty("user")) {
+    if (!Ti.App.Properties.hasProperty("user")) {
 
   
         console.log('has user'); 
