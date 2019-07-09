@@ -178,7 +178,11 @@ function getTodoList() {
         }
         for (pos = 0; pos < jsonname.length; pos++) {
             //Pushing into array evry value			
-            Alloy.Globals.Scientific.push(jsonname[pos].photo);
+            Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);
+        }
+        for (pos = 0; pos < jsonname.length; pos++) {
+            //Pushing into array evry value			
+            Alloy.Globals.Description.push(jsonname[pos].description);
         }
 
         for (var i = 0; i < Alloy.Globals.Names.length; i++) {
@@ -190,6 +194,7 @@ function getTodoList() {
             var science = JSON.stringify(Alloy.Globals.Scientific[i]);
             //Slicing the values for cleaner look 
             //var sciencer = science.slice(1,-1);
+            var description = JSON.stringify(Alloy.Globals.Description[i]);            
             if (args.img == i+1) {
                 var ta1 = Titanium.UI.createTextArea({
                     value: namer,
@@ -203,7 +208,7 @@ function getTodoList() {
                         fontWeight: 'bold'
                     },
                     color: '#888',
-                    textAlign: 'left',
+                    textAlign: 'left', 
                     borderWidth: 2,
                     borderColor: '#bbb',
                     borderRadius: 5,
@@ -236,7 +241,7 @@ function getTodoList() {
                 $.image.add(ta2);
 
                 var ta3 = Titanium.UI.createTextArea({
-                    value: 'Atlantic Ocean',
+                    value: description,
                     height: 35,
                     width: 150,
                     left: 10,

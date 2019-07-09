@@ -2,8 +2,22 @@
 // SITES
 
 function report(event) {
-	Ti.API.info('Annotation ' + event.title + ' clicked, ID: ' + event.annotation.myID);
+	//Ti.API.info('Annotation ' + event.title + ' clicked, ID: ' + event.annotation.myID);
 }
+
+
+//Creating eventListner to the pins on the map
+$.mapview.addEventListener('click', function(e){
+        // if user click on rightButton of annotaion
+        //console.log(e.clicksource);
+        if (e.clicksource == 'leftPane') { 
+            console.log("ola");
+            //navGroup.open(detailWindow);
+         var species = Alloy.createController('species').getView(); 
+			species.open();
+			species = null;
+        }
+});
 
 getTodoList();
 
@@ -59,7 +73,12 @@ function getTodoList() {
 		        title: Alloy.Globals.Sites[i],  
 		        subtitle: Alloy.Globals.Address[i] + "\n" + Alloy.Globals.Depth[i], 
 		        animate: true,
-		        pincolor: Alloy.Globals.Map.ANNOTATION_BLUE
+		        pincolor: Alloy.Globals.Map.ANNOTATION_BLUE,
+		        leftView: Ti.UI.createButton({
+	            title: 'SEE MORE',
+	            height: 32,
+	            width: 70
+	       		 })
 		        //leftButton: 'appcelerator.gif'
 		   });
   			//annotations[i] = pin;
