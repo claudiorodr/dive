@@ -13,7 +13,7 @@
  
     console.log('starting');
 // user exists  
-    if (!Ti.App.Properties.hasProperty("user")) {
+    if (Ti.App.Properties.hasProperty("user")) {
 
   
         console.log('has user'); 
@@ -117,7 +117,7 @@
 
                             // open main 
                                 var main = Alloy.createController("main").getView();
-                                    main.open();
+                                    main.open(); 
                             }
                     //}
                 // ===== 

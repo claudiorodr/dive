@@ -15,7 +15,7 @@ $.mapview.addEventListener('click', function(e){
          var species = Alloy.createController('species').getView(); 
 			species.open();
 			species = null;
-        }
+        } 
 });
 
 getTodoList();
@@ -125,7 +125,7 @@ function openMain() {
 function select(e) {
 	if (e.source.id) {
         console.log(e.source.id);
-        
+
         //clear
         //img, row, speciesTable = null;
         

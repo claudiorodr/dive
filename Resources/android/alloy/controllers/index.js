@@ -125,7 +125,7 @@ function Controller() {
 
   console.log('starting');
 
-  if (!Ti.App.Properties.hasProperty("user")) {
+  if (Ti.App.Properties.hasProperty("user")) {
 
 
     console.log('has user');

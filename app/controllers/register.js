@@ -108,7 +108,7 @@ function register_user() {
 
             // open info
             alert("registered");
-
+ 
         }
 
         //}
