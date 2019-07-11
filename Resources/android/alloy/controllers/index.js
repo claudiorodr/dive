@@ -123,9 +123,13 @@ function Controller() {
 
 
 
+
+
+
+
   console.log('starting');
 
-  if (Ti.App.Properties.hasProperty("user")) {
+  if (!Ti.App.Properties.hasProperty("user")) {
 
 
     console.log('has user');
@@ -199,7 +203,7 @@ function Controller() {
         var postFunction = function postFunction(e) {
 
 
-          if (e.register == "OK") {
+          if (e.register == true) {
 
 
             Ti.App.Properties.setObject('user', e);
@@ -245,6 +249,11 @@ function Controller() {
         var down = require('download');
         down.downloadOneFile(url2, localFilepath);
         down = null;
+
+        var inst = require('install');
+        inst.downloadImages();
+        inst = null;
+
       }
     }
   }

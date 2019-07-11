@@ -193,8 +193,10 @@ function getTodoList() {
             //Putting into string format the JSON values
             var science = JSON.stringify(Alloy.Globals.Scientific[i]);
             //Slicing the values for cleaner look 
-            //var sciencer = science.slice(1,-1);
-            var description = JSON.stringify(Alloy.Globals.Description[i]);            
+            var sciencer = science.slice(1,-1);
+            var description = JSON.stringify(Alloy.Globals.Description[i]);        
+            var sciencer = description.slice(1,-1);   
+             
             if (args.img == i+1) {
                 var ta1 = Titanium.UI.createTextArea({
                     value: namer,
@@ -219,7 +221,7 @@ function getTodoList() {
                 $.image.add(ta1);
 
                 var ta2 = Titanium.UI.createTextArea({
-                    value: science,//r,
+                    value: sciencer,
                     height: 35,
                     width: 'auto',
                     left: 10,
@@ -242,7 +244,7 @@ function getTodoList() {
 
                 var ta3 = Titanium.UI.createTextArea({
                     value: description,
-                    height: 35,
+                    height: 'auto',
                     width: 150,
                     left: 10,
                     top: "38%",
@@ -301,7 +303,7 @@ function insertData() {
     });
     //Request the data from the web service, Here you have to change it for your local ip
     request.open("POST", "http://backend.tigerwhale.com/api/survey");
-    alert(Alloy.Globals.Species[4],survey[2],survey[1],survey[0]);
+    //alert(Alloy.Globals.Species[4],survey[2],survey[1],survey[0]);
     var params = ({    	
       
     /*"user_id": "1",

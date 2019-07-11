@@ -38,51 +38,51 @@ function Controller() {
   { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieDetailWin", title: "Specie Details" });
 
   $.__views.specieDetailWin && $.addTopLevelView($.__views.specieDetailWin);
-  $.__views.__alloyId0 = Ti.UI.createView(
-  { id: "__alloyId0" });
+  $.__views.__alloyId9 = Ti.UI.createView(
+  { id: "__alloyId9" });
 
-  $.__views.specieDetailWin.add($.__views.__alloyId0);
-  $.__views.__alloyId1 = Ti.UI.createLabel(
-  { id: "__alloyId1" });
+  $.__views.specieDetailWin.add($.__views.__alloyId9);
+  $.__views.__alloyId10 = Ti.UI.createLabel(
+  { id: "__alloyId10" });
 
-  $.__views.__alloyId0.add($.__views.__alloyId1);
+  $.__views.__alloyId9.add($.__views.__alloyId10);
   $.__views.image = Ti.UI.createView(
   { id: "image" });
 
-  $.__views.__alloyId0.add($.__views.image);
+  $.__views.__alloyId9.add($.__views.image);
   $.__views.picker = Ti.UI.createPicker(
   { top: "20%", right: "5%", selectionIndicator: true, id: "picker", useSpinner: false });
 
-  $.__views.__alloyId0.add($.__views.picker);
-  var __alloyId2 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
+  $.__views.__alloyId9.add($.__views.picker);
+  var __alloyId11 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
   { id: "Abundance" });
 
-  __alloyId2.push($.__views.Abundance);
-  $.__views.__alloyId3 = Ti.UI.createPickerRow(
-  { title: "Low (1)", id: "__alloyId3" });
+  __alloyId11.push($.__views.Abundance);
+  $.__views.__alloyId12 = Ti.UI.createPickerRow(
+  { title: "Low (1)", id: "__alloyId12" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId3);
-  $.__views.__alloyId4 = Ti.UI.createPickerRow(
-  { title: "Medium (2-3)", id: "__alloyId4" });
+  $.__views.Abundance.addRow($.__views.__alloyId12);
+  $.__views.__alloyId13 = Ti.UI.createPickerRow(
+  { title: "Medium (2-3)", id: "__alloyId13" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId4);
-  $.__views.__alloyId5 = Ti.UI.createPickerRow(
-  { title: "High (4-5)", id: "__alloyId5" });
+  $.__views.Abundance.addRow($.__views.__alloyId13);
+  $.__views.__alloyId14 = Ti.UI.createPickerRow(
+  { title: "High (4-5)", id: "__alloyId14" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId5);
-  $.__views.__alloyId6 = Ti.UI.createPickerRow(
-  { title: "Very High (>5)", id: "__alloyId6" });
+  $.__views.Abundance.addRow($.__views.__alloyId14);
+  $.__views.__alloyId15 = Ti.UI.createPickerRow(
+  { title: "Very High (>5)", id: "__alloyId15" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId6);
-  $.__views.picker.add(__alloyId2);
+  $.__views.Abundance.addRow($.__views.__alloyId15);
+  $.__views.picker.add(__alloyId11);
   $.__views.moreBtn = Ti.UI.createButton(
   { id: "moreBtn", title: "Add more species", right: "5%", bottom: "20%", width: "auto", height: 50 });
 
-  $.__views.__alloyId0.add($.__views.moreBtn);
+  $.__views.__alloyId9.add($.__views.moreBtn);
   openMore ? $.addListener($.__views.moreBtn, 'click', openMore) : __defers['$.__views.moreBtn!click!openMore'] = true;$.__views.endBtn = Ti.UI.createButton(
   { id: "endBtn", title: "End survey", right: "5%", bottom: "15%", width: "auto", height: 50 });
 
-  $.__views.__alloyId0.add($.__views.endBtn);
+  $.__views.__alloyId9.add($.__views.endBtn);
   openMain ? $.addListener($.__views.endBtn, 'click', openMain) : __defers['$.__views.endBtn!click!openMain'] = true;exports.destroy = function () {};
 
 
@@ -286,8 +286,10 @@ function Controller() {
 
         var science = JSON.stringify(Alloy.Globals.Scientific[i]);
 
-
+        var sciencer = science.slice(1, -1);
         var description = JSON.stringify(Alloy.Globals.Description[i]);
+        var sciencer = description.slice(1, -1);
+
         if (args.img == i + 1) {
           var ta1 = Titanium.UI.createTextArea({
             value: namer,
@@ -312,7 +314,7 @@ function Controller() {
           $.image.add(ta1);
 
           var ta2 = Titanium.UI.createTextArea({
-            value: science,
+            value: sciencer,
             height: 35,
             width: 'auto',
             left: 10,
@@ -335,7 +337,7 @@ function Controller() {
 
           var ta3 = Titanium.UI.createTextArea({
             value: description,
-            height: 35,
+            height: 'auto',
             width: 150,
             left: 10,
             top: "38%",
@@ -394,7 +396,7 @@ function Controller() {
 
 
       request.open("POST", "http://backend.tigerwhale.com/api/survey");
-      alert(Alloy.Globals.Species[4], survey[2], survey[1], survey[0]);
+
       var params = {
 
 

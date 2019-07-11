@@ -38,8 +38,8 @@ exports.downloadMultiFile = function (data, starter, callBack_DownloadMultipleFi
         if (dados) {
           console.log(dados.status);
         }
-        var localFilePath = Ti.Filesystem.applicationDataDirectory + "imagens/" + data["data"][queueIndex]["photo_number"] + ".png";
-        downloadOneImage(data["data"][queueIndex].url, localFilePath, processQueue);
+        var localFilePath = Ti.Filesystem.applicationDataDirectory + "imagens/" + data["images"][queueIndex]["photo_number"] + ".png";
+        downloadOneImage(data["images"][queueIndex].url, localFilePath, processQueue);
         queueIndex++;
       } else {
         callBack_DownloadMultipleFileFinished({ status: "ACABOU O DOWNLOAD DAS IMAGENS" });

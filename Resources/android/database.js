@@ -10,7 +10,7 @@ function create_database() {
         animation.remove($.clicks, $.clicksMoans, $.moans, $.moansWhistles, $.whistles);
         change();
     } else {
-        var url = "http://seasurface.tigerwhale.com/db.sqlite";
+        var url = "http://backend.tigerwhale.com/sqlite/dive";
         var localFilePath = Ti.Filesystem.applicationDataDirectory + "bd.sqlite";
         var download = require('download');
         download.downloadOneFile(url, localFilePath, change);

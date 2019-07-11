@@ -11,9 +11,13 @@
         //loading = null;
 
  
+ 
+ //[{JSON --> New() Instance of the progra}]
+ 
+ //Ge new link of this 
     console.log('starting');
 // user exists  
-    if (Ti.App.Properties.hasProperty("user")) {
+    if (!Ti.App.Properties.hasProperty("user")) {
 
   
         console.log('has user'); 
@@ -87,7 +91,7 @@
                 var postFunction = function postFunction(e) {
                     //if (!Alloy.Globals.checkErrors(e)) {
                     // REGISTER 
-                        if (e.register == "OK") {
+                        if (e.register == true) {
  
                             // set user
                                 Ti.App.Properties.setObject('user', e);
@@ -116,9 +120,9 @@
                             	//create_database();                        
 
                             // open main 
-                                var main = Alloy.createController("main").getView();
-                                    main.open(); 
-                            }
+                                var main = Alloy.createController("main").getView(); 
+                                    main.open();
+                           } 
                     //}
                 // ===== 
                 // CLEAR 
@@ -133,6 +137,11 @@
                 var down = require('download');//Creating the local database
                 down.downloadOneFile(url2, localFilepath);//, callBack_DownloadOneFileFinished);
                 down = null;
+            
+				var inst = require('install');//Creating the local database
+                inst.downloadImages();//, callBack_DownloadOneFileFinished);
+                inst = null;
+            
             } 
         }
     }

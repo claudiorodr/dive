@@ -11,19 +11,19 @@ $.mapview.addEventListener('click', function(e){
         // if user click on rightButton of annotaion
         //console.log(e.clicksource);
         if (e.clicksource == 'leftPane') { 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             console.log("ola");
->>>>>>> master
+//>>>>>>> master
             //navGroup.open(detailWindow);
          var species = Alloy.createController('species').getView(); 
 			species.open();
 			species = null;
-<<<<<<< HEAD
+//<<<<<<< HEAD
         } 
-=======
-        }
->>>>>>> master
+//=======
+        //}
+//>>>>>>> master
 });
 
 getTodoList();

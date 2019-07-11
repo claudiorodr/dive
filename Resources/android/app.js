@@ -1,8 +1,11 @@
 
 
+
+
+
 var Alloy = require('/alloy'),
-    _ = Alloy._,
-    Backbone = Alloy.Backbone;
+_ = Alloy._,
+Backbone = Alloy.Backbone;
 
 Alloy.Globals.Map = require('ti.map');
 Alloy.Globals.Pin = [];
@@ -27,8 +30,13 @@ Alloy.Globals.HandleErr = function (e, url) {
 	console.log("-- POST - " + url + " - END");
 };
 
+
 Ti.Network.addEventListener('change', function (e) {
 	Ti.API.info('NETWORK STAT: ' + JSON.stringify(e));
 	Ti.API.info('NETWORK : ' + e.online + ' type: ' + e.networkType);
+
+
+
+
 });
 Alloy.createController('index');
