@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<resources>  
+	
+	<string name="name1">DUSKY GROUPER</string>
+	<string name="name2">PILOT WHALE</string>
+	<string name="name3">HAMMERHEAD SHARK</string>
+	<string name="name4">SUN FISH</string>
+	<string name="name5">TURTLE CARETTA</string>
+	<string name="name6">DUSKY GROUPER</string>
+	<string name="name7">SUN FISH</string>
+	<string name="name8">CRAB</string>
+	<string name="name9">SEA HORSE</string>
+	<string name="name10">BIRD FREIRA</string>
+	<string name="name11">RED GURNARD</string>
+	<string name="name12">TURTLE CARETTA</string>
+	<string name="name13">HAMMERHEAD SHARK</string>
+	<string name="name14">SEA HORSE</string>
+	<string name="name15">DUSKY GROUPER</string>
+	<string name="name16">HAMMERHEAD SHARK</string>
+	<string name="name17">FLYING FISH</string>
+	<string name="name18">BLOW FISH</string>
+	<string name="name19">COMMON FANGTOOTH</string>
+	<string name="name20">BALEIA</string>
+	<string name="name21">FLYING FISH</string>
+	<string name="name22">BLOW FISH</string>
+	<string name="name23">MONK SEAL</string>
+	<string name="name24">BIRD FREIRA</string>
+	<string name="name25">CRAB</string>
+	<string name="name26">BIRD FREIRA</string>
+	<string name="name27">TURTLE CARETTA</string>
+	<string name="name28">SUN FISH</string>
+	<string name="name29">RED GURNARD</string>
+	<string name="name30">MONK SEAL</string>
+	<string name="name31">HAMMERHEAD SHARK</string>
+	<string name="name32">DUSKY GROUPER</string>
+	<string name="name33">CRAB</string>
+	<string name="name34">FLYING FISH</string>
+	<string name="name35">RED GURNARD</string>
+	<string name="name36">BLOW FISH</string>
+	<string name="name37">COMMON FANGTOOTH</string>
+	<string name="name38">SEA HORSE</string>
+	<string name="name39">TURTLE CARETTA</string>
+	<string name="facebook_app_id">2084165518310324</string>
+</resources>
