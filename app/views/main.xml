@@ -1,6 +1,6 @@
 <Alloy>
 	<TabGroup id = "speciesWin">
-		<ActionBar/>
+		<ActionBar id  = "actionBar" />
 		<Require src="survey"/>
 		<Require src="sites"/>
 		<Require src="gallery"/>

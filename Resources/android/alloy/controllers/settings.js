@@ -37,10 +37,10 @@ function Controller() {
 	$.__views.settingsWin = Ti.UI.createWindow(
 	{ backgroundImage: "/img/images/mainback.jpg", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, orientationModes: [], id: "settingsWin", title: "Settings" });
 
-	$.__views.__alloyId7 = Ti.UI.createLabel(
-	{ text: 'Settings', id: "__alloyId7" });
+	$.__views.__alloyId6 = Ti.UI.createLabel(
+	{ text: 'Settings', id: "__alloyId6" });
 
-	$.__views.settingsWin.add($.__views.__alloyId7);
+	$.__views.settingsWin.add($.__views.__alloyId6);
 	$.__views.settingsTab = Ti.UI.createTab(
 	{ window: $.__views.settingsWin, id: "settingsTab", title: "Settings" });
 

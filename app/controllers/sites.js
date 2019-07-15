@@ -69,6 +69,7 @@ function getTodoList() {
 			//Putting into string format the JSON values
 			var lat = JSON.stringify(Alloy.Globals.Latitudes[i]);
 			var lon = JSON.stringify(Alloy.Globals.Longitudes[i]);
+			//
 			//Slicing the values for cleaner look
 			var lati = lat.slice(1,-1);
 			var loni = lon.slice(1,-1);

@@ -38,10 +38,10 @@ function Controller() {
 	__alloyId0.push($.__views.__alloyId1.getViewEx({ recurse: true }));$.__views.__alloyId2 = Alloy.createController('sites', { id: "__alloyId2", __parentSymbol: __parentSymbol });
 	__alloyId0.push($.__views.__alloyId2.getViewEx({ recurse: true }));$.__views.__alloyId3 = Alloy.createController('gallery', { id: "__alloyId3", __parentSymbol: __parentSymbol });
 	__alloyId0.push($.__views.__alloyId3.getViewEx({ recurse: true }));$.__views.speciesWin = Ti.UI.createTabGroup(
-	{ tabs: __alloyId0, id: "speciesWin" });
+	{ color: "#FF0000", backgroundColor: "#D50000", tabs: __alloyId0, id: "speciesWin" });
 
-	function __alloyId5() {
-		$.__views.speciesWin.removeEventListener('open', __alloyId5);
+	function __alloyId4() {
+		$.__views.speciesWin.removeEventListener('open', __alloyId4);
 		if ($.__views.speciesWin.activity) {
 
 		} else {
@@ -50,7 +50,7 @@ function Controller() {
 			Ti.API.warn('are valid with only windows in TabGroups or heavyweight Windows.');
 		}
 	}
-	$.__views.speciesWin.addEventListener('open', __alloyId5);
+	$.__views.speciesWin.addEventListener('open', __alloyId4);
 	$.__views.speciesWin && $.addTopLevelView($.__views.speciesWin);
 	exports.destroy = function () {};
 

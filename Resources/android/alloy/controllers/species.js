@@ -38,17 +38,17 @@ function Controller() {
   { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "species" });
 
   $.__views.species && $.addTopLevelView($.__views.species);
-  var __alloyId18 = [];
+  var __alloyId17 = [];
   $.__views.speciesTable = Ti.UI.createTableView(
   { id: "speciesTable" });
 
-  __alloyId18.push($.__views.speciesTable);
+  __alloyId17.push($.__views.speciesTable);
   select ? $.addListener($.__views.speciesTable, 'click', select) : __defers['$.__views.speciesTable!click!select'] = true;$.__views.speciesTable1 = Ti.UI.createTableView(
   { id: "speciesTable1" });
 
-  __alloyId18.push($.__views.speciesTable1);
+  __alloyId17.push($.__views.speciesTable1);
   select ? $.addListener($.__views.speciesTable1, 'click', select) : __defers['$.__views.speciesTable1!click!select'] = true;$.__views.scrollableView = Ti.UI.createScrollableView(
-  { views: __alloyId18, id: "scrollableView", showPagingControl: true });
+  { views: __alloyId17, id: "scrollableView", showPagingControl: true });
 
   $.__views.species.add($.__views.scrollableView);
   exports.destroy = function () {};

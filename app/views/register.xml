@@ -4,7 +4,7 @@
 			<View id="header">
 				<Button id="logo"></Button>
 				<Label id="create"></Label> 
-				<Label id="reg_btn"></Label>
+				<!--Label id="reg_btn"></Label-->
 			</View>
 			<View id="body">
 				<ScrollView  id="scrollView" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" layout = "vertical">
@@ -16,7 +16,7 @@
 				<TextField class="input" id="phone"></TextField>
 				<TextField class="input" id="gender"></TextField>
 				<!--Picker class="input" id="b_day" type="Ti.UI.PICKER_TYPE_DATE" minDate= "2013-02-08"
-            	maxDate="2015-11-17" selectionIndicator="true" useSpinner="false">
+            	maxDate="2015-11-17" selectionIndicator="true" useSpinner="false"> 
 					<PickerColumn class="input" id="column1" width="30%">		
 					</PickerColumn>
 				</Picker-->
@@ -25,6 +25,10 @@
 					</PickerColumn>
 				</Picker>
 				<TextField class="input" id="note"></TextField>
+				<Label id="agree"></Label>
+				<Label id="terms"></Label>
+				<Label id="privacy"></Label>
+				<Switch id="loginSwitch"></Switch>
 				<Button id="sign_up" onClick="register_user"></Button>
 			  </ScrollView>
 			</View>

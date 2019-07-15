@@ -11,16 +11,11 @@
 				<View id="linkContainer">
 					<Label id="forgotPass"></Label>
 					<Label id="register" onClick="register"></Label>
-					<Button id="log_in" onClick="loginRegister"></Button>
+					<!-- <Button id="sign_in" onClick="register"></Button> -->
 				</View>
+				<Button id="log_in" onClick="loginRegister"></Button>
 			</View>
-			<View id="footer">
-				<Switch id="loginSwitch"></Switch>
-				<Label id="agree"></Label>
-				<Label id="terms"></Label>
-				<Label id="privacy"></Label>
-								<!--<Label id="register" onClick="loginRegister"></Label>-->
-			</View>
+
 		</View>
 	</Window>
 </Alloy>

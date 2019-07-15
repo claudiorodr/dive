@@ -35,159 +35,167 @@ function Controller() {
 
 
   $.__views.surveyWin = Ti.UI.createWindow(
-  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, id: "surveyWin", title: "Survey" });
+  { backgroundColor: "white", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, id: "surveyWin", title: "Survey" });
 
-  $.__views.surveyTitle = Ti.UI.createLabel(
-  { text: 'Survey', id: "surveyTitle" });
+  $.__views.header = Ti.UI.createView(
+  { backgroundColor: "#f8f8f8", width: "100%", height: Titanium.UI.FILL, id: "header" });
 
-  $.__views.surveyWin.add($.__views.surveyTitle);
+  $.__views.surveyWin.add($.__views.header);
+  $.__views.logo = Ti.UI.createButton(
+  { top: 0, height: 300, width: 300, backgroundImage: "/img/logo.png", id: "logo" });
+
+  $.__views.header.add($.__views.logo);
+  $.__views.create = Ti.UI.createLabel(
+  { top: "32%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 34 }, color: "#8a9093", text: L('create_account', "Wave"), id: "create" });
+
+  $.__views.header.add($.__views.create);
   $.__views.picker = Ti.UI.createPicker(
-  { id: "picker", selectionIndicator: true, useSpinner: true });
+  { font: { fontFamily: "Raleway-Bold", fontSize: 16 }, color: "#000080", backgroundColor: "#AAAAAA", id: "picker", type: Titanium.UI.PICKER_TYPE_PLAIN });
 
   $.__views.surveyWin.add($.__views.picker);
-  var __alloyId19 = [];$.__views.column1 = Ti.UI.createPickerColumn(
-  { id: "column1", width: "30%" });
+  var __alloyId18 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  { font: { fontFamily: "Raleway-Bold", fontSize: 28 }, color: "#000080", id: "column1", width: "30%" });
 
-  __alloyId19.push($.__views.column1);
+  __alloyId18.push($.__views.column1);
   $.__views.column2 = Ti.UI.createPickerColumn(
-  { id: "column2" });
+  { font: { fontFamily: "Raleway-Bold", fontSize: 28 }, id: "column2" });
 
-  __alloyId19.push($.__views.column2);
+  __alloyId18.push($.__views.column2);
+  $.__views.__alloyId19 = Ti.UI.createPickerRow(
+  { title: "10 minutes", id: "__alloyId19" });
+
+  $.__views.column2.addRow($.__views.__alloyId19);
   $.__views.__alloyId20 = Ti.UI.createPickerRow(
-  { title: "10 minutes", id: "__alloyId20" });
+  { title: "20 minutes", id: "__alloyId20" });
 
   $.__views.column2.addRow($.__views.__alloyId20);
   $.__views.__alloyId21 = Ti.UI.createPickerRow(
-  { title: "20 minutes", id: "__alloyId21" });
+  { title: "30 minutes", id: "__alloyId21" });
 
   $.__views.column2.addRow($.__views.__alloyId21);
   $.__views.__alloyId22 = Ti.UI.createPickerRow(
-  { title: "30 minutes", id: "__alloyId22" });
+  { title: "40 minutes", id: "__alloyId22" });
 
   $.__views.column2.addRow($.__views.__alloyId22);
   $.__views.__alloyId23 = Ti.UI.createPickerRow(
-  { title: "40 minutes", id: "__alloyId23" });
+  { title: "50 minutes", id: "__alloyId23" });
 
   $.__views.column2.addRow($.__views.__alloyId23);
   $.__views.__alloyId24 = Ti.UI.createPickerRow(
-  { title: "50 minutes", id: "__alloyId24" });
+  { title: "60 minutes", id: "__alloyId24" });
 
   $.__views.column2.addRow($.__views.__alloyId24);
   $.__views.__alloyId25 = Ti.UI.createPickerRow(
-  { title: "60 minutes", id: "__alloyId25" });
+  { title: "70 minutes", id: "__alloyId25" });
 
   $.__views.column2.addRow($.__views.__alloyId25);
   $.__views.__alloyId26 = Ti.UI.createPickerRow(
-  { title: "70 minutes", id: "__alloyId26" });
+  { title: "80 minutes", id: "__alloyId26" });
 
   $.__views.column2.addRow($.__views.__alloyId26);
   $.__views.__alloyId27 = Ti.UI.createPickerRow(
-  { title: "80 minutes", id: "__alloyId27" });
+  { title: "90 minutes", id: "__alloyId27" });
 
   $.__views.column2.addRow($.__views.__alloyId27);
   $.__views.__alloyId28 = Ti.UI.createPickerRow(
-  { title: "90 minutes", id: "__alloyId28" });
+  { title: "100 minutes", id: "__alloyId28" });
 
   $.__views.column2.addRow($.__views.__alloyId28);
   $.__views.__alloyId29 = Ti.UI.createPickerRow(
-  { title: "100 minutes", id: "__alloyId29" });
+  { title: "110 minutes", id: "__alloyId29" });
 
   $.__views.column2.addRow($.__views.__alloyId29);
   $.__views.__alloyId30 = Ti.UI.createPickerRow(
-  { title: "110 minutes", id: "__alloyId30" });
+  { title: "120 minutes", id: "__alloyId30" });
 
   $.__views.column2.addRow($.__views.__alloyId30);
-  $.__views.__alloyId31 = Ti.UI.createPickerRow(
-  { title: "120 minutes", id: "__alloyId31" });
-
-  $.__views.column2.addRow($.__views.__alloyId31);
   $.__views.column3 = Ti.UI.createPickerColumn(
-  { id: "column3" });
+  { font: { fontFamily: "Raleway-Light", fontSize: 28 }, id: "column3" });
 
-  __alloyId19.push($.__views.column3);
+  __alloyId18.push($.__views.column3);
+  $.__views.__alloyId31 = Ti.UI.createPickerRow(
+  { title: "2 divers", id: "__alloyId31" });
+
+  $.__views.column3.addRow($.__views.__alloyId31);
   $.__views.__alloyId32 = Ti.UI.createPickerRow(
-  { title: "2 divers", id: "__alloyId32" });
+  { title: "3 divers", id: "__alloyId32" });
 
   $.__views.column3.addRow($.__views.__alloyId32);
   $.__views.__alloyId33 = Ti.UI.createPickerRow(
-  { title: "3 divers", id: "__alloyId33" });
+  { title: "4 divers", id: "__alloyId33" });
 
   $.__views.column3.addRow($.__views.__alloyId33);
   $.__views.__alloyId34 = Ti.UI.createPickerRow(
-  { title: "4 divers", id: "__alloyId34" });
+  { title: "5 divers", id: "__alloyId34" });
 
   $.__views.column3.addRow($.__views.__alloyId34);
   $.__views.__alloyId35 = Ti.UI.createPickerRow(
-  { title: "5 divers", id: "__alloyId35" });
+  { title: "6 divers", id: "__alloyId35" });
 
   $.__views.column3.addRow($.__views.__alloyId35);
   $.__views.__alloyId36 = Ti.UI.createPickerRow(
-  { title: "6 divers", id: "__alloyId36" });
+  { title: "7 divers", id: "__alloyId36" });
 
   $.__views.column3.addRow($.__views.__alloyId36);
   $.__views.__alloyId37 = Ti.UI.createPickerRow(
-  { title: "7 divers", id: "__alloyId37" });
+  { title: "8 divers", id: "__alloyId37" });
 
   $.__views.column3.addRow($.__views.__alloyId37);
   $.__views.__alloyId38 = Ti.UI.createPickerRow(
-  { title: "8 divers", id: "__alloyId38" });
+  { title: "9 divers", id: "__alloyId38" });
 
   $.__views.column3.addRow($.__views.__alloyId38);
   $.__views.__alloyId39 = Ti.UI.createPickerRow(
-  { title: "9 divers", id: "__alloyId39" });
+  { title: "10 divers", id: "__alloyId39" });
 
   $.__views.column3.addRow($.__views.__alloyId39);
   $.__views.__alloyId40 = Ti.UI.createPickerRow(
-  { title: "10 divers", id: "__alloyId40" });
+  { title: "11 divers", id: "__alloyId40" });
 
   $.__views.column3.addRow($.__views.__alloyId40);
   $.__views.__alloyId41 = Ti.UI.createPickerRow(
-  { title: "11 divers", id: "__alloyId41" });
+  { title: "12 divers", id: "__alloyId41" });
 
   $.__views.column3.addRow($.__views.__alloyId41);
   $.__views.__alloyId42 = Ti.UI.createPickerRow(
-  { title: "12 divers", id: "__alloyId42" });
+  { title: "13 divers", id: "__alloyId42" });
 
   $.__views.column3.addRow($.__views.__alloyId42);
   $.__views.__alloyId43 = Ti.UI.createPickerRow(
-  { title: "13 divers", id: "__alloyId43" });
+  { title: "14 divers", id: "__alloyId43" });
 
   $.__views.column3.addRow($.__views.__alloyId43);
   $.__views.__alloyId44 = Ti.UI.createPickerRow(
-  { title: "14 divers", id: "__alloyId44" });
+  { title: "15 divers", id: "__alloyId44" });
 
   $.__views.column3.addRow($.__views.__alloyId44);
   $.__views.__alloyId45 = Ti.UI.createPickerRow(
-  { title: "15 divers", id: "__alloyId45" });
+  { title: "16 divers", id: "__alloyId45" });
 
   $.__views.column3.addRow($.__views.__alloyId45);
   $.__views.__alloyId46 = Ti.UI.createPickerRow(
-  { title: "16 divers", id: "__alloyId46" });
+  { title: "17 divers", id: "__alloyId46" });
 
   $.__views.column3.addRow($.__views.__alloyId46);
   $.__views.__alloyId47 = Ti.UI.createPickerRow(
-  { title: "17 divers", id: "__alloyId47" });
+  { title: "18 divers", id: "__alloyId47" });
 
   $.__views.column3.addRow($.__views.__alloyId47);
   $.__views.__alloyId48 = Ti.UI.createPickerRow(
-  { title: "18 divers", id: "__alloyId48" });
+  { title: "19 divers", id: "__alloyId48" });
 
   $.__views.column3.addRow($.__views.__alloyId48);
   $.__views.__alloyId49 = Ti.UI.createPickerRow(
-  { title: "19 divers", id: "__alloyId49" });
+  { title: "20 divers", id: "__alloyId49" });
 
   $.__views.column3.addRow($.__views.__alloyId49);
-  $.__views.__alloyId50 = Ti.UI.createPickerRow(
-  { title: "20 divers", id: "__alloyId50" });
-
-  $.__views.column3.addRow($.__views.__alloyId50);
-  $.__views.picker.add(__alloyId19);
+  $.__views.picker.add(__alloyId18);
   $.__views.speciesBtn = Ti.UI.createButton(
-  { id: "speciesBtn", title: "Start survey", bottom: "8%", width: "20%", height: 50 });
+  { font: { fontFamily: "Raleway-Bold", fontSize: 20 }, title: "Start survey", bottom: "8%", width: "25%", height: 40, backgroundColor: "#000080", borderColor: "#EEEEEE", borderRadius: 6, id: "speciesBtn" });
 
   $.__views.surveyWin.add($.__views.speciesBtn);
   openSpecies ? $.addListener($.__views.speciesBtn, 'click', openSpecies) : __defers['$.__views.speciesBtn!click!openSpecies'] = true;$.__views.surveyTab = Ti.UI.createTab(
-  { window: $.__views.surveyWin, id: "surveyTab", title: "Survey" });
+  { font: { fontFamily: "Raleway-Light", fontSize: 28 }, color: "#000080", window: $.__views.surveyWin, id: "surveyTab", title: "Survey" });
 
   $.__views.surveyTab && $.addTopLevelView($.__views.surveyTab);
   exports.destroy = function () {};

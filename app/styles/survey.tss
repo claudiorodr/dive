@@ -1,10 +1,77 @@
 "Window": {
-	backgroundImage:'/img/images/mainback.jpg',
-	exitOnClose : true,
-	navBarHidden : true,
-	fullscreen : true,
-	height : Ti.UI.FILL,
-	width : Ti.UI.FILL
-	// tabBarHidden : true,
+	//backgroundImage:'/img/images/mainback.jpg',
+	backgroundColor: "white", exitOnClose: true, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL // tabBarHidden : true,
+}
 
+"#speciesBtn": {
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 20
+	}
+	,
+	title: "Start survey",
+	bottom: "8%",
+	width: "25%",
+	height: 40,
+	backgroundColor: "#000080",
+	borderColor: "#EEEEEE",
+	borderRadius: 6
+}
+
+"#surveyTab": {
+	font: {
+		fontFamily: 'Raleway-Light', fontSize: 28
+	}
+	,
+	color: "#000080"
+}
+
+"#column1": {
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 28
+	}
+	,
+	color: "#000080",
+}
+
+"#picker": {
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 16
+	}
+	,
+	color: "#000080",
+	backgroundColor: "#AAAAAA",
+	
+}
+
+"#column2": {
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 28
+	}
+}
+
+"#column3": {
+	font: {
+		fontFamily: 'Raleway-Light', fontSize: 28
+	}
+}
+
+"#header": {
+	backgroundColor: "#f8f8f8", // layout : "vertical",
+	width: "100%", height: Titanium.UI.FILL, //left : 0
+}
+
+"#logo": {
+	// left : "5%",
+	top: 0, height: 300, width: 300, backgroundImage: "/img/logo.png",
+}
+
+"#create": {
+	top: "32%",
+	textAlign: "center",
+	font: {
+		fontFamily: "Raleway-Light", fontSize: 34
+	}
+	,
+	color: "#8a9093",
+	text: L('create_account', "Wave")
 }

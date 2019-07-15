@@ -39,70 +39,50 @@ function Controller() {
 
   $.__views.login && $.addTopLevelView($.__views.login);
   $.__views.indexContainer = Ti.UI.createView(
-  { layout: "vertical", id: "indexContainer" });
+  { id: "indexContainer" });
 
   $.__views.login.add($.__views.indexContainer);
   $.__views.header = Ti.UI.createView(
-  { layout: "vertical", height: "33.33%", top: 0, id: "header" });
+  { backgroundColor: "#f8f8f8", width: "50%", height: "100%", left: 0, id: "header" });
 
   $.__views.indexContainer.add($.__views.header);
   $.__views.logo = Ti.UI.createButton(
-  { top: "10%", height: 100, width: 100, backgroundImage: "/img/logo.png", id: "logo" });
+  { height: 300, width: 300, backgroundImage: "/img/logo.png", id: "logo" });
 
   $.__views.header.add($.__views.logo);
   loginRegister ? $.addListener($.__views.logo, 'click', loginRegister) : __defers['$.__views.logo!click!loginRegister'] = true;$.__views.create = Ti.UI.createLabel(
-  { top: "5%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 18 }, color: "#000080", text: L('create_account', "Wave Dive"), id: "create" });
+  { top: "62%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 32 }, color: "#8a9093", text: L('create_account', "Wave"), id: "create" });
 
   $.__views.header.add($.__views.create);
   $.__views.body = Ti.UI.createView(
-  { layout: "vertical", height: "33.33%", top: "0", id: "body" });
+  { layout: "vertical", width: "50%", right: 0, height: "100%", id: "body" });
 
   $.__views.indexContainer.add($.__views.body);
   $.__views.email = Ti.UI.createTextField(
-  { top: 0, width: "60%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 16 }, color: "#000080", hintText: L('email_hintText', "EMAIL"), hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#000080", borderRadius: 0, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, id: "email" });
+  { top: "40%", left: "9%", width: "75%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#000080", hintText: L('email_hintText', "EMAIL"), hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#000080", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, id: "email" });
 
   $.__views.body.add($.__views.email);
   $.__views.pass = Ti.UI.createTextField(
-  { top: "5%", width: "60%", textAlign: "center", passwordMask: true, font: { fontFamily: "Smoolthan-Bold", fontSize: 16 }, color: "#000080", hintText: L('pass_hintText', "PASSWORD"), hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderRadius: 0, borderColor: "#000080", borderWidth: 1, height: 50, returnKeyType: Titanium.UI.RETURNKEY_DONE, id: "pass" });
+  { top: 5, left: "9%", width: "75%", textAlign: "center", passwordMask: true, font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#000080", hintText: L('pass_hintText', "PASSWORD"), hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderRadius: 6, borderColor: "#000080", borderWidth: 1, height: 50, returnKeyType: Titanium.UI.RETURNKEY_DONE, id: "pass" });
 
   $.__views.body.add($.__views.pass);
   $.__views.linkContainer = Ti.UI.createView(
-  { top: "10%", width: "60%", id: "linkContainer" });
+  { left: "9%", width: "75%", height: 50, id: "linkContainer" });
 
   $.__views.body.add($.__views.linkContainer);
   $.__views.forgotPass = Ti.UI.createLabel(
-  { top: 0, left: 0, width: "40%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 12 }, text: L("pass_forgot", "FORGOT PASSWORD?"), color: "#000080", id: "forgotPass" });
+  { top: "25%", left: 0, width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 12 }, text: L("pass_forgot", "FORGOT PASSWORD?"), color: "#000080", id: "forgotPass" });
 
   $.__views.linkContainer.add($.__views.forgotPass);
   $.__views.register = Ti.UI.createLabel(
-  { top: 0, left: "70%", width: "20%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 12 }, text: L("pass_forgot", "DON'T HAVE AN ACCOUNT? SIGN UP!"), color: "#000080", id: "register" });
+  { top: "25%", right: 0, width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 12 }, text: L("pass_forgot", "DON'T HAVE AN ACCOUNT? SIGN UP!"), color: "#000080", id: "register" });
 
   $.__views.linkContainer.add($.__views.register);
   register ? $.addListener($.__views.register, 'click', register) : __defers['$.__views.register!click!register'] = true;$.__views.log_in = Ti.UI.createButton(
-  { top: "45%", width: "30%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 24 }, color: "white", title: "LOG IN", backgroundColor: "#000080", borderColor: "#EEEEEE", borderRadius: 0, height: 50, id: "log_in" });
+  { left: "9%", top: 0, width: "75%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "white", title: "SIGN IN", backgroundColor: "#000080", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "log_in" });
 
-  $.__views.linkContainer.add($.__views.log_in);
-  loginRegister ? $.addListener($.__views.log_in, 'click', loginRegister) : __defers['$.__views.log_in!click!loginRegister'] = true;$.__views.footer = Ti.UI.createView(
-  { height: "33.33%", top: 0, id: "footer" });
-
-  $.__views.indexContainer.add($.__views.footer);
-  $.__views.loginSwitch = Ti.UI.createSwitch(
-  { top: "5%", onTintColor: "#000080", tintColor: "#FFFFFF", thumbTintColor: "#FFFFFF", value: false, id: "loginSwitch" });
-
-  $.__views.footer.add($.__views.loginSwitch);
-  $.__views.agree = Ti.UI.createLabel(
-  { top: "30%", width: "60%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 14 }, color: "#000080", text: L('privacy_text', "I agree with terms and conditions:"), id: "agree" });
-
-  $.__views.footer.add($.__views.agree);
-  $.__views.terms = Ti.UI.createLabel(
-  { top: "45%", left: "20%", width: "30%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 12 }, color: "#000080", text: L('privacy_terms', "TERMS OF USE"), id: "terms" });
-
-  $.__views.footer.add($.__views.terms);
-  $.__views.privacy = Ti.UI.createLabel(
-  { top: "45%", right: "20%", width: "30%", textAlign: "center", font: { fontFamily: "Smoolthan-Bold", fontSize: 12 }, color: "#000080", text: L('privacy_privacy', "PRIVACY POLICY"), id: "privacy" });
-
-  $.__views.footer.add($.__views.privacy);
-  exports.destroy = function () {};
+  $.__views.body.add($.__views.log_in);
+  loginRegister ? $.addListener($.__views.log_in, 'click', loginRegister) : __defers['$.__views.log_in!click!loginRegister'] = true;exports.destroy = function () {};
 
 
 
@@ -173,88 +153,79 @@ function Controller() {
 
 
 
-    if (!$.loginSwitch.value) {
+
+    if (!Ti.Network.online) {
       var alerts = require('alerts');
-      alerts.show(L('privacy_alert', "Please agree to the Weesh\nTearms of Use and Privacy Policy"));
+      alerts.show(L('alert_internet', "Please check your internet connection"));
       alerts = null;
 
 
     } else {
 
 
-      if (!Ti.Network.online) {
-        var alerts = require('alerts');
-        alerts.show(L('alert_internet', "Please check your internet connection"));
-        alerts = null;
-
-
-      } else {
-
-
-        var url = "api/login";
-        var url2 = "http://seasurface.tigerwhale.com/db.sqlite";
-        var data = {
-          email: "admin@admin.wave",
-          password: "admin" };
+      var url = "api/login";
+      var url2 = "http://seasurface.tigerwhale.com/db.sqlite";
+      var data = {
+        email: "admin@admin.wave",
+        password: "admin" };
 
 
 
-        var localFilepath = Ti.Filesystem.applicationDataDirectory + "bd.sqlite";
-        var postFunction = function postFunction(e) {
+      var localFilepath = Ti.Filesystem.applicationDataDirectory + "bd.sqlite";
+      var postFunction = function postFunction(e) {
 
 
-          if (e.register == true) {
+        if (e.register == true) {
 
 
-            Ti.App.Properties.setObject('user', e);
-            console.log("-- POST - " + url + " - user REGISTERED");
-            console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
+          Ti.App.Properties.setObject('user', e);
+          console.log("-- POST - " + url + " - user REGISTERED");
+          console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
 
 
-            var db = require('database');
-            db.create();
-            db = null;
+          var db = require('database');
+          db.create();
+          db = null;
 
 
-            alert("registered");
-          }
+          alert("registered");
+        }
 
 
-          if (e.success == true) {
+        if (e.success == true) {
 
 
-            Ti.App.Properties.setObject('user', e);
-            console.log("-- POST - " + url + " - user LOGGED IN");
-            console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
+          Ti.App.Properties.setObject('user', e);
+          console.log("-- POST - " + url + " - user LOGGED IN");
+          console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
 
 
 
 
 
 
-            var main = Alloy.createController("main").getView();
-            main.open();
-          }
+          var main = Alloy.createController("main").getView();
+          main.open();
+        }
 
 
 
-          url = null;
-          data = null;
-          postFunction = null;
-        };
-        var posts = require('posts');
-        posts.post(url, data, postFunction);
-        posts = null;
+        url = null;
+        data = null;
+        postFunction = null;
+      };
+      var posts = require('posts');
+      posts.post(url, data, postFunction);
+      posts = null;
 
-        var down = require('download');
-        down.downloadOneFile(url2, localFilepath);
-        down = null;
+      var down = require('download');
+      down.downloadOneFile(url2, localFilepath);
+      down = null;
 
-        var inst = require('install');
-        inst.downloadImages();
-        inst = null;
+      var inst = require('install');
+      inst.downloadImages();
+      inst = null;
 
-      }
     }
   }
 

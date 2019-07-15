@@ -7,6 +7,12 @@
 	width : Ti.UI.FILL
 }
 
-"speciesWin" : {
-	backgroundColor : "blue"
+"#speciesWin" : {
+    color: '#FF0000',
+    backgroundColor: '#D50000'
+}
+
+"#actionBar" : {
+    color: '#000000',
+    backgroundColor: '#000000'
 }

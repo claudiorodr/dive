@@ -12,7 +12,7 @@
 
  
  
- //[{JSON --> New() Instance of the progra}]
+ //[{JSON --> New() Instance of the program}]
  
  //Ge new link of this 
     console.log('starting');
@@ -60,21 +60,13 @@
 
 
 
-    // AGREE NO
-        if (!$.loginSwitch.value) {
-            var alerts = require('alerts');
-            alerts.show(L('privacy_alert', "Please agree to the Weesh\nTearms of Use and Privacy Policy"));
-            alerts = null;
-
-    // AGREE OK 
-        } else {
 
         // NET NO
             if (!Ti.Network.online) {
                 var alerts = require('alerts');
                 alerts.show(L('alert_internet', "Please check your internet connection"));
                 alerts = null;
-
+ 
         // NET OK
             } else {
 
@@ -143,5 +135,4 @@
                 inst = null;
             
             } 
-        }
     }
