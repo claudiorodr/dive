@@ -11,15 +11,7 @@ var row, left, container, img, text = '';
 
 // prepare
  
-var scrollView = Titanium.UI.createScrollableView({
-    views: [],
-    showPagingControl: true,
-    pagingControlHeight: 30,
-    maxZoomScale: 2.0,
-    currentPage: 1
-});
-
-for (var i = 1; i < 10; i++) {
+for (var i = 1; i < 19; i++) {
     if (columnCounter == 0) {
         row = Ti.UI.createTableViewRow({
             className: "creature",
@@ -71,65 +63,12 @@ for (var i = 1; i < 10; i++) {
     }
 } // eof for
 
-for (var i = 10; i < 19; i++) {
-    if (columnCounter == 0) {
-        row = Ti.UI.createTableViewRow({
-            className: "creature",
-            top: 0,
-            left: 0,
-            width: 400,
-            height: 200,
-        });
-        creatureData1.push(row);
-    }
-
-    left = (columnCounter + 1) * 2 + columnCounter * 30;
-    container = Ti.UI.createView({
-        top: 0,
-        left: left + "%",
-        width: '30%',
-        layout: "vertical"
-    });
-    row.add(container);
-
-    // creature
-    img = Ti.UI.createImageView({
-        id: i,
-        top: 10,
-        width: 200,
-        height: 200,
-        image: "http://backend.tigerwhale.com/api/dive/image/" + i,// + ".jpg",
-        verticalAlign: 'center'
-        // title : creatures_array[i-1]~		
-    });
-    container.add(img);
-
-    // title
-    text = Ti.UI.createLabel({
-        bottom: 0,
-        textAlign: "center",
-        // text : creatures_array[i-1],
-        font: {
-            fontFamily: 'Smoolthan-Bold',
-            fontSize: 14
-        },
-        color: "#FFFFFF"
-    });
-    container.add(text);
-
-    columnCounter++;
-    if (columnCounter == 3) {
-        columnCounter = 0;
-    }
-} // eof for
 // set
 $.speciesTable.setData(creatureData);
-$.speciesTable1.setData(creatureData1);
 // clear
 creatureData = [];
 creatureData = null;
-creatureData1 = [];
-creatureData1 = null;
+
 row, left, container, img, text = null;
 
 function select(e) {
@@ -148,7 +87,7 @@ function select(e) {
         }).getView().open();
     }
 }
-
+ 
 function openMain() {
     var main = Alloy.createController('main').getView();
     main.open();

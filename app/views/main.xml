@@ -1,9 +1,8 @@
 <Alloy>
-	<TabGroup id = "speciesWin">
-		<ActionBar id  = "actionBar" />
+	<TabGroup id = "speciesWin" tabsBackgroundColor="#000080" >
+		<!--ActionBar id  = "actionBar" /-->
 		<Require src="survey"/>
 		<Require src="sites"/>
 		<Require src="gallery"/>
-		<!-- <Require src="settings"/> -->
 	</TabGroup>
 </Alloy>

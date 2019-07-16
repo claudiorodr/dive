@@ -9,7 +9,6 @@
     //var loading = Alloy.createController("loading").getView();
         //loading.open(); 
         //loading = null;
-
  
  
  //[{JSON --> New() Instance of the program}]

@@ -1,6 +1,6 @@
 "Window": {
-	backgroundImage:'/img/images/mainback.jpg',
-	exitOnClose : false,
+	//backgroundImage:'/img/images/mainback.jpg',
+	exitOnClose : false, 
 	navBarHidden : true,
 	fullscreen : true,
 	height : Ti.UI.FILL,

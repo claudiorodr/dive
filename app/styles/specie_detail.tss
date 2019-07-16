@@ -1,5 +1,5 @@
 "Window": {
-	backgroundImage:'/img/images/mainback.jpg',
+	//backgroundImage:'/img/images/mainback.jpg',
 	exitOnClose : false,
 	navBarHidden : true,
 	fullscreen : true,

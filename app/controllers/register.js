@@ -5,12 +5,12 @@ var sendit = Ti.Network.createHTTPClient({
     onerror: function(e) {
         Ti.API.debug(e.error);
         alert('There was an error during the connection');
-    },
+    }, 
     timeout: 1000,
 });
 //Here you have to change it for your local ip  	
 sendit.open("GET", "http://backend.tigerwhale.com/api/country");
-sendit.send();
+sendit.send(); 
 
 
 //Function to be called upon a successful response 

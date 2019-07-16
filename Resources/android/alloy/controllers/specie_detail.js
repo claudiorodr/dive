@@ -35,54 +35,54 @@ function Controller() {
 
 
   $.__views.specieDetailWin = Ti.UI.createWindow(
-  { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieDetailWin", title: "Specie Details" });
+  { exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieDetailWin", title: "Specie Details" });
 
   $.__views.specieDetailWin && $.addTopLevelView($.__views.specieDetailWin);
-  $.__views.__alloyId8 = Ti.UI.createView(
+  $.__views.__alloyId7 = Ti.UI.createView(
+  { id: "__alloyId7" });
+
+  $.__views.specieDetailWin.add($.__views.__alloyId7);
+  $.__views.__alloyId8 = Ti.UI.createLabel(
   { id: "__alloyId8" });
 
-  $.__views.specieDetailWin.add($.__views.__alloyId8);
-  $.__views.__alloyId9 = Ti.UI.createLabel(
-  { id: "__alloyId9" });
-
-  $.__views.__alloyId8.add($.__views.__alloyId9);
+  $.__views.__alloyId7.add($.__views.__alloyId8);
   $.__views.image = Ti.UI.createView(
   { id: "image" });
 
-  $.__views.__alloyId8.add($.__views.image);
+  $.__views.__alloyId7.add($.__views.image);
   $.__views.picker = Ti.UI.createPicker(
   { top: "20%", right: "5%", selectionIndicator: true, id: "picker", useSpinner: false });
 
-  $.__views.__alloyId8.add($.__views.picker);
-  var __alloyId10 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
+  $.__views.__alloyId7.add($.__views.picker);
+  var __alloyId9 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
   { id: "Abundance" });
 
-  __alloyId10.push($.__views.Abundance);
+  __alloyId9.push($.__views.Abundance);
+  $.__views.__alloyId10 = Ti.UI.createPickerRow(
+  { title: "Low (1)", id: "__alloyId10" });
+
+  $.__views.Abundance.addRow($.__views.__alloyId10);
   $.__views.__alloyId11 = Ti.UI.createPickerRow(
-  { title: "Low (1)", id: "__alloyId11" });
+  { title: "Medium (2-3)", id: "__alloyId11" });
 
   $.__views.Abundance.addRow($.__views.__alloyId11);
   $.__views.__alloyId12 = Ti.UI.createPickerRow(
-  { title: "Medium (2-3)", id: "__alloyId12" });
+  { title: "High (4-5)", id: "__alloyId12" });
 
   $.__views.Abundance.addRow($.__views.__alloyId12);
   $.__views.__alloyId13 = Ti.UI.createPickerRow(
-  { title: "High (4-5)", id: "__alloyId13" });
+  { title: "Very High (>5)", id: "__alloyId13" });
 
   $.__views.Abundance.addRow($.__views.__alloyId13);
-  $.__views.__alloyId14 = Ti.UI.createPickerRow(
-  { title: "Very High (>5)", id: "__alloyId14" });
-
-  $.__views.Abundance.addRow($.__views.__alloyId14);
-  $.__views.picker.add(__alloyId10);
+  $.__views.picker.add(__alloyId9);
   $.__views.moreBtn = Ti.UI.createButton(
   { id: "moreBtn", title: "Add more species", right: "5%", bottom: "20%", width: "auto", height: 50 });
 
-  $.__views.__alloyId8.add($.__views.moreBtn);
+  $.__views.__alloyId7.add($.__views.moreBtn);
   openMore ? $.addListener($.__views.moreBtn, 'click', openMore) : __defers['$.__views.moreBtn!click!openMore'] = true;$.__views.endBtn = Ti.UI.createButton(
   { id: "endBtn", title: "End survey", right: "5%", bottom: "15%", width: "auto", height: 50 });
 
-  $.__views.__alloyId8.add($.__views.endBtn);
+  $.__views.__alloyId7.add($.__views.endBtn);
   openMain ? $.addListener($.__views.endBtn, 'click', openMain) : __defers['$.__views.endBtn!click!openMain'] = true;exports.destroy = function () {};
 
 

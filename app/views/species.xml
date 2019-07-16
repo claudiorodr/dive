@@ -1,13 +1,8 @@
 <Alloy>
 		<Window id="species">
-			<ScrollableView id="scrollableView" showPagingControl="true">
 				<TableView id="speciesTable" onClick="select">
 						
 				</TableView>
-				
-				<TableView id="speciesTable1" onClick="select">
-						
-				</TableView>
-			</ScrollableView>
+
 		</Window>
 </Alloy>

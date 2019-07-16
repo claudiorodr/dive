@@ -171,21 +171,25 @@
 				}
 				"#country" : {
 					//hintText : L('email_hintText', "COUNTRY"),
-					color : "#000000"
+					color : "#ffffff",
+					pullBackgroundColor : "#ffffff"
 					
 				}
 				"#column1" : {
 						//hintText : L('email_hintText', "COUNTRY"),
 						//backgroundColor : "#f8f8f8",
-						color : "#000000" 
+					color : "#ffffff",
+					pullBackgroundColor : "#ffffff"
 						
 					}		
 				"#gender" : {
 					hintText : L('email_hintText', "GENDER"),
 				}
-				"#b_day" : {
-					hintText : L('email_hintText', "BIRTHDAY"),
-					dateTimeColor : "gray"
+				"#birthday" : {
+					font : {
+						fontSize : 20 
+					},
+					height : 65
 				}				
 				"#note" : {
 					hintText : L('email_hintText', "NOTE"),

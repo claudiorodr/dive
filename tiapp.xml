@@ -9,7 +9,7 @@
   <description>Sea Assessments</description>
   <copyright>2019 by Scuba Team</copyright>
   <icon>appicon.png</icon>
-  <fullscreen>false</fullscreen>
+  <fullscreen>true</fullscreen>
   <navbar-hidden>true</navbar-hidden>
   <analytics>false</analytics>
   <guid>1015700c-af9d-4af2-9ccc-04558f1f5acc</guid>
@@ -40,7 +40,7 @@
   <android 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <manifest>
-      <application>
+      <application android:theme="@style/Light">
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="landscape">
           <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
