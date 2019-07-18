@@ -12,51 +12,67 @@ var row, left, container, img, text = '';
 // prepare
  
 for (var i = 1; i < 19; i++) {
+	left = 0;
     if (columnCounter == 0) {
         row = Ti.UI.createTableViewRow({
             className: "creature",
             top: 0,
             left: 0,
-            width: 400,
-            height: 200,
-        });
-        creatureData.push(row);
+            // width: 400,
+            height: Ti.UI.SIZE,
+        }); 
+        creatureData.push(row); 
+    } else {
+	    left = columnCounter * 33.333;
     }
 
-    left = (columnCounter + 1) * 2 + columnCounter * 30;
+
     container = Ti.UI.createView({
         top: 0,
         left: left + "%",
-        width: '30%',
-        layout: "vertical"
-    });
-    row.add(container);
+        width: '33.33%',
+        height : Ti.UI.SIZE
+    }); 
 
+    row.add(container);
+	 
     // creature
     img = Ti.UI.createImageView({
         id: i,
         //top : 10,
-        width: 200,
-        height: 200,
+        width: "100%",  
+        // height: 200,
         image: "http://backend.tigerwhale.com/api/dive/image/" + i,// + ".jpg",
         verticalAlign: 'center'
         // title : creatures_array[i-1]~		
     });
     container.add(img);
+    	// view, bottom 0 width 100%, height 25%, baclgroung black 90%
+    	// label white coor
+    	
+	    container2 = Ti.UI.createView({ 
+	        bottom: 0,
+	        width: '100%',
+	        height : '25%',
+	        opacity : 0.5,
+	        backgroundColor : 'black'
+	    });
 
-    // title
-    text = Ti.UI.createLabel({
-        bottom: 0,
-        textAlign: "center",
-        // text : creatures_array[i-1],
-        font: {
-            fontFamily: 'Smoolthan-Bold',
-            fontSize: 14
-        },
-        color: "#FFFFFF"
-    });
-    container.add(text);
+    	 
+		    // title
+		    text = Ti.UI.createLabel({
+		        //value : "Olá",
+		        text: Alloy.Globals.Names[i-1],
+		        font: {
+		            fontFamily: 'Raleway-Bold',
+		            fontSize: 18
+		        },
+		        color: "#FFFFFF"
+		    }); 
+		    container2.add(text);
 
+    container.add(container2);
+    
     columnCounter++;
     if (columnCounter == 3) {
         columnCounter = 0;

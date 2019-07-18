@@ -22,9 +22,9 @@
 					onload : function() {
 						
 						// debug
-							console.log("-- POST - " + url + " - START");
-							console.log("-- POST - " + url + " - STATUS: " + this.status);
-							console.log("-- POST - " + url + " - TEXT:   " + this.responseText);
+							// console.log("-- POST - " + url + " - START");
+							// console.log("-- POST - " + url + " - STATUS: " + this.status);
+							// console.log("-- POST - " + url + " - TEXT:   " + this.responseText);
 						
 						// status ok
 							if (this.status == "200") {

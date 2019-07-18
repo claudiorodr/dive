@@ -1,8 +1,6 @@
 <Alloy>
 		<Window id="species">
-				<TableView id="speciesTable" onClick="select">
-						
+				<TableView id="speciesTable" onClick="select">					
 				</TableView>
-
 		</Window>
 </Alloy>

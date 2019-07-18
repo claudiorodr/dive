@@ -60,8 +60,8 @@ function getTodoList() {
 function openSpecies() {
 	Alloy.Globals.Sites.length = 0; 
 	var selectedRow = $.picker.getSelectedRow(0).myId; //Value from picker 1
-	var selectedRow1 = $.picker.getSelectedRow(1).title; //Value from picker 2
-	var selectedRow2 = $.picker.getSelectedRow(2).title; //Value from picker 3
+	var selectedRow1 = $.picker2.getSelectedRow(0).title; //Value from picker 2
+	var selectedRow2 = $.picker3.getSelectedRow(0).title; //Value from picker 3
 	 
 	var species = Alloy.createController('species').getView(); 
 	species.open();

@@ -1,1 +1,0 @@
-module.exports = [{"isApi":true,"priority":1000.005,"key":"Window","style":{exitOnClose:false,navBarHidden:true,fullscreen:true,height:Ti.UI.FILL,width:Ti.UI.FILL,tabBarHidden:true,}},{"isApi":true,"priority":1000.0051,"key":"Picker","style":{top:"20%",right:"5%",selectionIndicator:true,}}];

@@ -188,8 +188,9 @@
 				"#birthday" : {
 					font : {
 						fontSize : 20 
-					},
-					height : 65
+					}, 
+					height : 90,
+					width : "70%" 
 				}				
 				"#note" : {
 					hintText : L('email_hintText', "NOTE"),

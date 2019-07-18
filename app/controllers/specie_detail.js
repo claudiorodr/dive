@@ -101,7 +101,8 @@ var args = $.args;
 */	
 	var l = Titanium.UI.createLabel({
 		text:'Common name:',
-		font:{fontSize:14},
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
 		left:10,
 		top:"15%",
 		width:300,
@@ -112,7 +113,8 @@ var args = $.args;
 	
 	var ll = Titanium.UI.createLabel({
 		text:'Scientific name:',
-		font:{fontSize:14},
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
 		left:10,
 		top:"25%",
 		width:300,
@@ -123,7 +125,8 @@ var args = $.args;
 	
 		var lll = Titanium.UI.createLabel({
 		text:'Habitat:',
-		font:{fontSize:14},
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
 		left:10,
 		top:"35%",
 		width:300,
@@ -206,8 +209,8 @@ function getTodoList() {
                     top: "18%",
                     font: {
                         fontSize: 14,
-                        fontFamily: 'Marker Felt',
-                        fontWeight: 'bold'
+                        fontFamily: 'Raleway-Bold',
+
                     },
                     color: '#888',
                     textAlign: 'left', 
@@ -228,8 +231,8 @@ function getTodoList() {
                     top: "28%",
                     font: {
                         fontSize: 14,
-                        fontFamily: 'Marker Felt',
-                        fontWeight: 'bold'
+                        fontFamily: 'Raleway-Bold',
+
                     },
                     color: '#888',
                     textAlign: 'left',
@@ -250,8 +253,8 @@ function getTodoList() {
                     top: "38%",
                     font: {
                         fontSize: 14,
-                        fontFamily: 'Marker Felt',
-                        fontWeight: 'bold'
+                        fontFamily: 'Raleway-Bold',
+
                     },
                     color: '#888',
                     textAlign: 'left',

@@ -1,32 +1,42 @@
 "Window": {
-	//backgroundImage:'/img/images/mainback.jpg',
+	backgroundColor:"black",
 	exitOnClose : false,
 	navBarHidden : true,
 	fullscreen : true,
 	height : Ti.UI.FILL,
-	width : Ti.UI.FILL,
-	tabBarHidden : true
+	width : Ti.UI.FILL, 
+	tabBarHidden : true 
 },
 
 "Picker": {
 	top: "20%",
 	right: "5%", 
-	selectionIndicator: true
+	selectionIndicator: true,
+	font : {
+		fontFamily: 'Raleway-Bold'
+			}
 	}
-/*
+
 "moreBtn" : {
 		text:'Add more species',
 		height:40,
 		width:100,
 		top:0,
 		left:10,
-},
+			font : {
+		fontFamily: 'Raleway-Bold'
+			}
+	}
+
 
 "endBtn" : {
 		text:'End survey',
 		height:40,
 		width:100,
-		bottom:10,
+		bottom:10, 
 		right:10,
+			font : { 
+		fontFamily: 'Raleway-Bold'
+			}
 	}
-	*/
+	

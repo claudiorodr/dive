@@ -11,9 +11,9 @@
 "#surveyTab": {
 	font: {
 		fontFamily: 'Raleway-Light', fontSize: 28
-	}
-	,
-	color: "#000080"
+	},
+	color: "#000080",
+	titleColor : "#FFFFFF"
 }
 
 "#header": {
@@ -26,7 +26,7 @@
 "#body": {
 	backgroundColor: "#f8f8f8", // layout : "vertical",
 	width: "100%", 
-	height: "60%", //left : 0
+	height: "55%", //left : 0
 	bottom : 0
 }
 
@@ -54,7 +54,43 @@
 	shadowColor : "#aaa",
 	text : "Please, insert the following information about your dive:",
 	textAlign : "Ti.UI.TEXT_ALIGNMENT_CENTER",
-	top : "20%",
+	top : "16%",
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 16
+	}
+}
+
+"#label2": {
+	color : "#8a9093",
+	shadowColor : "#aaa",
+	text : "Diving Spot",
+	textAlign : "Ti.UI.TEXT_ALIGNMENT_CENTER",
+	top : "25%",
+	left : "29%",
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 16
+	}
+}
+
+"#label3": {
+	color : "#8a9093",
+	shadowColor : "#aaa",
+	text : "Duration",
+	textAlign : "Ti.UI.TEXT_ALIGNMENT_CENTER",
+	top : "25%",
+	left : "50%",
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 16
+	}
+}
+
+"#label4": {
+	color : "#8a9093",
+	shadowColor : "#aaa",
+	text : "Number of Divers",
+	textAlign : "Ti.UI.TEXT_ALIGNMENT_CENTER",
+	top : "25%",
+	left : "60%",
 	font: {
 		fontFamily: 'Raleway-Bold', fontSize: 16
 	}
@@ -62,12 +98,40 @@
 
 "#picker": {
 	top : "30%",
+	left : "29%",
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 16
+	}
+	,
+	//color: "#000080",
+	//backgroundColor: "#AAAAAA", 
+	selectionIndicator: true,
+	borderColor : "black"
+}
+
+"#picker2": {
+	top : "30%",
+	left : "49%",
+	font: {
+		fontFamily: 'Raleway-Bold', fontSize: 16
+	},
+	//color: "#000080",
+	//backgroundColor: "#AAAAAA", 
+	selectionIndicator: true,
+	borderColor : "black"
+}
+
+"#picker3": {
+	top : "30%",
+	left : "59%",
 	font: {
 		fontFamily: 'Raleway-Bold', fontSize: 16
 	}
 	,
 	color: "#000080",
-	backgroundColor: "#AAAAAA"
+	//backgroundColor: "#AAAAAA", 
+	selectionIndicator: true,
+	borderColor : "black"
 }
 
 "#column1": {
