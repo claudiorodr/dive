@@ -1,8 +1,11 @@
 <Alloy>
 	<Window id="specieDetailWin" title="Specie Details">
-		<View class="container">
-			<Label></Label>
+		<View id="header">
 			<View id="image"></View>
+		</View>
+		<View id="body">
+		</View>
+		<View id="body2">
 			<Picker id="picker" selectionIndicator="true" useSpinner="false">
 				<PickerColumn id="Abundance">
 					<PickerRow title="Low (1)"/>
@@ -11,10 +14,8 @@
 					<PickerRow title="Very High (>5)"/> 
 					</PickerColumn>
 			</Picker>
-		<Button id="moreBtn" onClick="openMore" title="Add more species"
-			right="5%" bottom="20%" width="auto" height="50"></Button>
-		<Button id="endBtn" onClick="openMain" title="End survey"
-			right="5%" bottom="15%" width="auto" height="50"></Button>
+		<Button id="moreBtn" onClick="openMore"></Button>
+		<Button id="endBtn" onClick="openMain"></Button>
 		</View>
 	</Window>
 </Alloy>

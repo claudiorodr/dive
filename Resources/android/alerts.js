@@ -32,7 +32,7 @@ exports.show = function (alertText) {
 	var interval = interval ? interval : 2000;
 	indWin.open();
 	var animation = Titanium.UI.createAnimation({
-		duration: 400,
+		duration: 700,
 		opacity: 1.0
 	});
 	var animationHandler = function () {

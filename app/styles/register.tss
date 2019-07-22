@@ -168,10 +168,11 @@
 				}
 				"#phone" : {
 					hintText : L('email_hintText', "PHONE"),
-					keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+					keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD
 				}
 				"#country" : {
 					//hintText : L('email_hintText', "COUNTRY"),
+					accessibilityValue  : "Country",
 					color : "#ffffff",
 					pullBackgroundColor : "#ffffff"
 					
@@ -179,6 +180,7 @@
 				"#column1" : {
 						//hintText : L('email_hintText', "COUNTRY"),
 						//backgroundColor : "#f8f8f8",
+					//accessibilityHint : "Country",
 					color : "#ffffff",
 					pullBackgroundColor : "#ffffff"
 						
@@ -191,11 +193,9 @@
 						fontSize : 20 
 					}, 
 					height : 90,
-					width : "70%" 
+					width : "70%",
+					dateTimeColor : "#0099ff"
 				}				
-				"#note" : {
-					hintText : L('email_hintText', "NOTE"),
-				}
 				
 				"#sign_up" : {
 					left : "9%",
@@ -211,6 +211,11 @@
 					backgroundColor : "#0099ff",
 					borderColor : "#EEEEEE",
 					borderRadius : 6,
+					height : 50,
+				}
+				"#agreeContainer" : { 
+					left : "9%",
+					width : "75%",
 					height : 50,
 				}
 				"#linkContainer" : { 
@@ -231,7 +236,7 @@
 					text : L('privacy_text', "I agree with terms and conditions:")
 				}
 				"#terms" : {
-					top : "25%",
+					top : "0%",
 					right : 0,
 					width : "40%",
 					textAlign : "center",
@@ -243,7 +248,7 @@
 					text : L('privacy_terms', "TERMS OF USE")
 				}
 				"#privacy" : {
-					top : "25%",
+					top : "0%",
 					left : 0,
 					width : "40%", 
 					textAlign : "center", 

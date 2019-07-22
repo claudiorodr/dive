@@ -103,42 +103,42 @@ var args = $.args;
 		text:'Common name:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		left:"50%",
+		left:"10%",
 		top:"15%",
 		width:300,
 		height:'auto'
 	});
 	
-	$.image.add(l);
+	$.body.add(l);
 	
 	var ll = Titanium.UI.createLabel({
 		text:'Scientific name:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		left:"50%",
+		left:"10%",
 		top:"25%",
 		width:300,
 		height:'auto'
 	});
 	
-	$.image.add(ll);
+	$.body.add(ll);
 	
 		var lll = Titanium.UI.createLabel({
 		text:'Habitat:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		left:"50%",
+		left:"10%",
 		top:"35%",
 		width:300,
 		height:'auto'
 	});
 	
-	$.image.add(lll);
+	$.body.add(lll);
 
 var img = Ti.UI.createImageView({
 		top : "15%",
-		left : "5%",
-		width : "42%",
+		left : "0%",
+		width : "100%",
 		height : "70%",
 		image : "http://backend.tigerwhale.com/api/dive/image/" + args.img,// + ".jpg",
 		verticalAlign : 'center' 
@@ -207,7 +207,7 @@ function getTodoList() {
                     value: namer,
                     height: 35,
                     width: 150,
-                    left:"50%",
+                    left:"10%",
                     top: "18%",
                     font: {
                         fontSize: 14,
@@ -215,7 +215,7 @@ function getTodoList() {
 
                     },
                     color: '#888',
-                    textAlign: 'left', 
+                    textAlign: 'left',
                     borderWidth: 2,
                     borderColor: '#bbb',
                     borderRadius: 5,
@@ -223,13 +223,13 @@ function getTodoList() {
                     editable: false
                 });
 
-                $.image.add(ta1);
+                $.body.add(ta1);
 
                 var ta2 = Titanium.UI.createTextArea({
                     value: sciencer,
                     height: 35,
                     width: 'auto',
-                    left:"50%",
+                    left:"10%",
                     top: "28%",
                     font: {
                         fontSize: 14,
@@ -245,13 +245,13 @@ function getTodoList() {
                     editable: false
                 });
 
-                $.image.add(ta2);
+                $.body.add(ta2);
 
                 var ta3 = Titanium.UI.createTextArea({
                     value: descriptioner,
-                    height: 'auto',
+                    height: 'auto', 
                     width: 150,
-                    left:"50%",
+                    left:"10%",
                     top: "38%",
                     font: { 
                         fontSize: 14,
@@ -267,7 +267,7 @@ function getTodoList() {
                     editable: false
                 });
 
-                $.image.add(ta3);
+                $.body.add(ta3);
             }
         };
     };

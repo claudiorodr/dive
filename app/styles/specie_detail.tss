@@ -8,6 +8,33 @@
 	tabBarHidden : true 
 },
 
+"#header" : {
+	backgroundColor : "#f8f8f8",
+	// layout : "vertical",
+	width : "50%",
+	height : "100%",
+	left : 0
+}
+
+"#body" : {
+	layout : "vertical",
+	width : "25%",
+	left : "50%",
+	height : "100%"
+	
+	// top : 0
+	// right :
+}
+
+"#body2" : {
+	layout : "vertical",
+	width : "30%",
+	right : 0,
+	height : "100%"
+	
+
+}
+
 "Picker": {
 	top: "20%",
 	right: "5%", 
@@ -17,26 +44,34 @@
 			}
 	}
 
-"moreBtn" : {
-		text:'Add more species',
-		height:40,
-		width:100,
-		top:0,
-		left:10,
-			font : {
-		fontFamily: 'Raleway-Bold'
-			}
+"#moreBtn" : {
+	font: {
+		fontFamily: 'Raleway-SemiBold', fontSize: 20
+	}
+	,
+	title: "Add specie",
+	bottom: "15%", 
+	width: "70%",
+	color : "white",
+	height: 40,
+	backgroundColor: "#0099ff",
+	borderColor: "#EEEEEE",
+	borderRadius: 6
 	}
 
 
-"endBtn" : {
-		text:'End survey',
-		height:40,
-		width:100,
-		bottom:10, 
-		right:10,
-			font : { 
-		fontFamily: 'Raleway-Bold'
-			}
+"#endBtn" : {
+	font: {
+		fontFamily: 'Raleway-SemiBold', fontSize: 20
+	}
+	,
+	title: "End survey",
+	bottom: "0%", 
+	width: "70%",
+	color : "white",
+	height: 40,
+	backgroundColor: "#0099ff",
+	borderColor: "#EEEEEE",
+	borderRadius: 6
 	}
 	

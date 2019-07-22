@@ -91,43 +91,51 @@ function Controller() {
 
   $.__views.scrollView.add($.__views.gender);
   $.__views.country = Ti.UI.createPicker(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
+  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.country);
-  var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId4 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { top: 10, left: "9%", width: "30%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, pullBackgroundColor: "#ffffff", id: "column1" });
 
-  __alloyId0.push($.__views.column1);
-  $.__views.country.add(__alloyId0);
+  __alloyId4.push($.__views.column1);
+  $.__views.country.add(__alloyId4);
   $.__views.birthday = Ti.UI.createPicker(
-  { font: { fontSize: 20 }, height: 90, width: "70%", id: "birthday" });
+  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 20 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 90, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, dateTimeColor: "#0099ff", format24: false, calendarViewShown: false, id: "birthday", type: Ti.UI.PICKER_TYPE_DATE });
 
   $.__views.scrollView.add($.__views.birthday);
+  $.__views.agreeContainer = Ti.UI.createView(
+  { left: "9%", width: "75%", height: 50, id: "agreeContainer" });
+
+  $.__views.scrollView.add($.__views.agreeContainer);
+  $.__views.agree = Ti.UI.createLabel(
+  { top: "25%", width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 14 }, color: "#0099ff", text: L('privacy_text', "I agree with terms and conditions:"), id: "agree" });
+
+  $.__views.agreeContainer.add($.__views.agree);
   $.__views.linkContainer = Ti.UI.createView(
   { left: "9%", width: "75%", height: 50, id: "linkContainer" });
 
   $.__views.scrollView.add($.__views.linkContainer);
-  $.__views.agree = Ti.UI.createLabel(
-  { top: "25%", width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 14 }, color: "#0099ff", text: L('privacy_text', "I agree with terms and conditions:"), id: "agree" });
-
-  $.__views.linkContainer.add($.__views.agree);
   $.__views.terms = Ti.UI.createLabel(
-  { top: "25%", right: 0, width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 12 }, color: "#0099ff", text: L('privacy_terms', "TERMS OF USE"), id: "terms" });
+  { top: "0%", right: 0, width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 12 }, color: "#0099ff", text: L('privacy_terms', "TERMS OF USE"), id: "terms" });
 
   $.__views.linkContainer.add($.__views.terms);
   $.__views.privacy = Ti.UI.createLabel(
-  { top: "25%", left: 0, width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 12 }, color: "#0099ff", text: L('privacy_privacy', "PRIVACY POLICY"), id: "privacy" });
+  { top: "0%", left: 0, width: "40%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 12 }, color: "#0099ff", text: L('privacy_privacy', "PRIVACY POLICY"), id: "privacy" });
 
   $.__views.linkContainer.add($.__views.privacy);
   $.__views.loginSwitch = Ti.UI.createSwitch(
   { id: "loginSwitch" });
 
-  $.__views.scrollView.add($.__views.loginSwitch);
+  $.__views.linkContainer.add($.__views.loginSwitch);
   $.__views.sign_up = Ti.UI.createButton(
   { left: "9%", bottom: 0, width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "white", title: "SIGN UP", backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "sign_up" });
 
   $.__views.scrollView.add($.__views.sign_up);
-  register_user ? $.addListener($.__views.sign_up, 'click', register_user) : __defers['$.__views.sign_up!click!register_user'] = true;exports.destroy = function () {};
+  register_user ? $.addListener($.__views.sign_up, 'click', register_user) : __defers['$.__views.sign_up!click!register_user'] = true;$.__views.linkContainer = Ti.UI.createView(
+  { left: "9%", width: "75%", height: 50, id: "linkContainer" });
+
+  $.__views.scrollView.add($.__views.linkContainer);
+  exports.destroy = function () {};
 
 
 
@@ -146,6 +154,8 @@ function Controller() {
 
 
 
+  $.birthday.value = new Date();
+  $.birthday.maxDate = new Date();
 
   var sendit = Ti.Network.createHTTPClient({
     onerror: function (e) {

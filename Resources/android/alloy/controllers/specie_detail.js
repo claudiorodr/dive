@@ -38,51 +38,55 @@ function Controller() {
   { backgroundColor: "white", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieDetailWin", title: "Specie Details" });
 
   $.__views.specieDetailWin && $.addTopLevelView($.__views.specieDetailWin);
-  $.__views.__alloyId0 = Ti.UI.createView(
-  { id: "__alloyId0" });
+  $.__views.header = Ti.UI.createView(
+  { backgroundColor: "#f8f8f8", width: "50%", height: "100%", left: 0, id: "header" });
 
-  $.__views.specieDetailWin.add($.__views.__alloyId0);
-  $.__views.__alloyId1 = Ti.UI.createLabel(
-  { id: "__alloyId1" });
-
-  $.__views.__alloyId0.add($.__views.__alloyId1);
+  $.__views.specieDetailWin.add($.__views.header);
   $.__views.image = Ti.UI.createView(
   { id: "image" });
 
-  $.__views.__alloyId0.add($.__views.image);
+  $.__views.header.add($.__views.image);
+  $.__views.body = Ti.UI.createView(
+  { layout: "vertical", width: "25%", left: "50%", height: "100%", id: "body" });
+
+  $.__views.specieDetailWin.add($.__views.body);
+  $.__views.body2 = Ti.UI.createView(
+  { layout: "vertical", width: "30%", right: 0, height: "100%", id: "body2" });
+
+  $.__views.specieDetailWin.add($.__views.body2);
   $.__views.picker = Ti.UI.createPicker(
   { top: "20%", right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
-  $.__views.__alloyId0.add($.__views.picker);
-  var __alloyId2 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
+  $.__views.body2.add($.__views.picker);
+  var __alloyId7 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
   { id: "Abundance" });
 
-  __alloyId2.push($.__views.Abundance);
-  $.__views.__alloyId3 = Ti.UI.createPickerRow(
-  { title: "Low (1)", id: "__alloyId3" });
+  __alloyId7.push($.__views.Abundance);
+  $.__views.__alloyId8 = Ti.UI.createPickerRow(
+  { title: "Low (1)", id: "__alloyId8" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId3);
-  $.__views.__alloyId4 = Ti.UI.createPickerRow(
-  { title: "Medium (2-3)", id: "__alloyId4" });
+  $.__views.Abundance.addRow($.__views.__alloyId8);
+  $.__views.__alloyId9 = Ti.UI.createPickerRow(
+  { title: "Medium (2-3)", id: "__alloyId9" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId4);
-  $.__views.__alloyId5 = Ti.UI.createPickerRow(
-  { title: "High (4-5)", id: "__alloyId5" });
+  $.__views.Abundance.addRow($.__views.__alloyId9);
+  $.__views.__alloyId10 = Ti.UI.createPickerRow(
+  { title: "High (4-5)", id: "__alloyId10" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId5);
-  $.__views.__alloyId6 = Ti.UI.createPickerRow(
-  { title: "Very High (>5)", id: "__alloyId6" });
+  $.__views.Abundance.addRow($.__views.__alloyId10);
+  $.__views.__alloyId11 = Ti.UI.createPickerRow(
+  { title: "Very High (>5)", id: "__alloyId11" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId6);
-  $.__views.picker.add(__alloyId2);
+  $.__views.Abundance.addRow($.__views.__alloyId11);
+  $.__views.picker.add(__alloyId7);
   $.__views.moreBtn = Ti.UI.createButton(
-  { id: "moreBtn", title: "Add more species", right: "5%", bottom: "20%", width: "auto", height: 50 });
+  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", bottom: "15%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "moreBtn" });
 
-  $.__views.__alloyId0.add($.__views.moreBtn);
+  $.__views.body2.add($.__views.moreBtn);
   openMore ? $.addListener($.__views.moreBtn, 'click', openMore) : __defers['$.__views.moreBtn!click!openMore'] = true;$.__views.endBtn = Ti.UI.createButton(
-  { id: "endBtn", title: "End survey", right: "5%", bottom: "15%", width: "auto", height: 50 });
+  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", bottom: "0%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "endBtn" });
 
-  $.__views.__alloyId0.add($.__views.endBtn);
+  $.__views.body2.add($.__views.endBtn);
   openMain ? $.addListener($.__views.endBtn, 'click', openMain) : __defers['$.__views.endBtn!click!openMain'] = true;exports.destroy = function () {};
 
 
@@ -196,42 +200,42 @@ function Controller() {
     text: 'Common name:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
-    left: "50%",
+    left: "10%",
     top: "15%",
     width: 300,
     height: 'auto' });
 
 
-  $.image.add(l);
+  $.body.add(l);
 
   var ll = Titanium.UI.createLabel({
     text: 'Scientific name:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
-    left: "50%",
+    left: "10%",
     top: "25%",
     width: 300,
     height: 'auto' });
 
 
-  $.image.add(ll);
+  $.body.add(ll);
 
   var lll = Titanium.UI.createLabel({
     text: 'Habitat:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
-    left: "50%",
+    left: "10%",
     top: "35%",
     width: 300,
     height: 'auto' });
 
 
-  $.image.add(lll);
+  $.body.add(lll);
 
   var img = Ti.UI.createImageView({
     top: "15%",
-    left: "5%",
-    width: "42%",
+    left: "0%",
+    width: "100%",
     height: "70%",
     image: "http://backend.tigerwhale.com/api/dive/image/" + args.img,
     verticalAlign: 'center' });
@@ -300,7 +304,7 @@ function Controller() {
             value: namer,
             height: 35,
             width: 150,
-            left: "50%",
+            left: "10%",
             top: "18%",
             font: {
               fontSize: 14,
@@ -316,13 +320,13 @@ function Controller() {
             editable: false });
 
 
-          $.image.add(ta1);
+          $.body.add(ta1);
 
           var ta2 = Titanium.UI.createTextArea({
             value: sciencer,
             height: 35,
             width: 'auto',
-            left: "50%",
+            left: "10%",
             top: "28%",
             font: {
               fontSize: 14,
@@ -338,13 +342,13 @@ function Controller() {
             editable: false });
 
 
-          $.image.add(ta2);
+          $.body.add(ta2);
 
           var ta3 = Titanium.UI.createTextArea({
             value: descriptioner,
             height: 'auto',
             width: 150,
-            left: "50%",
+            left: "10%",
             top: "38%",
             font: {
               fontSize: 14,
@@ -360,7 +364,7 @@ function Controller() {
             editable: false });
 
 
-          $.image.add(ta3);
+          $.body.add(ta3);
         }
       };
     };

@@ -9,6 +9,8 @@ var birthday = Ti.UI.createPicker({
      value : new Date(),
  });*/
 
+	$.birthday.value = new Date();
+	$.birthday.maxDate = new Date();
 
 var sendit = Ti.Network.createHTTPClient({
     onerror: function(e) {

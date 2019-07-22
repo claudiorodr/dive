@@ -1,64 +1,67 @@
 <Alloy>
-	<Tab id="surveyTab" title="Survey"  titleColor ="white" activeIcon="/dive/app/assets/android/118761.png">
-		<Window id="surveyWin" title="Survey">
-			<!--Label id="surveyTitle">Survey</Label-->
-
-			<View id="header">
-				<Button id="logo"></Button>
-				<Label id="create"></Label> 
-				<!--Label id="reg_btn"></Label-->
-			</View>
-			<View id="body">
-			<Label id="label1"/>
-			<Label id="label2"/>
-			<Label id="label3"/>
-			<Label id="label4"/>
-			<Picker id="picker" selectionIndicator="true" useSpinner="false"> 
-				<PickerColumn id="column1" width="30%">			
-				</PickerColumn>
-			</Picker>
-				<Picker id="picker2" selectionIndicator="true" useSpinner="false">
-					<PickerColumn id="column2" width="30%">	
-					<PickerRow title="10 minutes"/>
-					<PickerRow title="20 minutes"/>
-					<PickerRow title="30 minutes"/>
-					<PickerRow title="40 minutes"/>
-					<PickerRow title="50 minutes"/>
-					<PickerRow title="60 minutes"/>
-					<PickerRow title="70 minutes"/>  
-					<PickerRow title="80 minutes"/>
-					<PickerRow title="90 minutes"/>
-					<PickerRow title="100 minutes"/>
-					<PickerRow title="110 minutes"/>
-					<PickerRow title="120 minutes"/>
-				</PickerColumn>
-				</Picker>
-				<Picker id="picker3" selectionIndicator="true" useSpinner="false">
-					<PickerColumn id="column3" width="30%">	
-					<PickerRow title="2 divers"/>
-					<PickerRow title="3 divers"/>
-					<PickerRow title="4 divers"/>
-					<PickerRow title="5 divers"/>
-					<PickerRow title="6 divers"/>
-					<PickerRow title="7 divers"/>
-					<PickerRow title="8 divers"/>
-					<PickerRow title="9 divers"/>
-					<PickerRow title="10 divers"/>
-					<PickerRow title="11 divers"/>
-					<PickerRow title="12 divers"/>
-					<PickerRow title="13 divers"/>
-					<PickerRow title="14 divers"/>
-					<PickerRow title="15 divers"/>
-					<PickerRow title="16 divers"/>
-					<PickerRow title="17 divers"/>
-					<PickerRow title="18 divers"/>
-					<PickerRow title="19 divers"/>
-					<PickerRow title="20 divers"/>
-				</PickerColumn>
-				</Picker>
-
-		  <Button id="speciesBtn" onClick="openSpecies"></Button>
-		  </View>
-		</Window>
-	</Tab>
+    <Tab id="surveyTab" title="Survey" titleColor="white" activeIcon="/dive/app/assets/android/118761.png">
+        <Window id="surveyWin" title="Survey">
+            <!--Label id="surveyTitle">Survey</Label-->
+            <View id="header">
+                <Button id="logo"></Button>
+                <Label id="create"></Label>
+                <!--Label id="reg_btn"></Label-->
+            </View>
+            <View id="body">
+                <View id="up">
+                </View>
+                <View id="mid">
+                	<Label id="label1" />
+                    <Label id="label2" />
+                    <Label id="label3" />
+                    <Label id="label4" />
+                    <Picker id="picker" selectionIndicator="true" useSpinner="false">
+                        <PickerColumn id="column1" width="30%"></PickerColumn>
+                    </Picker>
+                    <Picker id="picker2" selectionIndicator="true" useSpinner="false">
+                        <PickerColumn id="column2" width="30%">
+                            <PickerRow title="10 minutes" />
+                            <PickerRow title="20 minutes" />
+                            <PickerRow title="30 minutes" />
+                            <PickerRow title="40 minutes" />
+                            <PickerRow title="50 minutes" />
+                            <PickerRow title="60 minutes" />
+                            <PickerRow title="70 minutes" />
+                            <PickerRow title="80 minutes" />
+                            <PickerRow title="90 minutes" />
+                            <PickerRow title="100 minutes" />
+                            <PickerRow title="110 minutes" />
+                            <PickerRow title="120 minutes" />
+                        </PickerColumn>
+                    </Picker>
+                    <Picker id="picker3" selectionIndicator="true" useSpinner="false">
+                        <PickerColumn id="column3" width="30%">
+                            <PickerRow title="2 divers" />
+                            <PickerRow title="3 divers" />
+                            <PickerRow title="4 divers" />
+                            <PickerRow title="5 divers" />
+                            <PickerRow title="6 divers" />
+                            <PickerRow title="7 divers" />
+                            <PickerRow title="8 divers" />
+                            <PickerRow title="9 divers" />
+                            <PickerRow title="10 divers" />
+                            <PickerRow title="11 divers" />
+                            <PickerRow title="12 divers" />
+                            <PickerRow title="13 divers" />
+                            <PickerRow title="14 divers" />
+                            <PickerRow title="15 divers" />
+                            <PickerRow title="16 divers" />
+                            <PickerRow title="17 divers" />
+                            <PickerRow title="18 divers" />
+                            <PickerRow title="19 divers" />
+                            <PickerRow title="20 divers" />
+                        </PickerColumn>
+                    </Picker>
+                </View>
+                <View id="down">
+                    <Button id="speciesBtn" onClick="openSpecies"></Button>
+                </View>
+            </View>
+        </Window>
+    </Tab>
 </Alloy>
