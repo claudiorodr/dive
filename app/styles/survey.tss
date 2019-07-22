@@ -1,6 +1,6 @@
 "Window": {
 	//backgroundImage:'/img/images/mainback.jpg',
-	backgroundColor: "white", 
+	backgroundColor: "#f8f8ff" , 
 	exitOnClose: true, 
 	navBarHidden: true, 
 	fullscreen: true, 
@@ -10,7 +10,8 @@
 
 "#surveyTab": {
 	font: {
-		fontFamily: 'Raleway-Light', fontSize: 28
+		fontFamily: 'Raleway-Light', 
+		fontSize: 28
 	},
 	color: "#000080",
 	titleColor : "#FFFFFF"
@@ -162,11 +163,11 @@
 	}
 	,
 	title: "Start survey",
-	bottom: "15%",
+	bottom: "15%", 
 	width: "25%",
 	color : "white",
 	height: 40,
-	backgroundColor: "#000080", 
+	backgroundColor: "#0099ff",
 	borderColor: "#EEEEEE",
 	borderRadius: 6
 }

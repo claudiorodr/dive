@@ -1,5 +1,5 @@
 "Window": {
-	backgroundColor:"black",
+	backgroundColor:"white",
 	exitOnClose : false,
 	navBarHidden : true,
 	fullscreen : true,

@@ -11,11 +11,11 @@ $.login.open();
 //loading = null;
 
 //[{JSON --> New() Instance of the program}]
-
+ 
 //Ge new link of this
 console.log('starting');
 // user exists
-if (!Ti.App.Properties.hasProperty("user")) {
+if (!Ti.App.Properties.hasProperty("user")) { 
 
 	console.log('has user');
 	var main = Alloy.createController("main").getView();

@@ -5,13 +5,15 @@ var args = $.args;
 
 //We execute the function to show the data for the first view 
 getTodoList();
+getTodoList2();
  
 function getTodoList() {
 	//function to use HTTP to connect to a web server and transfer the data. 
 	var sendit = Ti.Network.createHTTPClient({
 		onerror: function (e) {
-			Ti.API.debug(e.error);
-			alert('There was an error during the connection');
+			//Ti.API.debug(e.error);
+			//alert('There was an error during the connection');
+			
 		},
 		timeout: 1000,
 	});
@@ -29,7 +31,7 @@ function getTodoList() {
 			Titanium.API.info('Error - Null return!');
 			return;
 		} 
-		//Saving into var values from php page
+		
 		var jsonsites = json.data;
 		var pos;
 		
@@ -52,6 +54,48 @@ function getTodoList() {
 		}
 	}; 
 };
+
+function getTodoList2() {
+    //function to use HTTP to connect to a web server and transfer the data. 
+    var sendit = Ti.Network.createHTTPClient({
+        onerror: function(e) {
+            Ti.API.debug(e.error);
+            alert('There was an error during the connection');
+        },
+        timeout: 1000,
+    });
+    //Here you have to change it for your local ip  
+    sendit.open("GET", "http://backend.tigerwhale.com/api/creature");
+    sendit.send();
+
+
+    //Function to be called upon a successful response 
+    sendit.onload = function() {
+        //Emptying the data to refresh the view 
+        //Parsing into JSON fromat
+        var json = JSON.parse(this.responseText);
+        if (!json) {
+            Titanium.API.info('Error - Null return!');
+            return;
+        }
+        //Saving into var values from php page
+        var jsonname = json.data;
+        
+        var pos;
+
+        for (pos = 0; pos < jsonname.length; pos++) {
+            //Pushing into array evry value			
+            Alloy.Globals.Names.push(jsonname[pos].name);
+        }
+
+        for (var i = 0; i < Alloy.Globals.Names.length; i++) {
+            //Putting into string format the JSON values
+            var name = JSON.stringify(Alloy.Globals.Names[i]);
+            //Slicing the values for cleaner look 
+            var namer = name.slice(1,-1);            
+        };
+    };
+}
 // 1. prepare data from db
 // 2. create rows from db values
 // 3. incremeting each row with the db values

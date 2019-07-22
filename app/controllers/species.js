@@ -8,9 +8,9 @@ Alloy.Globals.Sites = [];
 
 var row, left, container, img, text = '';
 
-
 // prepare
- 
+
+
 for (var i = 1; i < 19; i++) {
 	left = 0;
     if (columnCounter == 0) {
@@ -54,10 +54,9 @@ for (var i = 1; i < 19; i++) {
 	        bottom: 0,
 	        width: '100%',
 	        height : '25%',
-	        opacity : 0.5,
+	        opacity : 0.55,
 	        backgroundColor : 'black'
 	    });
-
     	 
 		    // title
 		    text = Ti.UI.createLabel({

@@ -24,13 +24,16 @@
 					<PickerColumn class="input" id="column1" width="30%">		
 					</PickerColumn>
 				</Picker>
-				        <Picker id="birthday" class="input" type="Ti.UI.PICKER_TYPE_DATE">
+				        <Picker id="birthday">
         
         </Picker> 
 				<!--TextField class="input" id="note"></TextField-->
-				<Label id="agree"></Label>
+
+				<View id="linkContainer"> 
+									<Label id="agree"></Label> 
 				<Label id="terms"></Label>
 				<Label id="privacy"></Label>
+				</View>
 				<Switch id="loginSwitch"></Switch>
 				<Button id="sign_up" onClick="register_user"></Button>
 			  </ScrollView>

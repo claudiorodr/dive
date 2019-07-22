@@ -2,7 +2,7 @@
 	<Window id="specieDetailWin" title="Specie Details">
 		<View class="container">
 			<Label></Label>
-			<View id="image" ></View>
+			<View id="image"></View>
 			<Picker id="picker" selectionIndicator="true" useSpinner="false">
 				<PickerColumn id="Abundance">
 					<PickerRow title="Low (1)"/>

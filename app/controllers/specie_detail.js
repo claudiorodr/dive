@@ -103,7 +103,7 @@ var args = $.args;
 		text:'Common name:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		left:10,
+		left:"50%",
 		top:"15%",
 		width:300,
 		height:'auto'
@@ -115,7 +115,7 @@ var args = $.args;
 		text:'Scientific name:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		left:10,
+		left:"50%",
 		top:"25%",
 		width:300,
 		height:'auto'
@@ -127,7 +127,7 @@ var args = $.args;
 		text:'Habitat:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		left:10,
+		left:"50%",
 		top:"35%",
 		width:300,
 		height:'auto'
@@ -137,6 +137,7 @@ var args = $.args;
 
 var img = Ti.UI.createImageView({
 		top : "15%",
+		left : "5%",
 		width : "42%",
 		height : "70%",
 		image : "http://backend.tigerwhale.com/api/dive/image/" + args.img,// + ".jpg",
@@ -197,15 +198,16 @@ function getTodoList() {
             var science = JSON.stringify(Alloy.Globals.Scientific[i]);
             //Slicing the values for cleaner look 
             var sciencer = science.slice(1,-1);
+            //Putting into string format the JSON values           
             var description = JSON.stringify(Alloy.Globals.Description[i]);        
-            var sciencer = description.slice(1,-1);   
+            var descriptioner = description.slice(1,-1);   
              
             if (args.img == i+1) {
                 var ta1 = Titanium.UI.createTextArea({
                     value: namer,
                     height: 35,
                     width: 150,
-                    left: 10,
+                    left:"50%",
                     top: "18%",
                     font: {
                         fontSize: 14,
@@ -227,7 +229,7 @@ function getTodoList() {
                     value: sciencer,
                     height: 35,
                     width: 'auto',
-                    left: 10,
+                    left:"50%",
                     top: "28%",
                     font: {
                         fontSize: 14,
@@ -246,12 +248,12 @@ function getTodoList() {
                 $.image.add(ta2);
 
                 var ta3 = Titanium.UI.createTextArea({
-                    value: description,
+                    value: descriptioner,
                     height: 'auto',
                     width: 150,
-                    left: 10,
+                    left:"50%",
                     top: "38%",
-                    font: {
+                    font: { 
                         fontSize: 14,
                         fontFamily: 'Raleway-Bold',
 
@@ -280,7 +282,6 @@ function checkJSON(_json) {
     return true;
 }
 
-//
 function insertData() {
     //if there is something in the textbox
     if (Ti.Network.online) {
@@ -307,8 +308,18 @@ function insertData() {
     //Request the data from the web service, Here you have to change it for your local ip
     request.open("POST", "http://backend.tigerwhale.com/api/survey");
     //alert(Alloy.Globals.Species[4],survey[2],survey[1],survey[0]);
+    var date = new Date();
+  var y = date.getFullYear();
+  var mo = (date.getMonth() + 1 );
+  var da = date.getDate();
+  var d = y + "-"+ mo + "-" + da;
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+  var x = h + ":" + m + ":" + s;
+  
     var params = ({    	
-      
+    
     /*"user_id": "1",
     "creature_id": args.img,
     "abundance_value": Alloy.Globals.Species[4],
@@ -316,18 +327,21 @@ function insertData() {
     "dive_time": survey[1],
     "diving_spot_id": survey[0],
     "max_depth" : "1"*/
-     "user_id": "1",
-    "creature_id": "2",
-    "abundance_value": "ola",
-    "number_diver": "12",
-    "dive_time": "12",
-    "diving_spot_id": "1",
-    "max_depth" : "1" 
+	"user_id": "1",
+    "creature_id": args.img,
+    "abundance_value": "1", //Alloy.Globals.Species[4].match(/\d/g).join(""),
+    "number_diver": parseInt(survey[2]),
+    "dive_time": parseInt(survey[1]),
+    "diving_spot_id": survey[0] + 1,
+    "max_depth" : "1",
+    "date":d + " "+x
     });
 
     request.send(params);
-    console.log(params); 
-
+    alert(params); 
+  
+	//Clean of parameteres
+  
     params = ({ 
     "user_id": "",
     "creature_id": "",
@@ -336,7 +350,8 @@ function insertData() {
     "dive_time": "",
     "diving_spot_id": "",
     "max_depth" : "",
-    "dive_id" : ""
+    "dive_id" : "", 
+    "date" : ""
     });
     
    }
@@ -408,3 +423,4 @@ $.specieDetailWin.addEventListener('androidback', function(e) {
     //img, l, ll, lll, ta1, ta2, ta3, specie_detail = null;
     openMore();
 });
+

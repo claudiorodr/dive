@@ -47,10 +47,6 @@
             <category android:name="android.intent.category.LAUNCHER"/>
           </intent-filter>
         </activity>
-        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="YourAppName" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <!--<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/><provider
-                    android:authorities="com.facebook.app.FacebookContentProvider2084165518310324"
-                    android:exported="true" android:name="com.facebook.FacebookContentProvider"/>-->
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="landscape"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.tianium.TiTranslucentActivity" android:screenOrientation="landscape" android:theme="@style/Theme.AppCompat.Translucent"/>
         <activity android:configChanges="screenSize" android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:screenOrientation="landscape"/>

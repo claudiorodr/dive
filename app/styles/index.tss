@@ -66,7 +66,7 @@
 					hintTextColor : "gray",
 					backgroundColor : "#EEEEEE",
 					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#000080",
+					borderColor : "#0099ff",
 					borderRadius : 6,
 					height : 50,
 					keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
@@ -88,7 +88,7 @@
 					backgroundColor : "#EEEEEE",
 					borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,  //iOS only
 					borderRadius : 6,
-					borderColor : "#000080",
+					borderColor : "#0099ff",
 					borderWidth : 1,
 					height : 50,
 					returnKeyType : Titanium.UI.RETURNKEY_DONE
@@ -108,7 +108,7 @@
 								fontSize : 12
 							},
 						text : L("pass_forgot", "FORGOT PASSWORD?"),
-						color : "#000080"
+						color : "#0099ff"
 					}
 					"#register" : {
 						top : "25%",
@@ -120,7 +120,7 @@
 								fontSize : 12
 							},
 						text : L("pass_forgot", "DON'T HAVE AN ACCOUNT? SIGN UP!"),
-						color : "#000080"
+						color : "#0099ff"
 					}
 
 
@@ -136,7 +136,7 @@
 					},
 					color : "white",
 					title : "SIGN IN",
-					backgroundColor : "#000080",
+					backgroundColor : "#0099ff",
 					borderColor : "#EEEEEE",
 					borderRadius : 6,
 					height : 50,
