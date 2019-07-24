@@ -50,6 +50,18 @@ function Controller() {
   { layout: "vertical", width: "25%", left: "50%", height: "100%", id: "body" });
 
   $.__views.specieDetailWin.add($.__views.body);
+  $.__views.common = Ti.UI.createView(
+  { top: "15%", height: "auto", id: "common" });
+
+  $.__views.body.add($.__views.common);
+  $.__views.science = Ti.UI.createView(
+  { height: "auto", id: "science" });
+
+  $.__views.body.add($.__views.science);
+  $.__views.description = Ti.UI.createView(
+  { height: "auto", id: "description" });
+
+  $.__views.body.add($.__views.description);
   $.__views.body2 = Ti.UI.createView(
   { layout: "vertical", width: "30%", right: 0, height: "100%", id: "body2" });
 
@@ -58,27 +70,27 @@ function Controller() {
   { top: "20%", right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
   $.__views.body2.add($.__views.picker);
-  var __alloyId7 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
+  var __alloyId0 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
   { id: "Abundance" });
 
-  __alloyId7.push($.__views.Abundance);
-  $.__views.__alloyId8 = Ti.UI.createPickerRow(
-  { title: "Low (1)", id: "__alloyId8" });
+  __alloyId0.push($.__views.Abundance);
+  $.__views.__alloyId1 = Ti.UI.createPickerRow(
+  { title: "Low (1)", id: "__alloyId1" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId8);
-  $.__views.__alloyId9 = Ti.UI.createPickerRow(
-  { title: "Medium (2-3)", id: "__alloyId9" });
+  $.__views.Abundance.addRow($.__views.__alloyId1);
+  $.__views.__alloyId2 = Ti.UI.createPickerRow(
+  { title: "Medium (2-3)", id: "__alloyId2" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId9);
-  $.__views.__alloyId10 = Ti.UI.createPickerRow(
-  { title: "High (4-5)", id: "__alloyId10" });
+  $.__views.Abundance.addRow($.__views.__alloyId2);
+  $.__views.__alloyId3 = Ti.UI.createPickerRow(
+  { title: "High (4-5)", id: "__alloyId3" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId10);
-  $.__views.__alloyId11 = Ti.UI.createPickerRow(
-  { title: "Very High (>5)", id: "__alloyId11" });
+  $.__views.Abundance.addRow($.__views.__alloyId3);
+  $.__views.__alloyId4 = Ti.UI.createPickerRow(
+  { title: "Very High (>5)", id: "__alloyId4" });
 
-  $.__views.Abundance.addRow($.__views.__alloyId11);
-  $.__views.picker.add(__alloyId7);
+  $.__views.Abundance.addRow($.__views.__alloyId4);
+  $.__views.picker.add(__alloyId0);
   $.__views.moreBtn = Ti.UI.createButton(
   { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", bottom: "15%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "moreBtn" });
 
@@ -201,36 +213,36 @@ function Controller() {
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
-    top: "15%",
+    top: 0,
     width: 300,
     height: 'auto' });
 
 
-  $.body.add(l);
+  $.common.add(l);
 
   var ll = Titanium.UI.createLabel({
     text: 'Scientific name:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
-    top: "25%",
+    top: 0,
     width: 300,
     height: 'auto' });
 
 
-  $.body.add(ll);
+  $.science.add(ll);
 
   var lll = Titanium.UI.createLabel({
-    text: 'Habitat:',
+    text: 'Description:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
-    top: "35%",
+    top: 0,
     width: 300,
     height: 'auto' });
 
 
-  $.body.add(lll);
+  $.description.add(lll);
 
   var img = Ti.UI.createImageView({
     top: "15%",
@@ -243,133 +255,87 @@ function Controller() {
 
   $.image.add(img);
 
-  getTodoList();
+  for (var i = 0; i < Alloy.Globals.Names.length; i++) {
 
-  function getTodoList() {
+    var name = JSON.stringify(Alloy.Globals.Names[i]);
 
-    var sendit = Ti.Network.createHTTPClient({
-      onerror: function (e) {
-        Ti.API.debug(e.error);
-        alert('There was an error during the connection');
-      },
-      timeout: 1000 });
+    var namer = name.slice(1, -1);
 
+    var science = JSON.stringify(Alloy.Globals.Scientific[i]);
 
-    sendit.open("GET", "http://backend.tigerwhale.com/api/creature");
-    sendit.send();
+    var sciencer = science.slice(1, -1);
 
+    var description = JSON.stringify(Alloy.Globals.Description[i]);
+    var descriptioner = description.slice(1, -1);
 
-
-    sendit.onload = function () {
-
-
-      var json = JSON.parse(this.responseText);
-      if (!json) {
-        Titanium.API.info('Error - Null return!');
-        return;
-      }
-
-      var jsonname = json.data;
-
-      var pos;
-
-      for (pos = 0; pos < jsonname.length; pos++) {
-
-        Alloy.Globals.Names.push(jsonname[pos].name);
-      }
-      for (pos = 0; pos < jsonname.length; pos++) {
-
-        Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);
-      }
-      for (pos = 0; pos < jsonname.length; pos++) {
-
-        Alloy.Globals.Description.push(jsonname[pos].description);
-      }
-
-      for (var i = 0; i < Alloy.Globals.Names.length; i++) {
-
-        var name = JSON.stringify(Alloy.Globals.Names[i]);
-
-        var namer = name.slice(1, -1);
-
-        var science = JSON.stringify(Alloy.Globals.Scientific[i]);
-
-        var sciencer = science.slice(1, -1);
-
-        var description = JSON.stringify(Alloy.Globals.Description[i]);
-        var descriptioner = description.slice(1, -1);
-
-        if (args.img == i + 1) {
-          var ta1 = Titanium.UI.createTextArea({
-            value: namer,
-            height: 35,
-            width: 150,
-            left: "10%",
-            top: "18%",
-            font: {
-              fontSize: 14,
-              fontFamily: 'Raleway-Bold' },
+    if (args.img == i + 1) {
+      var ta1 = Titanium.UI.createTextArea({
+        value: namer,
+        height: 35,
+        width: 150,
+        left: "10%",
+        top: 20,
+        font: {
+          fontSize: 14,
+          fontFamily: 'Raleway-Bold' },
 
 
-            color: '#888',
-            textAlign: 'left',
-            borderWidth: 2,
-            borderColor: '#bbb',
-            borderRadius: 5,
-            suppressReturn: false,
-            editable: false });
+        color: '#888',
+        textAlign: 'left',
+        borderWidth: 2,
+        borderColor: '#bbb',
+        borderRadius: 5,
+        suppressReturn: false,
+        editable: false });
 
 
-          $.body.add(ta1);
+      $.common.add(ta1);
 
-          var ta2 = Titanium.UI.createTextArea({
-            value: sciencer,
-            height: 35,
-            width: 'auto',
-            left: "10%",
-            top: "28%",
-            font: {
-              fontSize: 14,
-              fontFamily: 'Raleway-Bold' },
-
-
-            color: '#888',
-            textAlign: 'left',
-            borderWidth: 2,
-            borderColor: '#bbb',
-            borderRadius: 5,
-            suppressReturn: false,
-            editable: false });
+      var ta2 = Titanium.UI.createTextArea({
+        value: sciencer,
+        height: 35,
+        width: 'auto',
+        left: "10%",
+        top: 20,
+        font: {
+          fontSize: 14,
+          fontFamily: 'Raleway-Bold' },
 
 
-          $.body.add(ta2);
-
-          var ta3 = Titanium.UI.createTextArea({
-            value: descriptioner,
-            height: 'auto',
-            width: 150,
-            left: "10%",
-            top: "38%",
-            font: {
-              fontSize: 14,
-              fontFamily: 'Raleway-Bold' },
+        color: '#888',
+        textAlign: 'left',
+        borderWidth: 2,
+        borderColor: '#bbb',
+        borderRadius: 5,
+        suppressReturn: false,
+        editable: false });
 
 
-            color: '#888',
-            textAlign: 'left',
-            borderWidth: 2,
-            borderColor: '#bbb',
-            borderRadius: 5,
-            suppressReturn: false,
-            editable: false });
+      $.science.add(ta2);
+
+      var ta3 = Titanium.UI.createTextArea({
+        value: descriptioner,
+        height: 'auto',
+        width: 150,
+        left: "10%",
+        top: 20,
+        font: {
+          fontSize: 14,
+          fontFamily: 'Raleway-Bold' },
 
 
-          $.body.add(ta3);
-        }
-      };
-    };
-  }
+        color: '#888',
+        textAlign: 'left',
+        borderWidth: 2,
+        borderColor: '#bbb',
+        borderRadius: 5,
+        suppressReturn: false,
+        editable: false });
 
+
+      $.description.add(ta3);
+    }
+  };
   function checkJSON(_json) {
     try {
       JSON.parse(_json);

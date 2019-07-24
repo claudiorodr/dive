@@ -4,6 +4,12 @@
 			<View id="image"></View>
 		</View>
 		<View id="body">
+		<View id="common">			
+		</View>	
+		<View id="science">			
+		</View>	
+		<View id="description">			
+		</View>
 		</View>
 		<View id="body2">
 			<Picker id="picker" selectionIndicator="true" useSpinner="false">

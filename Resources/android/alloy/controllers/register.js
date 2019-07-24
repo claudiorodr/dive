@@ -63,7 +63,7 @@ function Controller() {
 
   $.__views.body.add($.__views.scrollView);
   $.__views.email = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, hintText: L('email_hintText', "EMAIL"), id: "email" });
+  { top: "40%", left: "5%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 0, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, hintText: L('email_hintText', "EMAIL"), id: "email" });
 
   $.__views.scrollView.add($.__views.email);
   $.__views.password = Ti.UI.createTextField(

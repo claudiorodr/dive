@@ -104,36 +104,36 @@ var args = $.args;
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
 		left:"10%",
-		top:"15%",
+		top:0,
 		width:300,
 		height:'auto'
 	});
 	
-	$.body.add(l);
+	$.common.add(l);
 	
 	var ll = Titanium.UI.createLabel({
 		text:'Scientific name:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
 		left:"10%",
-		top:"25%",
+		top:0,
 		width:300,
 		height:'auto'
 	});
 	
-	$.body.add(ll);
+	$.science.add(ll);
 	
 		var lll = Titanium.UI.createLabel({
-		text:'Habitat:',
+		text:'Description:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
 		left:"10%",
-		top:"35%",
+		top:0,
 		width:300,
 		height:'auto'
 	});
 	
-	$.body.add(lll);
+	$.description.add(lll);
 
 var img = Ti.UI.createImageView({
 		top : "15%",
@@ -145,49 +145,6 @@ var img = Ti.UI.createImageView({
 		});
 		
 		$.image.add(img);
-		
-getTodoList();
-
-function getTodoList() {
-    //function to use HTTP to connect to a web server and transfer the data. 
-    var sendit = Ti.Network.createHTTPClient({
-        onerror: function(e) {
-            Ti.API.debug(e.error);
-            alert('There was an error during the connection');
-        },
-        timeout: 1000,
-    });
-    //Here you have to change it for your local ip  
-    sendit.open("GET", "http://backend.tigerwhale.com/api/creature");
-    sendit.send();
-
-
-    //Function to be called upon a successful response 
-    sendit.onload = function() {
-        //Emptying the data to refresh the view 
-        //Parsing into JSON fromat
-        var json = JSON.parse(this.responseText);
-        if (!json) {
-            Titanium.API.info('Error - Null return!');
-            return;
-        }
-        //Saving into var values from php page
-        var jsonname = json.data;
-        
-        var pos;
-
-        for (pos = 0; pos < jsonname.length; pos++) {
-            //Pushing into array evry value			
-            Alloy.Globals.Names.push(jsonname[pos].name);
-        }
-        for (pos = 0; pos < jsonname.length; pos++) {
-            //Pushing into array evry value			
-            Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);
-        }
-        for (pos = 0; pos < jsonname.length; pos++) {
-            //Pushing into array evry value			
-            Alloy.Globals.Description.push(jsonname[pos].description);
-        }
 
         for (var i = 0; i < Alloy.Globals.Names.length; i++) {
             //Putting into string format the JSON values
@@ -208,7 +165,7 @@ function getTodoList() {
                     height: 35,
                     width: 150,
                     left:"10%",
-                    top: "18%",
+                    top: 20,
                     font: {
                         fontSize: 14,
                         fontFamily: 'Raleway-Bold',
@@ -223,14 +180,14 @@ function getTodoList() {
                     editable: false
                 });
 
-                $.body.add(ta1);
+                $.common.add(ta1);
 
                 var ta2 = Titanium.UI.createTextArea({
                     value: sciencer,
                     height: 35,
                     width: 'auto',
                     left:"10%",
-                    top: "28%",
+                    top: 20,
                     font: {
                         fontSize: 14,
                         fontFamily: 'Raleway-Bold',
@@ -244,15 +201,15 @@ function getTodoList() {
                     suppressReturn: false,
                     editable: false
                 });
-
-                $.body.add(ta2);
+ 
+                $.science.add(ta2);
 
                 var ta3 = Titanium.UI.createTextArea({
                     value: descriptioner,
                     height: 'auto', 
                     width: 150,
                     left:"10%",
-                    top: "38%",
+                    top: 20,
                     font: { 
                         fontSize: 14,
                         fontFamily: 'Raleway-Bold',
@@ -267,12 +224,9 @@ function getTodoList() {
                     editable: false
                 });
 
-                $.body.add(ta3);
+                $.description.add(ta3);
             }
         };
-    };
-}
-
 function checkJSON(_json) {
     try {
         JSON.parse(_json);

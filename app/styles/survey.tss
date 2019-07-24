@@ -120,7 +120,7 @@
 "#picker": {
 	//top : "30%",
 	left : "9%",
-	width : 206,
+	width : 204,
 	font: {
 		fontFamily: 'Raleway-Bold', fontSize: 16
 	}

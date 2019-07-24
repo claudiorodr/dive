@@ -26,6 +26,21 @@
 	// right :
 }
 
+"#common" : {
+	top : "15%",
+	height : "auto"
+}
+
+"#science" : {
+	//top : "15%",
+	height : "auto"
+}
+
+"#description" : {
+	//top : "30%",
+	height : "auto"
+}
+
 "#body2" : {
 	layout : "vertical",
 	width : "30%",

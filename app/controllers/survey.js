@@ -6,6 +6,7 @@ var args = $.args;
 //We execute the function to show the data for the first view 
 getTodoList();
 getTodoList2();
+
  
 function getTodoList() {
 	//function to use HTTP to connect to a web server and transfer the data. 
@@ -15,7 +16,7 @@ function getTodoList() {
 			//alert('There was an error during the connection');
 			
 		},
-		timeout: 1000,
+		timeout: 10000,
 	});
 	//Here you have to change it for your local ip  	
 	sendit.open("GET", "http://backend.tigerwhale.com/api/diving-spot"); 
@@ -62,7 +63,7 @@ function getTodoList2() {
             Ti.API.debug(e.error);
             alert('There was an error during the connection');
         },
-        timeout: 1000,
+        timeout: 10000,
     });
     //Here you have to change it for your local ip  
     sendit.open("GET", "http://backend.tigerwhale.com/api/creature");
@@ -88,6 +89,15 @@ function getTodoList2() {
             Alloy.Globals.Names.push(jsonname[pos].name);
         }
 
+        for (pos = 0; pos < jsonname.length; pos++) {
+            //Pushing into array evry value			
+            Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);
+        }
+        for (pos = 0; pos < jsonname.length; pos++) {
+            //Pushing into array evry value			
+            Alloy.Globals.Description.push(jsonname[pos].description);
+        }
+
         for (var i = 0; i < Alloy.Globals.Names.length; i++) {
             //Putting into string format the JSON values
             var name = JSON.stringify(Alloy.Globals.Names[i]);
@@ -96,6 +106,7 @@ function getTodoList2() {
         };
     };
 }
+
 // 1. prepare data from db
 // 2. create rows from db values
 // 3. incremeting each row with the db values

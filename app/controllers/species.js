@@ -47,14 +47,14 @@ for (var i = 1; i < 19; i++) {
         // title : creatures_array[i-1]~		
     });
     container.add(img);
-    	// view, bottom 0 width 100%, height 25%, baclgroung black 90%
+    	// view, bottom 0 width 100%, height 25%, background black 90%
     	// label white coor
     	
-	    container2 = Ti.UI.createView({ 
+	    container2 = Ti.UI.createView({  
 	        bottom: 0,
 	        width: '100%',
 	        height : '25%',
-	        opacity : 0.55,
+	        opacity : 0.75,
 	        backgroundColor : 'black'
 	    });
     	 

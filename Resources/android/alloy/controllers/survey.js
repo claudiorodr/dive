@@ -78,7 +78,7 @@ function Controller() {
 
   $.__views.mid.add($.__views.label4);
   $.__views.picker = Ti.UI.createPicker(
-  { left: "9%", width: 206, font: { fontFamily: "Raleway-Bold", fontSize: 16 }, selectionIndicator: true, borderColor: "black", id: "picker", useSpinner: false });
+  { left: "9%", width: 204, font: { fontFamily: "Raleway-Bold", fontSize: 16 }, selectionIndicator: true, borderColor: "black", id: "picker", useSpinner: false });
 
   $.__views.mid.add($.__views.picker);
   var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
@@ -257,6 +257,7 @@ function Controller() {
   getTodoList();
   getTodoList2();
 
+
   function getTodoList() {
 
     var sendit = Ti.Network.createHTTPClient({
@@ -265,7 +266,7 @@ function Controller() {
 
 
       },
-      timeout: 1000 });
+      timeout: 10000 });
 
 
     sendit.open("GET", "http://backend.tigerwhale.com/api/diving-spot");
@@ -312,7 +313,7 @@ function Controller() {
         Ti.API.debug(e.error);
         alert('There was an error during the connection');
       },
-      timeout: 1000 });
+      timeout: 10000 });
 
 
     sendit.open("GET", "http://backend.tigerwhale.com/api/creature");
@@ -338,6 +339,15 @@ function Controller() {
         Alloy.Globals.Names.push(jsonname[pos].name);
       }
 
+      for (pos = 0; pos < jsonname.length; pos++) {
+
+        Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);
+      }
+      for (pos = 0; pos < jsonname.length; pos++) {
+
+        Alloy.Globals.Description.push(jsonname[pos].description);
+      }
+
       for (var i = 0; i < Alloy.Globals.Names.length; i++) {
 
         var name = JSON.stringify(Alloy.Globals.Names[i]);
@@ -346,6 +356,7 @@ function Controller() {
       };
     };
   }
+
 
 
 

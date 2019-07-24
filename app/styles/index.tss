@@ -141,7 +141,7 @@
 					borderRadius : 6,
 					height : 50,
 				}	
-					"#sign_in" : {
+				/*	"#sign_in" : {
 						top : "75%",
 						width : "30%",
 						textAlign : "center",
@@ -155,4 +155,4 @@
 						borderColor : "#EEEEEE",
 						borderRadius : 6,
 						height : 50,
-					}
+					}*/
