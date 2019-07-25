@@ -101,7 +101,7 @@ function register_user() {
     var postFunction = function postFunction(e) {
         alert("registered");
         //if (!Alloy.Globals.checkErrors(e)) {
-        alert("registered");
+        //alert("registered");
 
 
         // REGISTER

@@ -15,7 +15,7 @@ $.login.open();
 //Ge new link of this
 console.log('starting');
 // user exists
-if (Ti.App.Properties.hasProperty("user")) {
+if (!Ti.App.Properties.hasProperty("user")) {
 
 	console.log('has user');
 	var main = Alloy.createController("main").getView();

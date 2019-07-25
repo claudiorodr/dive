@@ -1,104 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-//args.array.push(selectedRow3);
-/*	var row = Ti.UI.createPickerRow({
-				title: "a-ha",  
-				myId : i 
-			});
-	var img = Ti.UI.createImageView({
-		top : 10,
-		width : 250,
-		height : 250,
-		image : "/img/species/" + args.img + ".jpg",
-		verticalAlign : 'center'
-		});
-		
-		$.image.add(img);
-		
-	if(args.img == 	'2' || args.img == 	'3' || args.img == 	'4' || args.img == 	'8' || args.img ==  '10' || args.img ==  '12' || args.img ==  '14'|| args.img ==  '16'|| args.img ==  '18' )
-	{ 
-	var img2 = Ti.UI.createImageView({
-		top : 10,
-		width : 250,
-		height : 250,
-		image : "/img/speciesscroll/" + args.img + ".1" + ".jpg",
-		verticalAlign : 'center'
-		});
-		
-		$.image.add(img2);
-		
-		
-	var scrollView = Titanium.UI.createScrollableView({
-		views:[img,img2,img3],
-		showPagingControl:true,
-		pagingControlHeight:30,
-		maxZoomScale:2.0,
-		currentPage:0,
-		top : 10,
-		width : 250,
-		height : 250,
-	});
-	
-	$.specieDetailWin.add(scrollView);
-	
-	var i=1;
-	var activeView = img;
-	
-	scrollView.addEventListener('scroll', function(e)
-	{
-		activeView = e.view;  // the object handle to the view that is about to become visible
-		i = e.currentPage;
-		Titanium.API.info("scroll called - current index " + i + ' active view ' + activeView);
-	});
-	}
-	
-	else if(args.img == 	'6' || args.img == 	'9' )
-	{ 
-	var img2 = Ti.UI.createImageView({
-		top : 10,
-		width : 250,
-		height : 250,
-		image : "/img/speciesscroll/" + args.img + ".1" + ".jpg",
-		verticalAlign : 'center'
-		});
-		
-		$.image.add(img2);
-		
-	var img3 = Ti.UI.createImageView({
-		top : 10,
-		width : 250,
-		height : 250,
-		image : "/img/speciesscroll/" + args.img + ".2" + ".jpg",
-		verticalAlign : 'center'
-		});
-		
-		$.image.add(img3);
-		
-	var scrollView = Titanium.UI.createScrollableView({
-		views:[img,img2,img3],
-		showPagingControl:true,
-		pagingControlHeight:30,
-		maxZoomScale:2.0,
-		currentPage:0,
-		top : 10,
-		width : 250,
-		height : 250,
-	});
-	
-	$.specieDetailWin.add(scrollView);
-	
-	var i=1;
-	var activeView = img;
-	
-	scrollView.addEventListener('scroll', function(e)
-	{
-		activeView = e.view;  // the object handle to the view that is about to become visible
-		i = e.currentPage;
-		Titanium.API.info("scroll called - current index " + i + ' active view ' + activeView);
-	});
-	}
-*/	
 	var l = Titanium.UI.createLabel({
 		text:'Common name:',
 		font:{fontFamily: 'Raleway-Bold',
@@ -134,6 +36,42 @@ var args = $.args;
 	});
 	
 	$.description.add(lll);
+	
+		var a = Titanium.UI.createLabel({
+		text:'Conservation Status:',
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
+		left:"10%",
+		top:0,
+		width:300,
+		height:'auto'
+	});
+	
+	$.conserv.add(a);
+	
+	var aa = Titanium.UI.createLabel({
+		text:'Size:',
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
+		left:"10%",
+		top:0,
+		width:300,
+		height:'auto'
+	});
+	
+	$.size.add(aa);
+	
+		var aaa = Titanium.UI.createLabel({
+		text:'Curiosity:',
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
+		left:"10%",
+		top:0,
+		width:300,
+		height:'auto'
+	});
+	
+	$.curiosity.add(aaa);
 
 var img = Ti.UI.createImageView({
 		top : "15%",
@@ -149,21 +87,41 @@ var img = Ti.UI.createImageView({
         for (var i = 0; i < Alloy.Globals.Names.length; i++) {
             //Putting into string format the JSON values
             var name = JSON.stringify(Alloy.Globals.Names[i]);
-            //Slicing the values for cleaner look 
             var namer = name.slice(1,-1);
-            //Putting into string format the JSON values
+
             var science = JSON.stringify(Alloy.Globals.Scientific[i]);
-            //Slicing the values for cleaner look 
             var sciencer = science.slice(1,-1);
-            //Putting into string format the JSON values           
+         
             var description = JSON.stringify(Alloy.Globals.Description[i]);        
-            var descriptioner = description.slice(1,-1);   
+            var descriptioner = description.slice(1,-1);
+            
+            var sizer = JSON.stringify(Alloy.Globals.Size[i]);        
+            //var sizer = size.slice(1,-1);   
+            
+            var conservtion = JSON.stringify(Alloy.Globals.Conservation[i]);        
+            var conservtioner = conservtion.slice(1,-1);
+            
+            var curiosity = JSON.stringify(Alloy.Globals.Curiosity[i]);        
+            var curiositier = curiosity.slice(1,-1); 
+            
+            var level = JSON.stringify(Alloy.Globals.Level[i]);
+			//var leveler = level.slice(1,-1);
+			
+			var level2 = JSON.stringify(Alloy.Globals.Level2[i]);
+			//var leveler2 = level2.slice(1,-1);
+			
+			var level3 = JSON.stringify(Alloy.Globals.Level3[i]);
+			//var leveler3 = level3.slice(1,-1);
+			
+			var level4 = JSON.stringify(Alloy.Globals.Level4[i]);
+			//var leveler4 = level4.slice(1,-1);
              
             if (args.img == i+1) {
+               
                 var ta1 = Titanium.UI.createTextArea({
                     value: namer,
                     height: 35,
-                    width: 150,
+                    width: "auto",//150,
                     left:"10%",
                     top: 20,
                     font: {
@@ -202,10 +160,32 @@ var img = Ti.UI.createImageView({
                     editable: false
                 });
  
-                $.science.add(ta2);
-
-                var ta3 = Titanium.UI.createTextArea({
+               $.science.add(ta2);
+               
+               var ta3 = Titanium.UI.createTextArea({
                     value: descriptioner,
+                    height: "auto",
+                    width: 'auto',
+                    left:"10%",
+                    top: 20,
+                    font: {
+                        fontSize: 14,
+                        fontFamily: 'Raleway-Bold',
+
+                    },
+                    color: '#888',
+                    textAlign: 'left',
+                    borderWidth: 2,
+                    borderColor: '#bbb',
+                    borderRadius: 5,
+                    suppressReturn: false,
+                    editable: false
+                });
+ 
+               $.description.add(ta3);
+
+                var ta4 = Titanium.UI.createTextArea({
+                    value: sizer,
                     height: 'auto', 
                     width: 150,
                     left:"10%",
@@ -224,7 +204,80 @@ var img = Ti.UI.createImageView({
                     editable: false
                 });
 
-                $.description.add(ta3);
+                $.conserv.add(ta4);
+
+                var ta5 = Titanium.UI.createTextArea({
+                    value: conservtioner,
+                    height: 'auto', 
+                    width: 150,
+                    left:"10%",
+                    top: 20,
+                    font: { 
+                        fontSize: 14,
+                        fontFamily: 'Raleway-Bold',
+
+                    },
+                    color: '#888',
+                    textAlign: 'left',
+                    borderWidth: 2,
+                    borderColor: '#bbb',
+                    borderRadius: 5,
+                    suppressReturn: false,
+                    editable: false
+                });
+
+                $.size.add(ta5);
+                
+                var ta6 = Titanium.UI.createTextArea({
+                    value: curiositier,
+                    height: 'auto', 
+                    width: 150,
+                    left:"10%",
+                    top: 20,
+                    font: { 
+                        fontSize: 14,
+                        fontFamily: 'Raleway-Bold',
+
+                    },
+                    color: '#888',
+                    textAlign: 'left',
+                    borderWidth: 2,
+                    borderColor: '#bbb',
+                    borderRadius: 5,
+                    suppressReturn: false,
+                    editable: false
+                });
+
+                $.curiosity.add(ta6);
+
+			var row = Ti.UI.createPickerRow({
+				title: level, 
+				myId : i
+			});
+
+			$.abundance.addRow(row);
+
+			var row2 = Ti.UI.createPickerRow({
+				title: level2, 
+				myId : i
+			});
+
+			$.abundance.addRow(row2);
+
+			var row3 = Ti.UI.createPickerRow({
+				title: level3, 
+				myId : i
+			});
+
+			$.abundance.addRow(row3);
+			
+			var row4 = Ti.UI.createPickerRow({
+				title: level4, 
+				myId : i
+			});
+
+			$.abundance.addRow(row4);
+
             }
         };
 function checkJSON(_json) {
@@ -272,6 +325,8 @@ function insertData() {
   var s = date.getSeconds();
   var x = h + ":" + m + ":" + s;
   
+  var selectedRow = $.picker.getSelectedRow(0).title;
+  
     var params = ({    	
     
     /*"user_id": "1",
@@ -281,18 +336,17 @@ function insertData() {
     "dive_time": survey[1],
     "diving_spot_id": survey[0],
     "max_depth" : "1"*/
-	"user_id": "1",
+	"user_id": "1", //Ti.App.Properties.getObject('user').id,
     "creature_id": args.img,
-    "abundance_value": "1", //Alloy.Globals.Species[4].match(/\d/g).join(""),
+    "abundance_value": selectedRow, //Alloy.Globals.Species[4].match(/\d/g).join(""),
     "number_diver": parseInt(survey[2]),
     "dive_time": parseInt(survey[1]),
     "diving_spot_id": survey[0] + 1,
     "max_depth" : "1",
-    "date":d + " "+x
+    "date": d + " "+ x
     });
-
+ 
     request.send(params);
-    alert(params); 
   
 	//Clean of parameteres
   
@@ -345,11 +399,9 @@ function openMore() {
 
     survey = Alloy.Globals.Species.slice(0, 3);
 
-    console.log(survey);
-    console.log(Alloy.Globals.Species);
     insertData();
     Alloy.Globals.Species = Alloy.Globals.Species.slice(0, 3);
-    console.log(Alloy.Globals.Species);
+
 
 }
 

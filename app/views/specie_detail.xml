@@ -8,20 +8,24 @@
 		</View>	
 		<View id="science">			
 		</View>	
+		<View id="conserv">			
+		</View>	
+		<View id="size">			
+		</View>	
 		<View id="description">			
+		</View>
+		<View id="curiosity">			
 		</View>
 		</View>
 		<View id="body2">
 			<Picker id="picker" selectionIndicator="true" useSpinner="false">
-				<PickerColumn id="Abundance">
-					<PickerRow title="Low (1)"/>
-					<PickerRow title="Medium (2-3)"/>
-					<PickerRow title="High (4-5)"/>
-					<PickerRow title="Very High (>5)"/> 
+				<PickerColumn id="abundance">
 					</PickerColumn>
 			</Picker>
+		<View id="button">			
 		<Button id="moreBtn" onClick="openMore"></Button>
 		<Button id="endBtn" onClick="openMain"></Button>
+		</View>
 		</View>
 	</Window>
 </Alloy>

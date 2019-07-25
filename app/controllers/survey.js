@@ -6,7 +6,7 @@ var args = $.args;
 //We execute the function to show the data for the first view 
 getTodoList();
 getTodoList2();
-
+getTodoList3();
  
 function getTodoList() {
 	//function to use HTTP to connect to a web server and transfer the data. 
@@ -87,16 +87,14 @@ function getTodoList2() {
         for (pos = 0; pos < jsonname.length; pos++) {
             //Pushing into array evry value			
             Alloy.Globals.Names.push(jsonname[pos].name);
-        }
-
-        for (pos = 0; pos < jsonname.length; pos++) {
-            //Pushing into array evry value			
-            Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);
-        }
-        for (pos = 0; pos < jsonname.length; pos++) {
-            //Pushing into array evry value			
+            Alloy.Globals.Scientific.push(jsonname[pos].name_scientific);		
             Alloy.Globals.Description.push(jsonname[pos].description);
+            Alloy.Globals.Conservation.push(jsonname[pos].conserv);
+            Alloy.Globals.Curiosity.push(jsonname[pos].curiosity);
+            Alloy.Globals.Size.push(jsonname[pos].size); 
+            
         }
+        
 
         for (var i = 0; i < Alloy.Globals.Names.length; i++) {
             //Putting into string format the JSON values
@@ -104,6 +102,46 @@ function getTodoList2() {
             //Slicing the values for cleaner look 
             var namer = name.slice(1,-1);            
         };
+    };
+}
+
+function getTodoList3() {
+    //function to use HTTP to connect to a web server and transfer the data. 
+    var sendit = Ti.Network.createHTTPClient({
+        onerror: function(e) {
+            Ti.API.debug(e.error);
+            alert('There was an error during the connection');
+        },
+        timeout: 10000,
+    });
+    //Here you have to change it for your local ip  
+    sendit.open("GET", "http://backend.tigerwhale.com/api/abundance");
+    sendit.send();
+
+
+    //Function to be called upon a successful response 
+    sendit.onload = function() {
+        //Emptying the data to refresh the view 
+        //Parsing into JSON fromat
+        var json = JSON.parse(this.responseText);
+        if (!json) {
+            Titanium.API.info('Error - Null return!');
+            return;
+        }
+        //Saving into var values from php page
+        var jsonname = json.data;
+        
+        var pos;
+
+        for (pos = 0; pos < jsonname.length; pos++) {
+            //Pushing into array evry value			
+            Alloy.Globals.Level.push(jsonname[pos].level_1);
+            Alloy.Globals.Level2.push(jsonname[pos].level_2);
+            Alloy.Globals.Level3.push(jsonname[pos].level_3);
+            Alloy.Globals.Level4.push(jsonname[pos].level_4);
+
+            
+        }
     };
 }
 
@@ -117,7 +155,6 @@ function openSpecies() {
 	var selectedRow = $.picker.getSelectedRow(0).myId; //Value from picker 1
 	var selectedRow1 = $.picker2.getSelectedRow(0).title; //Value from picker 2
 	var selectedRow2 = $.picker3.getSelectedRow(0).title; //Value from picker 3
-	 
 	var species = Alloy.createController('species').getView(); 
 	species.open();
 	species = null;

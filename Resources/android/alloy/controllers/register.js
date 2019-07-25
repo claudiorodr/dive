@@ -246,7 +246,7 @@ function Controller() {
     var postFunction = function postFunction(e) {
       alert("registered");
 
-      alert("registered");
+
 
 
 

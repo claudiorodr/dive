@@ -51,17 +51,29 @@ function Controller() {
 
   $.__views.specieDetailWin.add($.__views.body);
   $.__views.common = Ti.UI.createView(
-  { top: "15%", height: "auto", id: "common" });
+  { top: "15%", height: "70", id: "common" });
 
   $.__views.body.add($.__views.common);
   $.__views.science = Ti.UI.createView(
-  { height: "auto", id: "science" });
+  { height: "70", id: "science" });
 
   $.__views.body.add($.__views.science);
+  $.__views.conserv = Ti.UI.createView(
+  { height: "70", id: "conserv" });
+
+  $.__views.body.add($.__views.conserv);
+  $.__views.size = Ti.UI.createView(
+  { height: "70", id: "size" });
+
+  $.__views.body.add($.__views.size);
   $.__views.description = Ti.UI.createView(
   { height: "auto", id: "description" });
 
   $.__views.body.add($.__views.description);
+  $.__views.curiosity = Ti.UI.createView(
+  { height: "70", id: "curiosity" });
+
+  $.__views.body.add($.__views.curiosity);
   $.__views.body2 = Ti.UI.createView(
   { layout: "vertical", width: "30%", right: 0, height: "100%", id: "body2" });
 
@@ -70,35 +82,23 @@ function Controller() {
   { top: "20%", right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
   $.__views.body2.add($.__views.picker);
-  var __alloyId0 = [];$.__views.Abundance = Ti.UI.createPickerColumn(
-  { id: "Abundance" });
+  var __alloyId0 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  { id: "abundance" });
 
-  __alloyId0.push($.__views.Abundance);
-  $.__views.__alloyId1 = Ti.UI.createPickerRow(
-  { title: "Low (1)", id: "__alloyId1" });
-
-  $.__views.Abundance.addRow($.__views.__alloyId1);
-  $.__views.__alloyId2 = Ti.UI.createPickerRow(
-  { title: "Medium (2-3)", id: "__alloyId2" });
-
-  $.__views.Abundance.addRow($.__views.__alloyId2);
-  $.__views.__alloyId3 = Ti.UI.createPickerRow(
-  { title: "High (4-5)", id: "__alloyId3" });
-
-  $.__views.Abundance.addRow($.__views.__alloyId3);
-  $.__views.__alloyId4 = Ti.UI.createPickerRow(
-  { title: "Very High (>5)", id: "__alloyId4" });
-
-  $.__views.Abundance.addRow($.__views.__alloyId4);
+  __alloyId0.push($.__views.abundance);
   $.__views.picker.add(__alloyId0);
+  $.__views.button = Ti.UI.createView(
+  { bottom: 0, height: "100", id: "button" });
+
+  $.__views.body2.add($.__views.button);
   $.__views.moreBtn = Ti.UI.createButton(
-  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", bottom: "15%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "moreBtn" });
+  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", bottom: "15%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, top: 0, id: "moreBtn" });
 
-  $.__views.body2.add($.__views.moreBtn);
+  $.__views.button.add($.__views.moreBtn);
   openMore ? $.addListener($.__views.moreBtn, 'click', openMore) : __defers['$.__views.moreBtn!click!openMore'] = true;$.__views.endBtn = Ti.UI.createButton(
-  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", bottom: "0%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "endBtn" });
+  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", bottom: 0, width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "endBtn" });
 
-  $.__views.body2.add($.__views.endBtn);
+  $.__views.button.add($.__views.endBtn);
   openMain ? $.addListener($.__views.endBtn, 'click', openMain) : __defers['$.__views.endBtn!click!openMain'] = true;exports.destroy = function () {};
 
 
@@ -109,104 +109,6 @@ function Controller() {
 
 
   var args = $.args;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   var l = Titanium.UI.createLabel({
     text: 'Common name:',
@@ -244,6 +146,42 @@ function Controller() {
 
   $.description.add(lll);
 
+  var a = Titanium.UI.createLabel({
+    text: 'Conservation Status:',
+    font: { fontFamily: 'Raleway-Bold',
+      fontSize: 14 },
+    left: "10%",
+    top: 0,
+    width: 300,
+    height: 'auto' });
+
+
+  $.conserv.add(a);
+
+  var aa = Titanium.UI.createLabel({
+    text: 'Size:',
+    font: { fontFamily: 'Raleway-Bold',
+      fontSize: 14 },
+    left: "10%",
+    top: 0,
+    width: 300,
+    height: 'auto' });
+
+
+  $.size.add(aa);
+
+  var aaa = Titanium.UI.createLabel({
+    text: 'Curiosity:',
+    font: { fontFamily: 'Raleway-Bold',
+      fontSize: 14 },
+    left: "10%",
+    top: 0,
+    width: 300,
+    height: 'auto' });
+
+
+  $.curiosity.add(aaa);
+
   var img = Ti.UI.createImageView({
     top: "15%",
     left: "0%",
@@ -258,21 +196,41 @@ function Controller() {
   for (var i = 0; i < Alloy.Globals.Names.length; i++) {
 
     var name = JSON.stringify(Alloy.Globals.Names[i]);
-
     var namer = name.slice(1, -1);
 
     var science = JSON.stringify(Alloy.Globals.Scientific[i]);
-
     var sciencer = science.slice(1, -1);
 
     var description = JSON.stringify(Alloy.Globals.Description[i]);
     var descriptioner = description.slice(1, -1);
 
+    var sizer = JSON.stringify(Alloy.Globals.Size[i]);
+
+
+    var conservtion = JSON.stringify(Alloy.Globals.Conservation[i]);
+    var conservtioner = conservtion.slice(1, -1);
+
+    var curiosity = JSON.stringify(Alloy.Globals.Curiosity[i]);
+    var curiositier = curiosity.slice(1, -1);
+
+    var level = JSON.stringify(Alloy.Globals.Level[i]);
+
+
+    var level2 = JSON.stringify(Alloy.Globals.Level2[i]);
+
+
+    var level3 = JSON.stringify(Alloy.Globals.Level3[i]);
+
+
+    var level4 = JSON.stringify(Alloy.Globals.Level4[i]);
+
+
     if (args.img == i + 1) {
+
       var ta1 = Titanium.UI.createTextArea({
         value: namer,
         height: 35,
-        width: 150,
+        width: "auto",
         left: "10%",
         top: 20,
         font: {
@@ -315,6 +273,28 @@ function Controller() {
 
       var ta3 = Titanium.UI.createTextArea({
         value: descriptioner,
+        height: "auto",
+        width: 'auto',
+        left: "10%",
+        top: 20,
+        font: {
+          fontSize: 14,
+          fontFamily: 'Raleway-Bold' },
+
+
+        color: '#888',
+        textAlign: 'left',
+        borderWidth: 2,
+        borderColor: '#bbb',
+        borderRadius: 5,
+        suppressReturn: false,
+        editable: false });
+
+
+      $.description.add(ta3);
+
+      var ta4 = Titanium.UI.createTextArea({
+        value: sizer,
         height: 'auto',
         width: 150,
         left: "10%",
@@ -333,7 +313,80 @@ function Controller() {
         editable: false });
 
 
-      $.description.add(ta3);
+      $.conserv.add(ta4);
+
+      var ta5 = Titanium.UI.createTextArea({
+        value: conservtioner,
+        height: 'auto',
+        width: 150,
+        left: "10%",
+        top: 20,
+        font: {
+          fontSize: 14,
+          fontFamily: 'Raleway-Bold' },
+
+
+        color: '#888',
+        textAlign: 'left',
+        borderWidth: 2,
+        borderColor: '#bbb',
+        borderRadius: 5,
+        suppressReturn: false,
+        editable: false });
+
+
+      $.size.add(ta5);
+
+      var ta6 = Titanium.UI.createTextArea({
+        value: curiositier,
+        height: 'auto',
+        width: 150,
+        left: "10%",
+        top: 20,
+        font: {
+          fontSize: 14,
+          fontFamily: 'Raleway-Bold' },
+
+
+        color: '#888',
+        textAlign: 'left',
+        borderWidth: 2,
+        borderColor: '#bbb',
+        borderRadius: 5,
+        suppressReturn: false,
+        editable: false });
+
+
+      $.curiosity.add(ta6);
+
+      var row = Ti.UI.createPickerRow({
+        title: level,
+        myId: i });
+
+
+      $.abundance.addRow(row);
+
+      var row2 = Ti.UI.createPickerRow({
+        title: level2,
+        myId: i });
+
+
+      $.abundance.addRow(row2);
+
+      var row3 = Ti.UI.createPickerRow({
+        title: level3,
+        myId: i });
+
+
+      $.abundance.addRow(row3);
+
+      var row4 = Ti.UI.createPickerRow({
+        title: level4,
+        myId: i });
+
+
+      $.abundance.addRow(row4);
+
     }
   };
   function checkJSON(_json) {
@@ -381,6 +434,8 @@ function Controller() {
       var s = date.getSeconds();
       var x = h + ":" + m + ":" + s;
 
+      var selectedRow = $.picker.getSelectedRow(0).title;
+
       var params = {
 
 
@@ -392,7 +447,7 @@ function Controller() {
 
         "user_id": "1",
         "creature_id": args.img,
-        "abundance_value": "1",
+        "abundance_value": selectedRow,
         "number_diver": parseInt(survey[2]),
         "dive_time": parseInt(survey[1]),
         "diving_spot_id": survey[0] + 1,
@@ -401,7 +456,6 @@ function Controller() {
 
 
       request.send(params);
-      alert(params);
 
 
 
@@ -454,11 +508,9 @@ function Controller() {
 
     survey = Alloy.Globals.Species.slice(0, 3);
 
-    console.log(survey);
-    console.log(Alloy.Globals.Species);
     insertData();
     Alloy.Globals.Species = Alloy.Globals.Species.slice(0, 3);
-    console.log(Alloy.Globals.Species);
+
 
   }
 
