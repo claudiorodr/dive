@@ -72,48 +72,48 @@ var args = $.args;
 	});
 	
 	$.curiosity.add(aaa);
-
+var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, args.img +'.png');
 var img = Ti.UI.createImageView({
 		top : "15%",
 		left : "0%",
 		width : "100%",
 		height : "70%",
-		image : "http://backend.tigerwhale.com/api/dive/image/" + args.img,// + ".jpg",
+		image : file,// + ".jpg",
 		verticalAlign : 'center' 
 		});
 		
 		$.image.add(img);
 
-        for (var i = 0; i < Alloy.Globals.Names.length; i++) {
+        for (var i = 0; i < Ti.App.Properties.getList('myNmaes').length; i++) {
             //Putting into string format the JSON values
-            var name = JSON.stringify(Alloy.Globals.Names[i]);
+            var name = JSON.stringify(Ti.App.Properties.getList('myNmaes')[i]);
             var namer = name.slice(1,-1);
 
-            var science = JSON.stringify(Alloy.Globals.Scientific[i]);
+            var science = JSON.stringify(Ti.App.Properties.getList('myScientific')[i]);
             var sciencer = science.slice(1,-1);
          
-            var description = JSON.stringify(Alloy.Globals.Description[i]);        
+            var description = JSON.stringify(Ti.App.Properties.getList('myDescription')[i]);        
             var descriptioner = description.slice(1,-1);
             
-            var sizer = JSON.stringify(Alloy.Globals.Size[i]);        
-            //var sizer = size.slice(1,-1);   
+            var size = JSON.stringify(Ti.App.Properties.getList('mySize')[i]);        
+            var sizer = size.slice(1,-1);
             
-            var conservtion = JSON.stringify(Alloy.Globals.Conservation[i]);        
+            var conservtion = JSON.stringify(Ti.App.Properties.getList('myConservation')[i]);        
             var conservtioner = conservtion.slice(1,-1);
             
-            var curiosity = JSON.stringify(Alloy.Globals.Curiosity[i]);        
+            var curiosity = JSON.stringify(Ti.App.Properties.getList('myCuriosity')[i]);        
             var curiositier = curiosity.slice(1,-1); 
             
-            var level = JSON.stringify(Alloy.Globals.Level[i]);
+            var level = JSON.stringify(Ti.App.Properties.getList('myLevel')[i]);
 			//var leveler = level.slice(1,-1);
 			
-			var level2 = JSON.stringify(Alloy.Globals.Level2[i]);
+			var level2 = JSON.stringify(Ti.App.Properties.getList('myLevel2')[i]);
 			//var leveler2 = level2.slice(1,-1);
 			
-			var level3 = JSON.stringify(Alloy.Globals.Level3[i]);
+			var level3 = JSON.stringify(Ti.App.Properties.getList('myLevel3')[i]);
 			//var leveler3 = level3.slice(1,-1);
 			
-			var level4 = JSON.stringify(Alloy.Globals.Level4[i]);
+			var level4 = JSON.stringify(Ti.App.Properties.getList('myLevel4')[i]);
 			//var leveler4 = level4.slice(1,-1);
              
             if (args.img == i+1) {
@@ -291,23 +291,21 @@ function checkJSON(_json) {
 
 function insertData() {
     //if there is something in the textbox
-    if (Ti.Network.online) {
+
     var request = Ti.Network.createHTTPClient({
 
         onload: function(e) {
 
             if (this.status == '200') {
-                // here you receive back the values and you can see them with
-                alert("all alright");
-
-                // make a global of e
             }
 
         },
 
         onerror: function(e) {
+        	Ti.App.Properties.setList('myParams',params);
             Ti.API.debug(e.error);
             alert('There was an error during the conexion');
+                    	alert(Ti.App.Properties.getList('myParams'));
         },
         
         timeout: 1000,
@@ -315,7 +313,7 @@ function insertData() {
     //Request the data from the web service, Here you have to change it for your local ip
     request.open("POST", "http://backend.tigerwhale.com/api/survey");
     //alert(Alloy.Globals.Species[4],survey[2],survey[1],survey[0]);
-    var date = new Date();
+  var date = new Date();
   var y = date.getFullYear();
   var mo = (date.getMonth() + 1 );
   var da = date.getDate();
@@ -328,15 +326,8 @@ function insertData() {
   var selectedRow = $.picker.getSelectedRow(0).title;
   
     var params = ({    	
-    
-    /*"user_id": "1",
-    "creature_id": args.img,
-    "abundance_value": Alloy.Globals.Species[4],
-    "number_diver": survey[2],
-    "dive_time": survey[1],
-    "diving_spot_id": survey[0],
-    "max_depth" : "1"*/
-	"user_id": "1", //Ti.App.Properties.getObject('user').id,
+
+	"user_id": Ti.App.Properties.getObject('user'), //Ti.App.Properties.getObject('user').id,
     "creature_id": args.img,
     "abundance_value": selectedRow, //Alloy.Globals.Species[4].match(/\d/g).join(""),
     "number_diver": parseInt(survey[2]),
@@ -345,7 +336,7 @@ function insertData() {
     "max_depth" : "1",
     "date": d + " "+ x
     });
- 
+   Ti.App.Properties.setList('myParams',params);
     request.send(params);
   
 	//Clean of parameteres
@@ -363,30 +354,7 @@ function insertData() {
     });
     
    }
-   else {
-   	var params = ({    	
-      
-    /*"user_id": "1",
-    "creature_id": args.img,
-    "abundance_value": Alloy.Globals.Species[4],
-    "number_diver": survey[2],
-    "dive_time": survey[1],
-    "diving_spot_id": survey[0],
-    "max_depth" : "1"*/
-    "user_id": "1",
-    "creature_id": "2",
-    "abundance_value": "ola",
-    "number_diver": "12",
-    "dive_time": "12",
-    "diving_spot_id": "1",
-    "max_depth" : "1" 
-    });
 
-   	Ti.App.Properties.setList('params',params);
-   	Ti.App.Properties.getList('params');
-   }
-
-};
 
 function openMore() {
 
@@ -409,12 +377,10 @@ function openMain() {
     survey = Alloy.Globals.Species.slice(0, 3);
     for (i = 3; i < Alloy.Globals.Species.length; i += 2) {
         specie = Alloy.Globals.Species.slice(i, i + 2);
-        console.log(specie);
+
 
     }
 
-    console.log(survey);
-    console.log(Alloy.Globals.Species);
     insertData();
     //Inserting into HTTP request from Backend
 

@@ -68,18 +68,10 @@ function Controller() {
 
     if (e.clicksource == 'leftPane') {
 
-
-      console.log("ola");
-
-
       var species = Alloy.createController('species').getView();
       species.open();
       species = null;
-
     }
-
-
-
   });
 
   getTodoList();
@@ -88,8 +80,41 @@ function Controller() {
 
     var sendit = Ti.Network.createHTTPClient({
       onerror: function (e) {
-        Ti.API.debug(e.error);
-        alert('There was an error during the connection');
+        Ti.App.Properties.setList('myLatitudes', Alloy.Globals.Latitudes);
+        Ti.App.Properties.setList('myLongitudes', Alloy.Globals.Longitudes);
+        Ti.App.Properties.setList('myAddress', Alloy.Globals.Address);
+        Ti.App.Properties.setList('myDepth', Alloy.Globals.Depth);
+
+        for (var i = 0; i < Ti.App.Properties.getList('mySites').length; i++) {
+
+          var lat = JSON.stringify(Ti.App.Properties.getList('mySites')[i]);
+          var lon = JSON.stringify(Ti.App.Properties.getList('mySites')[i]);
+
+
+          var lati = lat.slice(1, -1);
+          var loni = lon.slice(1, -1);
+
+
+          pin = Alloy.Globals.Map.createAnnotation({
+            latitude: lati,
+            longitude: loni,
+            title: Alloy.Globals.Sites[i],
+            subtitle: Alloy.Globals.Address[i] + "\n " + Alloy.Globals.Depth[i],
+            animate: true,
+            pincolor: Alloy.Globals.Map.ANNOTATION_BLUE,
+            leftView: Ti.UI.createButton({
+              title: 'SEE MORE',
+              height: 32,
+              width: 70 }) });
+
+
+
+
+          Alloy.Globals.Pin.push(pin);
+
+          $.mapview.addAnnotations([Alloy.Globals.Pin[i]]);
+
+        }
       },
       timeout: 1000 });
 
@@ -118,6 +143,11 @@ function Controller() {
         Alloy.Globals.Address.push(jsonsites[pos].description);
         Alloy.Globals.Depth.push(jsonsites[pos].substract);
       }
+
+      Ti.App.Properties.setList('myLatitudes', Alloy.Globals.Latitudes);
+      Ti.App.Properties.setList('myLongitudes', Alloy.Globals.Longitudes);
+      Ti.App.Properties.setList('myAddress', Alloy.Globals.Address);
+      Ti.App.Properties.setList('myDepth', Alloy.Globals.Depth);
 
 
 

@@ -11,19 +11,11 @@ $.mapview.addEventListener('click', function(e){
         // if user click on rightButton of annotaion
         //console.log(e.clicksource);
         if (e.clicksource == 'leftPane') { 
-//<<<<<<< HEAD
-//=======
-            console.log("ola");
-//>>>>>>> master
-            //navGroup.open(detailWindow);
+
          var species = Alloy.createController('species').getView(); 
 			species.open();
 			species = null;
-//<<<<<<< HEAD
         } 
-//=======
-        //}
-//>>>>>>> master
 });
 
 getTodoList();
@@ -32,8 +24,41 @@ function getTodoList() {
 	//function to use HTTP to connect to a web server and transfer the data. 
 	var sendit = Ti.Network.createHTTPClient({
 		onerror: function (e) {
-			Ti.API.debug(e.error); 
-			alert('There was an error during the connection');
+		    Ti.App.Properties.setList('myLatitudes',Alloy.Globals.Latitudes);
+        	Ti.App.Properties.setList('myLongitudes',Alloy.Globals.Longitudes);
+        	Ti.App.Properties.setList('myAddress',Alloy.Globals.Address);
+        	Ti.App.Properties.setList('myDepth',Alloy.Globals.Depth);
+
+		for (var i = 0; i < Ti.App.Properties.getList('mySites').length; i++) {
+			//Putting into string format the JSON values
+			var lat = JSON.stringify(Ti.App.Properties.getList('mySites')[i]); 
+			var lon = JSON.stringify(Ti.App.Properties.getList('mySites')[i]);
+			//
+			//Slicing the values for cleaner look
+			var lati = lat.slice(1,-1);
+			var loni = lon.slice(1,-1);
+			
+			
+			pin = Alloy.Globals.Map.createAnnotation({
+		        latitude: lati,
+		        longitude: loni ,
+		        title: Alloy.Globals.Sites[i],  
+		        subtitle: Alloy.Globals.Address[i] + "\n " + Alloy.Globals.Depth[i], 
+		        animate: true,
+		        pincolor: Alloy.Globals.Map.ANNOTATION_BLUE,
+		        leftView: Ti.UI.createButton({
+	            title: 'SEE MORE',
+	            height: 32,
+	            width: 70
+	       		 })
+		        //leftButton: 'appcelerator.gif'
+		   });
+  			//annotations[i] = pin;
+  			Alloy.Globals.Pin.push(pin);
+			//$.mapview.annotations = Alloy.Globals.Pin;
+			$.mapview.addAnnotations([Alloy.Globals.Pin[i]]);
+			
+		}
 		},
 		timeout: 1000,
 	});
@@ -62,6 +87,11 @@ function getTodoList() {
 			Alloy.Globals.Address.push(jsonsites[pos].description); 
 			Alloy.Globals.Depth.push(jsonsites[pos].substract); 
 		}
+		
+		    Ti.App.Properties.setList('myLatitudes',Alloy.Globals.Latitudes);
+        	Ti.App.Properties.setList('myLongitudes',Alloy.Globals.Longitudes);
+        	Ti.App.Properties.setList('myAddress',Alloy.Globals.Address);
+        	Ti.App.Properties.setList('myDepth',Alloy.Globals.Depth);
 
 		//var annotations = [];
 

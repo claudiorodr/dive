@@ -104,10 +104,14 @@ function Controller() {
 
 
 
-
   console.log('starting');
 
-  if (!Ti.App.Properties.hasProperty("user")) {
+  if (Ti.App.Properties.hasProperty("user")) {
+
+    var inst = require('install');
+    inst.getToDo();
+    inst = null;
+
 
     console.log('has user');
     var main = Alloy.createController("main").getView();
@@ -190,13 +194,14 @@ function Controller() {
         if (e.success == true) {
 
 
-          Ti.App.Properties.setObject('user', e);
+          Ti.App.Properties.setObject('user', e.user.id);
+
           console.log("-- POST - " + url + " - user LOGGED IN");
-          console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
+          console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user'));
 
-
-
-
+          var inst = require('install');
+          inst.getToDo();
+          inst = null;
 
 
           var main = Alloy.createController("main").getView();
@@ -212,11 +217,6 @@ function Controller() {
       var posts = require('posts');
       posts.post(url, data, postFunction);
       posts = null;
-
-
-
-
-
 
 
 

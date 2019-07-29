@@ -5,6 +5,7 @@ var columnCounter = 0;
 var creatureData = [];
 var creatureData1 = [];
 Alloy.Globals.Sites = []; 
+Ti.App.Properties.getList('myNmaes').length = 0;
 
 var row, left, container, img, text = '';
 
@@ -14,7 +15,7 @@ var row, left, container, img, text = '';
 for (var i = 1; i < 19; i++) {
 	left = 0;
     if (columnCounter == 0) {
-        row = Ti.UI.createTableViewRow({
+        row = Ti.UI.createTableViewRow({ 
             className: "creature",
             top: 0,
             left: 0,
@@ -35,14 +36,14 @@ for (var i = 1; i < 19; i++) {
     }); 
 
     row.add(container);
-	 
+	 		var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, i +'.png');
     // creature
     img = Ti.UI.createImageView({
         id: i,
         //top : 10,
         width: "100%",  
         // height: 200,
-        image: "http://backend.tigerwhale.com/api/dive/image/" + i,// + ".jpg",
+        image: file,
         verticalAlign: 'center'
         // title : creatures_array[i-1]~		
     });
@@ -103,7 +104,7 @@ function select(e) {
     }
 }
  
-function openMain() {
+function openMain() { 
     var main = Alloy.createController('main').getView();
     main.open();
     main = null;

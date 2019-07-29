@@ -47,22 +47,18 @@ exports.downloadOneFile = function(url, localFilepath, callBack_DownloadOneFileF
        }
    };
    
-exports.downloadMultiFile = function(data,starter,callBack_DownloadMultipleFileFinished){
+exports.downloadMultiFile = function(data,starter){//},callBack_DownloadMultipleFileFinished){
   var queueIndex = starter;
 
   if (Titanium.Network.online) {
     var processQueue = function(dados) {
       if (queueIndex < data["metadata"]) {
-      	if(dados){
-	      console.log(dados.status);  		
-      	}
-        var localFilePath =Ti.Filesystem.applicationDataDirectory +"imagens/" +
-          data["images"][queueIndex]["photo_number"] +".png";
+        var localFilePath =data["images"][queueIndex]["photo_number"] +".png";
         downloadOneImage(data["images"][queueIndex].url,localFilePath,processQueue);
         queueIndex++;
-      } else {
+      } /*else {
         callBack_DownloadMultipleFileFinished({ status: "ACABOU O DOWNLOAD DAS IMAGENS" });
-      }
+      }*/
     };
     processQueue();
   } else {
@@ -73,9 +69,8 @@ exports.downloadMultiFile = function(data,starter,callBack_DownloadMultipleFileF
 
   function downloadOneImage(url,localFilepath,callBack_DownloadOneFileFinished){
     var postURL = Ti.App.Properties.getString("serverUrl") + url;
-    console.log("url: " + postURL);
+    console.log("url: " + postURL); 
     console.log("local path: " + localFilepath);
-
     if (Titanium.Network.online) {
       var xhr = Ti.Network.createHTTPClient({
         onerror: function(e) {
@@ -83,17 +78,19 @@ exports.downloadMultiFile = function(data,starter,callBack_DownloadMultipleFileF
           callBack_DownloadOneFileFinished({
             status: e.error
           });
-        },
+        }, 
         onload: function(e) {
           console.log("-- Image() - SINGLE STARTED: " + localFilepath);
-          var f = Titanium.Filesystem.getFile(localFilepath);
+          var f = Titanium.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, localFilepath);
+          console.log("App data directory: " + Ti.Filesystem.applicationDataDirectory);
           console.log("file path: " + f.nativePath);
           f.write(this.responseData);
+          var contents = f.read();
           callBack_DownloadOneFileFinished({
             status: "success"
           });
         }
-      });
+      }); 
       xhr.open("GET", postURL);
       xhr.send();
     } else {

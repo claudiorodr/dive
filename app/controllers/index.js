@@ -10,13 +10,17 @@ $.login.open();
 //loading.open();
 //loading = null;
 
-//[{JSON --> New() Instance of the program}]
  
 //Ge new link of this
 console.log('starting');
 // user exists
-if (!Ti.App.Properties.hasProperty("user")) {
-
+if (Ti.App.Properties.hasProperty("user")) {			
+	
+	 var inst = require('install');//Creating the local database
+	 inst.getToDo();//, callBack_DownloadOneFileFinished);
+	 inst = null;
+	  
+	 
 	console.log('has user');
 	var main = Alloy.createController("main").getView();
 	main.open();
@@ -98,14 +102,15 @@ function loginRegister() {
 			if (e.success == true) {
 				// set user
 
-				Ti.App.Properties.setObject('user', e);
+				Ti.App.Properties.setObject('user', e.user.id);
+
 				console.log("-- POST - " + url + " - user LOGGED IN");
-				console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
+				console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user'));
 
-				// create db
-				//var db = require('database');
-				//create_database();
-
+				 var inst = require('install');//Creating the local database
+				 inst.getToDo();//, callBack_DownloadOneFileFinished);
+				 inst = null;
+				 
 				// open main
 				var main = Alloy.createController("main").getView();
 				main.open();
@@ -124,10 +129,5 @@ function loginRegister() {
 		/*var down = require('download');//Creating the local database
 		 down.downloadOneFile(url2, localFilepath);//, callBack_DownloadOneFileFinished);
 		 down = null;*/
-
-		/*var inst = require('install');//Creating the local database
-		 inst.downloadImages();//, callBack_DownloadOneFileFinished);
-		 inst = null;*/
-
 	}
 }

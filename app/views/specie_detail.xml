@@ -18,6 +18,7 @@
 		</View>
 		</View>
 		<View id="body2">
+			<Label id="label"></Label>
 			<Picker id="picker" selectionIndicator="true" useSpinner="false">
 				<PickerColumn id="abundance">
 					</PickerColumn>

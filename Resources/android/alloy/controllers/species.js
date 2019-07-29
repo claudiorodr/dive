@@ -57,6 +57,7 @@ function Controller() {
   var creatureData = [];
   var creatureData1 = [];
   Alloy.Globals.Sites = [];
+  Ti.App.Properties.getList('myNmaes').length = 0;
 
   var row,left,container,img,text = '';
 
@@ -87,14 +88,14 @@ function Controller() {
 
 
     row.add(container);
-
+    var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, i + '.png');
 
     img = Ti.UI.createImageView({
       id: i,
 
       width: "100%",
 
-      image: "http://backend.tigerwhale.com/api/dive/image/" + i,
+      image: file,
       verticalAlign: 'center' });
 
 

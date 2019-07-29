@@ -29,20 +29,15 @@ exports.downloadOneFile = function (url, localFilepath, callBack_DownloadOneFile
   }
 };
 
-exports.downloadMultiFile = function (data, starter, callBack_DownloadMultipleFileFinished) {
+exports.downloadMultiFile = function (data, starter) {
   var queueIndex = starter;
 
   if (Titanium.Network.online) {
     var processQueue = function (dados) {
       if (queueIndex < data["metadata"]) {
-        if (dados) {
-          console.log(dados.status);
-        }
-        var localFilePath = Ti.Filesystem.applicationDataDirectory + "imagens/" + data["images"][queueIndex]["photo_number"] + ".png";
+        var localFilePath = data["images"][queueIndex]["photo_number"] + ".png";
         downloadOneImage(data["images"][queueIndex].url, localFilePath, processQueue);
         queueIndex++;
-      } else {
-        callBack_DownloadMultipleFileFinished({ status: "ACABOU O DOWNLOAD DAS IMAGENS" });
       }
     };
     processQueue();
@@ -56,7 +51,6 @@ exports.downloadMultiFile = function (data, starter, callBack_DownloadMultipleFi
     var postURL = Ti.App.Properties.getString("serverUrl") + url;
     console.log("url: " + postURL);
     console.log("local path: " + localFilepath);
-
     if (Titanium.Network.online) {
       var xhr = Ti.Network.createHTTPClient({
         onerror: function (e) {
@@ -67,9 +61,11 @@ exports.downloadMultiFile = function (data, starter, callBack_DownloadMultipleFi
         },
         onload: function (e) {
           console.log("-- Image() - SINGLE STARTED: " + localFilepath);
-          var f = Titanium.Filesystem.getFile(localFilepath);
+          var f = Titanium.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, localFilepath);
+          console.log("App data directory: " + Ti.Filesystem.applicationDataDirectory);
           console.log("file path: " + f.nativePath);
           f.write(this.responseData);
+          var contents = f.read();
           callBack_DownloadOneFileFinished({
             status: "success"
           });

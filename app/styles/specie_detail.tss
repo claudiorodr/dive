@@ -70,7 +70,17 @@
 
 }
 
-"Picker": {
+"#label": {
+		text:'Insert the abundance of the fish:',
+		font:{fontFamily: 'Raleway-Bold',
+			  fontSize:14},
+		//left:"10%",
+		top:0,
+		width:300,
+		height:'auto'
+	}
+
+"#picker": {
 	top: "20%",
 	right: "5%", 
 	selectionIndicator: true,

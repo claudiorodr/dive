@@ -78,15 +78,19 @@ function Controller() {
   { layout: "vertical", width: "30%", right: 0, height: "100%", id: "body2" });
 
   $.__views.specieDetailWin.add($.__views.body2);
+  $.__views.label = Ti.UI.createLabel(
+  { text: "Insert the abundance of the fish:", font: { fontFamily: "Raleway-Bold", fontSize: 14 }, top: 0, width: 300, height: "auto", id: "label" });
+
+  $.__views.body2.add($.__views.label);
   $.__views.picker = Ti.UI.createPicker(
   { top: "20%", right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
   $.__views.body2.add($.__views.picker);
-  var __alloyId0 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  var __alloyId7 = [];$.__views.abundance = Ti.UI.createPickerColumn(
   { id: "abundance" });
 
-  __alloyId0.push($.__views.abundance);
-  $.__views.picker.add(__alloyId0);
+  __alloyId7.push($.__views.abundance);
+  $.__views.picker.add(__alloyId7);
   $.__views.button = Ti.UI.createView(
   { bottom: 0, height: "100", id: "button" });
 
@@ -181,48 +185,48 @@ function Controller() {
 
 
   $.curiosity.add(aaa);
-
+  var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, args.img + '.png');
   var img = Ti.UI.createImageView({
     top: "15%",
     left: "0%",
     width: "100%",
     height: "70%",
-    image: "http://backend.tigerwhale.com/api/dive/image/" + args.img,
+    image: file,
     verticalAlign: 'center' });
 
 
   $.image.add(img);
 
-  for (var i = 0; i < Alloy.Globals.Names.length; i++) {
+  for (var i = 0; i < Ti.App.Properties.getList('myNmaes').length; i++) {
 
-    var name = JSON.stringify(Alloy.Globals.Names[i]);
+    var name = JSON.stringify(Ti.App.Properties.getList('myNmaes')[i]);
     var namer = name.slice(1, -1);
 
-    var science = JSON.stringify(Alloy.Globals.Scientific[i]);
+    var science = JSON.stringify(Ti.App.Properties.getList('myScientific')[i]);
     var sciencer = science.slice(1, -1);
 
-    var description = JSON.stringify(Alloy.Globals.Description[i]);
+    var description = JSON.stringify(Ti.App.Properties.getList('myDescription')[i]);
     var descriptioner = description.slice(1, -1);
 
-    var sizer = JSON.stringify(Alloy.Globals.Size[i]);
+    var size = JSON.stringify(Ti.App.Properties.getList('mySize')[i]);
+    var sizer = size.slice(1, -1);
 
-
-    var conservtion = JSON.stringify(Alloy.Globals.Conservation[i]);
+    var conservtion = JSON.stringify(Ti.App.Properties.getList('myConservation')[i]);
     var conservtioner = conservtion.slice(1, -1);
 
-    var curiosity = JSON.stringify(Alloy.Globals.Curiosity[i]);
+    var curiosity = JSON.stringify(Ti.App.Properties.getList('myCuriosity')[i]);
     var curiositier = curiosity.slice(1, -1);
 
-    var level = JSON.stringify(Alloy.Globals.Level[i]);
+    var level = JSON.stringify(Ti.App.Properties.getList('myLevel')[i]);
 
 
-    var level2 = JSON.stringify(Alloy.Globals.Level2[i]);
+    var level2 = JSON.stringify(Ti.App.Properties.getList('myLevel2')[i]);
 
 
-    var level3 = JSON.stringify(Alloy.Globals.Level3[i]);
+    var level3 = JSON.stringify(Ti.App.Properties.getList('myLevel3')[i]);
 
 
-    var level4 = JSON.stringify(Alloy.Globals.Level4[i]);
+    var level4 = JSON.stringify(Ti.App.Properties.getList('myLevel4')[i]);
 
 
     if (args.img == i + 1) {
@@ -400,102 +404,70 @@ function Controller() {
 
   function insertData() {
 
-    if (Ti.Network.online) {
-      var request = Ti.Network.createHTTPClient({
 
-        onload: function (e) {
+    var request = Ti.Network.createHTTPClient({
 
-          if (this.status == '200') {
+      onload: function (e) {
 
-            alert("all alright");
+        if (this.status == '200') {
+        }
 
+      },
 
-          }
+      onerror: function (e) {
+        Ti.App.Properties.setList('myParams', params);
+        Ti.API.debug(e.error);
+        alert('There was an error during the conexion');
+        alert(Ti.App.Properties.getList('myParams'));
+      },
 
-        },
-
-        onerror: function (e) {
-          Ti.API.debug(e.error);
-          alert('There was an error during the conexion');
-        },
-
-        timeout: 1000 });
+      timeout: 1000 });
 
 
-      request.open("POST", "http://backend.tigerwhale.com/api/survey");
+    request.open("POST", "http://backend.tigerwhale.com/api/survey");
 
-      var date = new Date();
-      var y = date.getFullYear();
-      var mo = date.getMonth() + 1;
-      var da = date.getDate();
-      var d = y + "-" + mo + "-" + da;
-      var h = date.getHours();
-      var m = date.getMinutes();
-      var s = date.getSeconds();
-      var x = h + ":" + m + ":" + s;
+    var date = new Date();
+    var y = date.getFullYear();
+    var mo = date.getMonth() + 1;
+    var da = date.getDate();
+    var d = y + "-" + mo + "-" + da;
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    var x = h + ":" + m + ":" + s;
 
-      var selectedRow = $.picker.getSelectedRow(0).title;
+    var selectedRow = $.picker.getSelectedRow(0).title;
 
-      var params = {
+    var params = {
 
+      "user_id": Ti.App.Properties.getObject('user'),
+      "creature_id": args.img,
+      "abundance_value": selectedRow,
+      "number_diver": parseInt(survey[2]),
+      "dive_time": parseInt(survey[1]),
+      "diving_spot_id": survey[0] + 1,
+      "max_depth": "1",
+      "date": d + " " + x };
 
-
-
-
-
-
-
-        "user_id": "1",
-        "creature_id": args.img,
-        "abundance_value": selectedRow,
-        "number_diver": parseInt(survey[2]),
-        "dive_time": parseInt(survey[1]),
-        "diving_spot_id": survey[0] + 1,
-        "max_depth": "1",
-        "date": d + " " + x };
-
-
-      request.send(params);
+    Ti.App.Properties.setList('myParams', params);
+    request.send(params);
 
 
 
-      params = {
-        "user_id": "",
-        "creature_id": "",
-        "abundance_value": "",
-        "number_diver": "",
-        "dive_time": "",
-        "diving_spot_id": "",
-        "max_depth": "",
-        "dive_id": "",
-        "date": "" };
+    params = {
+      "user_id": "",
+      "creature_id": "",
+      "abundance_value": "",
+      "number_diver": "",
+      "dive_time": "",
+      "diving_spot_id": "",
+      "max_depth": "",
+      "dive_id": "",
+      "date": "" };
 
 
-    } else
-    {
-      var params = {
+  }
 
-
-
-
-
-
-
-
-        "user_id": "1",
-        "creature_id": "2",
-        "abundance_value": "ola",
-        "number_diver": "12",
-        "dive_time": "12",
-        "diving_spot_id": "1",
-        "max_depth": "1" };
-
-
-      Ti.App.Properties.setList('params', params);
-      Ti.App.Properties.getList('params');
-    }
-
-  };
 
   function openMore() {
 
@@ -518,12 +490,10 @@ function Controller() {
     survey = Alloy.Globals.Species.slice(0, 3);
     for (i = 3; i < Alloy.Globals.Species.length; i += 2) {
       specie = Alloy.Globals.Species.slice(i, i + 2);
-      console.log(specie);
+
 
     }
 
-    console.log(survey);
-    console.log(Alloy.Globals.Species);
     insertData();
 
 
