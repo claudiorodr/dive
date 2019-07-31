@@ -303,9 +303,9 @@ function insertData() {
 
         onerror: function(e) {
         	Ti.App.Properties.setList('myParams',params);
-            Ti.API.debug(e.error);
-            alert('There was an error during the conexion');
-                    	alert(Ti.App.Properties.getList('myParams'));
+            //Ti.API.debug(e.error);
+            //alert('There was an error during the conexion');
+            //alert(Ti.App.Properties.getList('myParams'));
         },
         
         timeout: 1000,
@@ -326,7 +326,6 @@ function insertData() {
   var selectedRow = $.picker.getSelectedRow(0).title;
   
     var params = ({    	
-
 	"user_id": Ti.App.Properties.getObject('user'), //Ti.App.Properties.getObject('user').id,
     "creature_id": args.img,
     "abundance_value": selectedRow, //Alloy.Globals.Species[4].match(/\d/g).join(""),
@@ -337,7 +336,7 @@ function insertData() {
     "date": d + " "+ x
     });
    Ti.App.Properties.setList('myParams',params);
-    request.send(params);
+   request.send(params);
   
 	//Clean of parameteres
   

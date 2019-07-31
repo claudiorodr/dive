@@ -86,11 +86,11 @@ function Controller() {
   { top: "20%", right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
   $.__views.body2.add($.__views.picker);
-  var __alloyId7 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  var __alloyId8 = [];$.__views.abundance = Ti.UI.createPickerColumn(
   { id: "abundance" });
 
-  __alloyId7.push($.__views.abundance);
-  $.__views.picker.add(__alloyId7);
+  __alloyId8.push($.__views.abundance);
+  $.__views.picker.add(__alloyId8);
   $.__views.button = Ti.UI.createView(
   { bottom: 0, height: "100", id: "button" });
 
@@ -416,9 +416,9 @@ function Controller() {
 
       onerror: function (e) {
         Ti.App.Properties.setList('myParams', params);
-        Ti.API.debug(e.error);
-        alert('There was an error during the conexion');
-        alert(Ti.App.Properties.getList('myParams'));
+
+
+
       },
 
       timeout: 1000 });
@@ -439,7 +439,6 @@ function Controller() {
     var selectedRow = $.picker.getSelectedRow(0).title;
 
     var params = {
-
       "user_id": Ti.App.Properties.getObject('user'),
       "creature_id": args.img,
       "abundance_value": selectedRow,

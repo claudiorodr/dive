@@ -10,6 +10,7 @@ getTodoList3();
  
 function getTodoList() { 
 	//function to use HTTP to connect to a web server and transfer the data. 
+
 	var sendit = Ti.Network.createHTTPClient({
 		onerror: function (e) {
 			for (var i = 0; i < Ti.App.Properties.getList('mySites').length; i++) {
@@ -18,7 +19,7 @@ function getTodoList() {
 			//Slicing the values for cleaner look
 			var spotter = spot.slice(1,-1);
 			var row = Ti.UI.createPickerRow({
-				title: spotter,
+				title: spotter, 
 				myId : i
 			});
 
@@ -32,7 +33,6 @@ function getTodoList() {
 
 	sendit.open("GET", "http://backend.tigerwhale.com/api/diving-spot");  
 	sendit.send(); 
-
 
 	//Function to be called upon a successful response 
 	sendit.onload = function () { 

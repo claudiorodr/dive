@@ -90,23 +90,15 @@ function Controller() {
   _.extend($, $.__views);
 
 
-
-
   Ti.App.Properties.setString("serverUrl", "http://backend.tigerwhale.com/");
 
 
   $.login.open();
 
 
-
-
-
-
-
-
   console.log('starting');
 
-  if (Ti.App.Properties.hasProperty("user")) {
+  if (!Ti.App.Properties.hasProperty("user")) {
 
     var inst = require('install');
     inst.getToDo();

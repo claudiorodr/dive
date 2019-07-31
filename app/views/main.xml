@@ -3,6 +3,6 @@
 		<!--ActionBar id  = "actionBar" /-->
 		<Require src="survey"/>
 		<Require src="sites"/> 
-		<Require src="gallery"/>
+		<Require src="profile"/>
 	</TabGroup>
 </Alloy>

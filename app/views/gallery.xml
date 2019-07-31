@@ -1,9 +1,0 @@
-<Alloy>
-	<Tab id="galleryTab" title="Gallery">
-		<Window id="gallery" title="Gallery">
-			<TableView id="galleryTable" onClick="select">
-			
-			</TableView>
-		</Window>
-	</Tab>
-</Alloy>

@@ -16,7 +16,7 @@ function __processArg(obj, key) {
 function Controller() {
 
   require('/alloy/controllers/' + 'BaseController').apply(this, Array.prototype.slice.call(arguments));
-  this.__controllerPath = 'register';
+  this.__controllerPath = 'profile';
   this.args = arguments[0] || {};
 
   if (arguments[0]) {
@@ -37,7 +37,6 @@ function Controller() {
   $.__views.register = Ti.UI.createWindow(
   { backgroundColor: "white", navBarHidden: true, tabBarHidden: true, fullscreen: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "register" });
 
-  $.__views.register && $.addTopLevelView($.__views.register);
   $.__views.indexContainer = Ti.UI.createView(
   { id: "indexContainer" });
 
@@ -94,11 +93,11 @@ function Controller() {
   { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.country);
-  var __alloyId5 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { top: 10, left: "9%", width: "30%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, pullBackgroundColor: "#ffffff", id: "column1" });
 
-  __alloyId5.push($.__views.column1);
-  $.__views.country.add(__alloyId5);
+  __alloyId0.push($.__views.column1);
+  $.__views.country.add(__alloyId0);
   $.__views.birthday = Ti.UI.createPicker(
   { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 20 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 90, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, dateTimeColor: "#0099ff", format24: false, calendarViewShown: false, id: "birthday", type: Ti.UI.PICKER_TYPE_DATE });
 
@@ -135,6 +134,10 @@ function Controller() {
   { left: "9%", width: "75%", height: 50, id: "linkContainer" });
 
   $.__views.scrollView.add($.__views.linkContainer);
+  $.__views.surveyTab = Ti.UI.createTab(
+  { window: $.__views.register, id: "surveyTab", title: "Profile", titleColor: "white" });
+
+  $.__views.surveyTab && $.addTopLevelView($.__views.surveyTab);
   exports.destroy = function () {};
 
 
@@ -145,12 +148,6 @@ function Controller() {
 
 
   var args = $.args;
-
-
-
-
-
-
 
 
 
@@ -282,6 +279,7 @@ function Controller() {
 
 
 
+  var args = $.args;
 
 
 

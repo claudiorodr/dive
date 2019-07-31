@@ -123,10 +123,7 @@
 	width : 204,
 	font: {
 		fontFamily: 'Raleway-Bold', fontSize: 16
-	}
-	,
-	//color: "#000080",
-	//backgroundColor: "#AAAAAA", 
+	},
 	selectionIndicator: true,
 	borderColor : "black"
 }

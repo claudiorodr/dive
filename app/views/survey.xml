@@ -1,5 +1,5 @@
 <Alloy>
-    <Tab id="surveyTab" title="Survey" titleColor="white" activeIcon="/dive/app/assets/android/118761.png">
+    <Tab id="surveyTab" title="Survey" titleColor="white">
         <Window id="surveyWin" title="Survey">
             <!--Label id="surveyTitle">Survey</Label-->
             <View id="header">
