@@ -93,11 +93,11 @@ function Controller() {
   { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.country);
-  var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId4 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { top: 10, left: "9%", width: "30%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, pullBackgroundColor: "#ffffff", id: "column1" });
 
-  __alloyId0.push($.__views.column1);
-  $.__views.country.add(__alloyId0);
+  __alloyId4.push($.__views.column1);
+  $.__views.country.add(__alloyId4);
   $.__views.birthday = Ti.UI.createPicker(
   { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 20 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 90, keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL, returnKeyType: Titanium.UI.RETURNKEY_NEXT, dateTimeColor: "#0099ff", format24: false, calendarViewShown: false, id: "birthday", type: Ti.UI.PICKER_TYPE_DATE });
 

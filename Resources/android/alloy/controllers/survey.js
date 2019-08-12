@@ -50,46 +50,38 @@ function Controller() {
 
   $.__views.header.add($.__views.create);
   $.__views.body = Ti.UI.createView(
-  { backgroundColor: "#f8f8f8", width: "60%", height: "100%", right: 0, id: "body" });
+  { backgroundColor: "#f8f8f8", width: "50%", height: "100%", right: 0, id: "body" });
 
   $.__views.surveyWin.add($.__views.body);
   $.__views.up = Ti.UI.createView(
-  { backgroundColor: "#f8f8f8", width: "100", height: "33.33%", top: 0, left: 0, id: "up" });
+  { backgroundColor: "#f8f8f8", width: "100%", height: "50%", top: 0, left: 0, id: "up" });
 
   $.__views.body.add($.__views.up);
-  $.__views.mid = Ti.UI.createView(
-  { backgroundColor: "#f8f8f8", width: "100%", height: "33.33%", top: "33%", left: 0, id: "mid" });
-
-  $.__views.body.add($.__views.mid);
   $.__views.label1 = Ti.UI.createLabel(
-  { color: "#8a9093", shadowColor: "#aaa", text: "Please, insert the following information about your dive:", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "0%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label1" });
+  { color: "#8a9093", shadowColor: "#aaa", text: "Please, insert the following information about your dive:", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "20%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label1" });
 
-  $.__views.mid.add($.__views.label1);
+  $.__views.up.add($.__views.label1);
   $.__views.label2 = Ti.UI.createLabel(
-  { color: "#8a9093", shadowColor: "#aaa", text: "Diving Spot", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "33%", left: "9%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label2" });
+  { color: "#8a9093", shadowColor: "#aaa", text: "Diving Spot", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "30%", left: "9%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label2" });
 
-  $.__views.mid.add($.__views.label2);
-  $.__views.label3 = Ti.UI.createLabel(
-  { color: "#8a9093", shadowColor: "#aaa", text: "Duration", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "33%", left: "42%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label3" });
-
-  $.__views.mid.add($.__views.label3);
-  $.__views.label4 = Ti.UI.createLabel(
-  { color: "#8a9093", shadowColor: "#aaa", text: "Number of Divers", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "33%", left: "66%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label4" });
-
-  $.__views.mid.add($.__views.label4);
+  $.__views.up.add($.__views.label2);
   $.__views.picker = Ti.UI.createPicker(
-  { left: "9%", width: 204, font: { fontFamily: "Raleway-Bold", fontSize: 16 }, selectionIndicator: true, borderColor: "black", id: "picker", useSpinner: false });
+  { top: "35%", left: "9%", width: "55%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "white", title: "START SURVEY", backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "picker", selectionIndicator: true, useSpinner: false });
 
-  $.__views.mid.add($.__views.picker);
+  $.__views.up.add($.__views.picker);
   var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { font: { fontFamily: "Raleway-Regular", fontSize: 28 }, color: "#000080", id: "column1", width: "30%" });
 
   __alloyId0.push($.__views.column1);
   $.__views.picker.add(__alloyId0);
-  $.__views.picker2 = Ti.UI.createPicker(
-  { left: "42%", width: 150, font: { fontFamily: "Raleway-Bold", fontSize: 16 }, selectionIndicator: true, borderColor: "black", id: "picker2", useSpinner: false });
+  $.__views.label3 = Ti.UI.createLabel(
+  { color: "#8a9093", shadowColor: "#aaa", text: "Duration", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "50%", left: "9%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label3" });
 
-  $.__views.mid.add($.__views.picker2);
+  $.__views.up.add($.__views.label3);
+  $.__views.picker2 = Ti.UI.createPicker(
+  { top: "55%", left: "9%", width: "55%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "white", title: "START SURVEY", backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "picker2", selectionIndicator: true, useSpinner: false });
+
+  $.__views.up.add($.__views.picker2);
   var __alloyId1 = [];$.__views.column2 = Ti.UI.createPickerColumn(
   { font: { fontFamily: "Raleway-Bold", fontSize: 28 }, color: "#000080", id: "column2", width: "30%" });
 
@@ -143,10 +135,14 @@ function Controller() {
 
   $.__views.column2.addRow($.__views.__alloyId13);
   $.__views.picker2.add(__alloyId1);
-  $.__views.picker3 = Ti.UI.createPicker(
-  { left: "66.2%", width: "auto", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, color: "#000080", selectionIndicator: true, borderColor: "black", id: "picker3", useSpinner: false });
+  $.__views.label4 = Ti.UI.createLabel(
+  { color: "#8a9093", shadowColor: "#aaa", text: "Number of Divers", textAlign: "Ti.UI.TEXT_ALIGNMENT_CENTER", top: "70%", left: "9%", font: { fontFamily: "Raleway-Bold", fontSize: 16 }, id: "label4" });
 
-  $.__views.mid.add($.__views.picker3);
+  $.__views.up.add($.__views.label4);
+  $.__views.picker3 = Ti.UI.createPicker(
+  { top: "75%", left: "9%", width: "55%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "white", title: "START SURVEY", backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "picker3", selectionIndicator: true, useSpinner: false });
+
+  $.__views.up.add($.__views.picker3);
   var __alloyId14 = [];$.__views.column3 = Ti.UI.createPickerColumn(
   { font: { fontFamily: "Raleway-Light", fontSize: 28 }, color: "#000080", id: "column3", width: "30%" });
 
@@ -228,12 +224,16 @@ function Controller() {
 
   $.__views.column3.addRow($.__views.__alloyId33);
   $.__views.picker3.add(__alloyId14);
+  $.__views.mid = Ti.UI.createView(
+  { id: "mid" });
+
+  $.__views.body.add($.__views.mid);
   $.__views.down = Ti.UI.createView(
   { backgroundColor: "#f8f8f8", width: "100%", height: "33.33%", bottom: 0, left: 0, id: "down" });
 
   $.__views.body.add($.__views.down);
   $.__views.speciesBtn = Ti.UI.createButton(
-  { top: 0, width: "55%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "white", title: "START SURVEY", backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "speciesBtn" });
+  { top: 0, width: "55%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 24 }, color: "black", title: "START SURVEY", backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, height: 50, id: "speciesBtn" });
 
   $.__views.down.add($.__views.speciesBtn);
   openSpecies ? $.addListener($.__views.speciesBtn, 'click', openSpecies) : __defers['$.__views.speciesBtn!click!openSpecies'] = true;$.__views.surveyTab = Ti.UI.createTab(

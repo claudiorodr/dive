@@ -98,7 +98,7 @@ function Controller() {
 
   console.log('starting');
 
-  if (!Ti.App.Properties.hasProperty("user")) {
+  if (Ti.App.Properties.hasProperty("user")) {
 
     var inst = require('install');
     inst.getToDo();

@@ -65,7 +65,7 @@ for (var i = 1; i < 19; i++) {
 		        text: Alloy.Globals.Names[i-1],
 		        font: {
 		            fontFamily: 'Raleway-Bold',
-		            fontSize: 18
+		            fontSize: 20
 		        },
 		        color: "#FFFFFF"
 		    }); 

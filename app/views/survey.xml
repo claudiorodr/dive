@@ -9,16 +9,14 @@
             </View>
             <View id="body">
                 <View id="up">
-                </View>
-                <View id="mid">
-                	<Label id="label1" />
-                    <Label id="label2" />
-                    <Label id="label3" />
-                    <Label id="label4" />
-                    <Picker id="picker" selectionIndicator="true" useSpinner="false">
+                <Label id="label1" />
+                <Label id="label2" />
+                                    <Picker id="picker" selectionIndicator="true" useSpinner="false">
                         <PickerColumn id="column1" width="30%"></PickerColumn>
                     </Picker>
-                    <Picker id="picker2" selectionIndicator="true" useSpinner="false">
+                    
+                                        <Label id="label3" />
+                                                            <Picker id="picker2" selectionIndicator="true" useSpinner="false">
                         <PickerColumn id="column2" width="30%">
                             <PickerRow title="10 minutes" />
                             <PickerRow title="20 minutes" />
@@ -34,6 +32,8 @@
                             <PickerRow title="120 minutes" />
                         </PickerColumn>
                     </Picker>
+                     <Label id="label4" />
+
                     <Picker id="picker3" selectionIndicator="true" useSpinner="false">
                         <PickerColumn id="column3" width="30%">
                             <PickerRow title="2 divers" />
@@ -57,6 +57,12 @@
                             <PickerRow title="20 divers" />
                         </PickerColumn>
                     </Picker>
+                </View>
+                <View id="mid">
+
+
+
+                   
                 </View>
                 <View id="down">
                     <Button id="speciesBtn" onClick="openSpecies"></Button>
