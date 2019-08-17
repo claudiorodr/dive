@@ -117,7 +117,7 @@ function Controller() {
       text: Alloy.Globals.Names[i - 1],
       font: {
         fontFamily: 'Raleway-Bold',
-        fontSize: 20 },
+        fontSize: 24 },
 
       color: "#FFFFFF" });
 

@@ -66,6 +66,7 @@ font : {
 	fontSize : 16
 },
 color : "#0099ff",
+editable : false,
 hintTextColor : "gray",
 backgroundColor : "#EEEEEE",
 borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
@@ -78,24 +79,7 @@ borderColor : "#0099ff",
 }
 
 "#email" : {
-top : "40%",
-left : "5%",
-width : "70%",
-textAlign : "center",
-font : {
-	fontFamily : 'Raleway-Light',
-	fontSize : 16
-},
-color : "#0099ff",
-hintText : L('email_hintText', "EMAIL"),
-hintTextColor : "gray",
-backgroundColor : "#EEEEEE",
-borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-borderColor : "#0099ff",
-	borderRadius : 0,
-	height : 50,
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
-	returnKeyType : Titanium.UI.RETURNKEY_NEXT
+hintText : L('email_hintText', "FIRST NAME"),
 }
 "#pass" : {
 left : "5%",
@@ -134,24 +118,7 @@ borderColor : "#EEEEEE",
 	borderRadius : 6,
 	height : 50,
 }	
-	/*"#sign_in" : {
-		top : "75%",
-		width : "30%",
-		textAlign : "center",
-		font : {
-			fontFamily : 'Raleway-Light',
-			fontSize : 24
-		},
-		color : "white",
-		title : "SIGN up",
-		backgroundColor : "#0099ff",
-		borderColor : "#EEEEEE",
-		borderRadius : 0,
-		height : 50,
-	}
-					"#email" : {
-	hintText : L('email_hintText', "EMAIL"),
-}*/
+
 "#password" : {
 passwordMask : true,
 hintText : L('pass_hintText', "PASSWORD"),

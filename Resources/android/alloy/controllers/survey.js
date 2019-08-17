@@ -439,6 +439,17 @@ function Controller() {
     Ti.App.Properties.setList('mySpecies', Alloy.Globals.Species);
   }
 
+  function openMain() {
+    var main = Alloy.createController('main').getView();
+    main.open();
+    main = null;
+
+  }
+
+  $.surveyWin.addEventListener('androidback', function (e) {
+    openMain();
+  });
+
 
 
 

@@ -6,7 +6,7 @@ $.login.open();
 //Ge new link of this
 console.log('starting');
 // user exists
-if (Ti.App.Properties.hasProperty("user")) {
+if (!Ti.App.Properties.hasProperty("user")) {
 
     var inst = require('install'); //Creating the local database
     inst.getToDo(); //, callBack_DownloadOneFileFinished);
