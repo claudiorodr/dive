@@ -1,14 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-/*
-var birthday = Ti.UI.createPicker({
-     type : Ti.UI.PICKER_TYPE_DATE, 
-     minDate : new Date(1900, 0, 1), //1990 Jan 1
-     maxDate : new Date(), // Current Date
-     value : new Date(),
- });*/
-
 	$.birthday.value = new Date();
 	$.birthday.maxDate = new Date();
 
@@ -47,7 +39,7 @@ sendit.onload = function() {
                 fontFamily: 'Smoolthan-Bold',
                 fontSize: 16
             },
-            color: "#000080",
+            color: "#0099ff",
             hintText: L('email_hintText', "COUNTRY"),
             hintTextColor: "gray",
             backgroundColor: "#EEEEEE",

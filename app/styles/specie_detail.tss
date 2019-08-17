@@ -18,7 +18,7 @@
 
 "#body" : {
 	layout : "vertical",
-	width : "25%",
+	width : "50%",
 	left : "50%",
 	height : "100%"
 	
@@ -32,56 +32,53 @@
 }
 
 "#common" : {
-	top : "15%",
-	height : "70"
+	layout : "vertical",
+	top : "5%",
+	height : Titanium.UI.SIZE
 }
 
 "#science" : {
-	//top : "15%",
-	height : "70"
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
 
 "#conserv" : {
-	//top : "15%",
-	height : "70"
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
 
 "#size" : {
-	//top : "15%",
-	height : "70"
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
 
 "#curiosity" : {
-	//top : "15%",
-	height : "70"
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
 
 "#description" : {
-	//top : "30%",
-	height : "auto"
-}
-
-"#body2" : {
 	layout : "vertical",
-	width : "30%",
-	right : 0,
-	height : "100%"
-	
-
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
+
 
 "#label": {
 		text:'Insert the abundance of the fish:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
 		//left:"10%",
-		top:0,
+		top:"5%",
 		width:300,
-		height:'auto'
+		height:Titanium.UI.SIZE,
 	}
 
 "#picker": {
-	top: "20%",
 	right: "5%", 
 	selectionIndicator: true,
 	font : {
@@ -95,7 +92,6 @@
 	}
 	,
 	title: "Add specie",
-	bottom: "15%", 
 	width: "70%",
 	color : "white",
 	height: 40,
@@ -112,7 +108,6 @@
 	}
 	,
 	title: "End survey",
-	bottom: "0%", 
 	width: "70%",
 	color : "white",
 	height: 40,

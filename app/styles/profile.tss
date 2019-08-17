@@ -56,173 +56,40 @@ top : 20
 // top : 0
 // right :
 }
-".input" : {
-top : 10,
-left : "9%",
-width : "70%",
-textAlign : "center",
-font : {
-	fontFamily : 'Raleway-Light',
-	fontSize : 16
-},
-color : "#0099ff",
-editable : false,
-hintTextColor : "gray",
-backgroundColor : "#EEEEEE",
-borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-borderColor : "#0099ff",
-	borderRadius : 6,
-	height : 50,
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
-	returnKeyType : Titanium.UI.RETURNKEY_NEXT
-	
+
+
+"#common" : {
+	layout : "vertical",
+	top : "5%",
+	height : Titanium.UI.SIZE
 }
 
-"#email" : {
-hintText : L('email_hintText', "FIRST NAME"),
-}
-"#pass" : {
-left : "5%",
-width : "70%",
-textAlign : "center",
-passwordMask : true,
-font : {
-	fontFamily : 'Raleway-Light',
-	fontSize : 16
-},
-color : "#0099ff",
-hintText : L('pass_hintText', "PASSWORD"),
-hintTextColor : "gray",
-backgroundColor : "#EEEEEE",
-borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,  //iOS only
-borderRadius : 0,
-borderColor : "#0099ff",
-	borderWidth : 1,
-	height : 50,
-	returnKeyType : Titanium.UI.RETURNKEY_DONE
+"#science" : {
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
 
-"#log_in" : {
-left : "5%",
-top : 0,
-width : "70%",
-textAlign : "center",
-font : {
-	fontFamily : 'Raleway-Light',
-	fontSize : 24
-},
-color : "white",
-title : "SIGN IN",
-backgroundColor : "#0099ff",
-borderColor : "#EEEEEE",
-	borderRadius : 6,
-	height : 50,
-}	
+"#conserv" : {
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
+}
 
-"#password" : {
-passwordMask : true,
-hintText : L('pass_hintText', "PASSWORD"),
+"#size" : {
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
-"#pass_confirm" : {
-passwordMask : true,
-hintText : L('pass_hintText', "CONFIRM PASSWORD"),
-}
-"#first_name" : {
-hintText : L('email_hintText', "FIRST NAME"),
-}
-"#last_name" : {
-hintText : L('email_hintText', "LAST NAME"),
-}
-"#phone" : {
-hintText : L('email_hintText', "PHONE"),
-	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD
-}
-"#country" : {
-//hintText : L('email_hintText', "COUNTRY"),
-accessibilityValue  : "Country",
-color : "#ffffff",
-pullBackgroundColor : "#ffffff"
-	
-}
-"#column1" : {
-//hintText : L('email_hintText', "COUNTRY"),
-//backgroundColor : "#f8f8f8",
-//accessibilityHint : "Country",
-color : "#ffffff",
-pullBackgroundColor : "#ffffff"
-	
-}		
-"#gender" : {
-hintText : L('email_hintText', "GENDER"),
-}
-"#birthday" : {
-font : {
-	fontSize : 20 
-}, 
-height : 90,
-width : "70%",
-dateTimeColor : "#0099ff"
-}				
 
-"#sign_up" : {
-left : "9%",
-bottom : 0,
-width : "70%",
-textAlign : "center",
-font : {
-	fontFamily : 'Raleway-Light',
-	fontSize : 24
-},
-color : "white",
-title : "SIGN UP",
-backgroundColor : "#0099ff",
-borderColor : "#EEEEEE",
-	borderRadius : 6,
-	height : 50,
+"#curiosity" : {
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }
-"#agreeContainer" : { 
-left : "9%",
-width : "75%",
-	height : 50,
-}
-"#linkContainer" : { 
-left : "9%",
-width : "75%",
-	height : 50,
-}
-"#agree" : {
-top : "25%",
-width : "40%",
-//left : 0,
-textAlign : "center",
-font : {
-	fontFamily : 'Raleway-Light',
-		fontSize : 14
-	},
-color : "#0099ff",
-text : L('privacy_text', "I agree with terms and conditions:")
-}
-"#terms" : {
-top : "0%",
-right : 0,
-width : "40%",
-textAlign : "center",
-font : {
-	fontFamily : 'Raleway-Light',
-		fontSize : 12
-	},
-color : "#0099ff",
-text : L('privacy_terms', "TERMS OF USE")
-}
-"#privacy" : {
-top : "0%",
-left : 0,
-width : "40%", 
-textAlign : "center", 
-font : {
-	fontFamily : 'Raleway-Light',
-		fontSize : 12
-	},
-color : "#0099ff",
-text : L('privacy_privacy', "PRIVACY POLICY")
+
+"#description" : {
+	layout : "vertical",
+	height : Titanium.UI.SIZE,
+	top : "1%"
 }

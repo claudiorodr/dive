@@ -47,60 +47,60 @@ function Controller() {
 
   $.__views.header.add($.__views.image);
   $.__views.body = Ti.UI.createView(
-  { layout: "vertical", width: "25%", left: "50%", height: "100%", id: "body" });
+  { layout: "vertical", width: "50%", left: "50%", height: "100%", id: "body" });
 
   $.__views.specieDetailWin.add($.__views.body);
+  $.__views.scrollView = Ti.UI.createScrollView(
+  { id: "scrollView", showVerticalScrollIndicator: true, showHorizontalScrollIndicator: true, layout: "vertical" });
+
+  $.__views.body.add($.__views.scrollView);
   $.__views.common = Ti.UI.createView(
-  { top: "15%", height: "70", id: "common" });
+  { layout: "vertical", top: "5%", height: Titanium.UI.SIZE, id: "common" });
 
-  $.__views.body.add($.__views.common);
+  $.__views.scrollView.add($.__views.common);
   $.__views.science = Ti.UI.createView(
-  { height: "70", id: "science" });
+  { layout: "vertical", height: Titanium.UI.SIZE, top: "1%", id: "science" });
 
-  $.__views.body.add($.__views.science);
+  $.__views.scrollView.add($.__views.science);
   $.__views.conserv = Ti.UI.createView(
-  { height: "70", id: "conserv" });
+  { layout: "vertical", height: Titanium.UI.SIZE, top: "1%", id: "conserv" });
 
-  $.__views.body.add($.__views.conserv);
+  $.__views.scrollView.add($.__views.conserv);
   $.__views.size = Ti.UI.createView(
-  { height: "70", id: "size" });
+  { layout: "vertical", height: Titanium.UI.SIZE, top: "1%", id: "size" });
 
-  $.__views.body.add($.__views.size);
+  $.__views.scrollView.add($.__views.size);
   $.__views.description = Ti.UI.createView(
-  { height: "auto", id: "description" });
+  { layout: "vertical", height: Titanium.UI.SIZE, top: "1%", id: "description" });
 
-  $.__views.body.add($.__views.description);
+  $.__views.scrollView.add($.__views.description);
   $.__views.curiosity = Ti.UI.createView(
-  { height: "70", id: "curiosity" });
+  { layout: "vertical", height: Titanium.UI.SIZE, top: "1%", id: "curiosity" });
 
-  $.__views.body.add($.__views.curiosity);
-  $.__views.body2 = Ti.UI.createView(
-  { layout: "vertical", width: "30%", right: 0, height: "100%", id: "body2" });
-
-  $.__views.specieDetailWin.add($.__views.body2);
+  $.__views.scrollView.add($.__views.curiosity);
   $.__views.label = Ti.UI.createLabel(
-  { text: "Insert the abundance of the fish:", font: { fontFamily: "Raleway-Bold", fontSize: 14 }, top: 0, width: 300, height: "auto", id: "label" });
+  { text: "Insert the abundance of the fish:", font: { fontFamily: "Raleway-Bold", fontSize: 14 }, top: "5%", width: 300, height: Titanium.UI.SIZE, id: "label" });
 
-  $.__views.body2.add($.__views.label);
+  $.__views.scrollView.add($.__views.label);
   $.__views.picker = Ti.UI.createPicker(
-  { top: "20%", right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
+  { right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
-  $.__views.body2.add($.__views.picker);
-  var __alloyId8 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  $.__views.scrollView.add($.__views.picker);
+  var __alloyId12 = [];$.__views.abundance = Ti.UI.createPickerColumn(
   { id: "abundance" });
 
-  __alloyId8.push($.__views.abundance);
-  $.__views.picker.add(__alloyId8);
+  __alloyId12.push($.__views.abundance);
+  $.__views.picker.add(__alloyId12);
   $.__views.button = Ti.UI.createView(
   { bottom: 0, height: "100", id: "button" });
 
-  $.__views.body2.add($.__views.button);
+  $.__views.scrollView.add($.__views.button);
   $.__views.moreBtn = Ti.UI.createButton(
-  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", bottom: "15%", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, top: 0, id: "moreBtn" });
+  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, top: 0, id: "moreBtn" });
 
   $.__views.button.add($.__views.moreBtn);
   openMore ? $.addListener($.__views.moreBtn, 'click', openMore) : __defers['$.__views.moreBtn!click!openMore'] = true;$.__views.endBtn = Ti.UI.createButton(
-  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", bottom: 0, width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, id: "endBtn" });
+  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, bottom: 0, id: "endBtn" });
 
   $.__views.button.add($.__views.endBtn);
   openMain ? $.addListener($.__views.endBtn, 'click', openMain) : __defers['$.__views.endBtn!click!openMain'] = true;exports.destroy = function () {};
@@ -187,10 +187,10 @@ function Controller() {
   $.curiosity.add(aaa);
   var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, args.img + '.png');
   var img = Ti.UI.createImageView({
-    top: "15%",
-    left: "0%",
-    width: "100%",
-    height: "70%",
+    top: "0%",
+    left: "-10%",
+    width: "120%",
+    height: "100%",
     image: file,
     verticalAlign: 'center' });
 
@@ -231,133 +231,127 @@ function Controller() {
 
     if (args.img == i + 1) {
 
-      var ta1 = Titanium.UI.createTextArea({
-        value: namer,
-        height: 35,
-        width: "auto",
-        left: "10%",
-        top: 20,
+      var ta1 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
         font: {
-          fontSize: 14,
-          fontFamily: 'Raleway-Bold' },
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
 
-
-        color: '#888',
-        textAlign: 'left',
-        borderWidth: 2,
-        borderColor: '#bbb',
-        borderRadius: 5,
-        suppressReturn: false,
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: 'auto',
+        hintText: namer,
         editable: false });
 
 
       $.common.add(ta1);
 
-      var ta2 = Titanium.UI.createTextArea({
-        value: sciencer,
-        height: 35,
-        width: 'auto',
-        left: "10%",
-        top: 20,
+      var ta2 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
         font: {
-          fontSize: 14,
-          fontFamily: 'Raleway-Bold' },
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
 
-
-        color: '#888',
-        textAlign: 'left',
-        borderWidth: 2,
-        borderColor: '#bbb',
-        borderRadius: 5,
-        suppressReturn: false,
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: 'auto',
+        hintText: sciencer,
         editable: false });
 
 
       $.science.add(ta2);
 
-      var ta3 = Titanium.UI.createTextArea({
-        value: descriptioner,
-        height: "auto",
-        width: 'auto',
-        left: "10%",
-        top: 20,
+      var ta3 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
         font: {
-          fontSize: 14,
-          fontFamily: 'Raleway-Bold' },
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
 
-
-        color: '#888',
-        textAlign: 'left',
-        borderWidth: 2,
-        borderColor: '#bbb',
-        borderRadius: 5,
-        suppressReturn: false,
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: 'auto',
+        hintText: descriptioner,
         editable: false });
 
 
       $.description.add(ta3);
 
-      var ta4 = Titanium.UI.createTextArea({
-        value: sizer,
-        height: 'auto',
-        width: 150,
-        left: "10%",
-        top: 20,
+      var ta4 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
         font: {
-          fontSize: 14,
-          fontFamily: 'Raleway-Bold' },
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
 
-
-        color: '#888',
-        textAlign: 'left',
-        borderWidth: 2,
-        borderColor: '#bbb',
-        borderRadius: 5,
-        suppressReturn: false,
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: 'auto',
+        hintText: sizer,
         editable: false });
 
 
       $.conserv.add(ta4);
 
-      var ta5 = Titanium.UI.createTextArea({
-        value: conservtioner,
-        height: 'auto',
-        width: 150,
-        left: "10%",
-        top: 20,
+      var ta5 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
         font: {
-          fontSize: 14,
-          fontFamily: 'Raleway-Bold' },
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
 
-
-        color: '#888',
-        textAlign: 'left',
-        borderWidth: 2,
-        borderColor: '#bbb',
-        borderRadius: 5,
-        suppressReturn: false,
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: 'auto',
+        hintText: conservtioner,
         editable: false });
 
 
       $.size.add(ta5);
 
-      var ta6 = Titanium.UI.createTextArea({
-        value: curiositier,
-        height: 'auto',
-        width: 150,
-        left: "10%",
-        top: 20,
+      var ta6 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
         font: {
-          fontSize: 14,
-          fontFamily: 'Raleway-Bold' },
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
 
-
-        color: '#888',
-        textAlign: 'left',
-        borderWidth: 2,
-        borderColor: '#bbb',
-        borderRadius: 5,
-        suppressReturn: false,
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: 'auto',
+        hintText: curiositier,
         editable: false });
 
 

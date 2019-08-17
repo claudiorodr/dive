@@ -63,40 +63,69 @@ function Controller() {
 
   $.__views.body.add($.__views.scrollView);
   $.__views.email = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, passwordMask: true, hintText: L('pass_hintText', "EMAIL"), id: "email" });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "EMAIL"), id: "email" });
 
   $.__views.scrollView.add($.__views.email);
   $.__views.password = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('pass_hintText', "PASSWORD"), id: "password" });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, passwordMask: true, hintText: L('pass_hintText', "PASSWORD"), id: "password" });
 
   $.__views.scrollView.add($.__views.password);
   $.__views.first_name = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "FIRST NAME"), id: "first_name" });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "FIRST NAME"), id: "first_name" });
 
   $.__views.scrollView.add($.__views.first_name);
   $.__views.last_name = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "LAST NAME"), id: "last_name" });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "LAST NAME"), id: "last_name" });
 
   $.__views.scrollView.add($.__views.last_name);
   $.__views.phone = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "PHONE"), id: "phone", type: "TI.UI.KEYBOARD_NUMBER_PAD" });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "PHONE"), id: "phone", type: "TI.UI.KEYBOARD_NUMBER_PAD" });
 
   $.__views.scrollView.add($.__views.phone);
-  $.__views.gender = Ti.UI.createTextField(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "GENDER"), id: "gender" });
+  $.__views.genderl = Ti.UI.createLabel(
+  { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Gender:"), id: "genderl" });
+
+  $.__views.scrollView.add($.__views.genderl);
+  $.__views.gender = Ti.UI.createPicker(
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "GENDER"), id: "gender", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.gender);
-  $.__views.country = Ti.UI.createPicker(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
-
-  $.__views.scrollView.add($.__views.country);
   var __alloyId5 = [];$.__views.column1 = Ti.UI.createPickerColumn(
-  { top: 10, left: "9%", width: "30%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, pullBackgroundColor: "#ffffff", id: "column1" });
+  { color: "#ffffff", pullBackgroundColor: "#ffffff", id: "column1", width: "30%" });
 
   __alloyId5.push($.__views.column1);
-  $.__views.country.add(__alloyId5);
+  $.__views.__alloyId6 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "", id: "__alloyId6" });
+
+  $.__views.column1.addRow($.__views.__alloyId6);
+  $.__views.__alloyId7 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "Masculine", id: "__alloyId7" });
+
+  $.__views.column1.addRow($.__views.__alloyId7);
+  $.__views.__alloyId8 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "Feminine", id: "__alloyId8" });
+
+  $.__views.column1.addRow($.__views.__alloyId8);
+  $.__views.gender.add(__alloyId5);
+  $.__views.countryl = Ti.UI.createLabel(
+  { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Country:"), id: "countryl" });
+
+  $.__views.scrollView.add($.__views.countryl);
+  $.__views.country = Ti.UI.createPicker(
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
+
+  $.__views.scrollView.add($.__views.country);
+  var __alloyId9 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  { color: "#ffffff", pullBackgroundColor: "#ffffff", id: "column1", width: "30%" });
+
+  __alloyId9.push($.__views.column1);
+  $.__views.country.add(__alloyId9);
+  $.__views.birthl = Ti.UI.createLabel(
+  { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Birthdate:"), id: "birthl" });
+
+  $.__views.scrollView.add($.__views.birthl);
   $.__views.birthday = Ti.UI.createPicker(
-  { top: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 20 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 90, dateTimeColor: "#0099ff", format24: false, calendarViewShown: false, id: "birthday", type: Ti.UI.PICKER_TYPE_DATE });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 20 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 90, dateTimeColor: "#0099ff", format24: false, calendarViewShown: false, id: "birthday", type: Ti.UI.PICKER_TYPE_DATE });
 
   $.__views.scrollView.add($.__views.birthday);
   $.__views.agreeContainer = Ti.UI.createView(
@@ -142,14 +171,6 @@ function Controller() {
 
   var args = $.args;
 
-
-
-
-
-
-
-
-
   $.birthday.value = new Date();
   $.birthday.maxDate = new Date();
 
@@ -188,7 +209,7 @@ function Controller() {
           fontFamily: 'Smoolthan-Bold',
           fontSize: 16 },
 
-        color: "#000080",
+        color: "#0099ff",
         hintText: L('email_hintText', "COUNTRY"),
         hintTextColor: "gray",
         backgroundColor: "#EEEEEE",

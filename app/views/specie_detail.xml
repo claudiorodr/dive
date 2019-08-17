@@ -4,6 +4,7 @@
 			<View id="image"></View>
 		</View>
 		<View id="body">
+		<ScrollView  id="scrollView" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" layout = "vertical">
 		<View id="common">			
 		</View>	
 		<View id="science">			
@@ -16,8 +17,6 @@
 		</View>
 		<View id="curiosity">			
 		</View>
-		</View>
-		<View id="body2">
 			<Label id="label"></Label>
 			<Picker id="picker" selectionIndicator="true" useSpinner="false">
 				<PickerColumn id="abundance">
@@ -27,6 +26,7 @@
 		<Button id="moreBtn" onClick="openMore"></Button>
 		<Button id="endBtn" onClick="openMain"></Button>
 		</View>
+		</ScrollView>
 		</View>
 	</Window>
 </Alloy>

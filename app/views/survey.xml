@@ -11,62 +11,57 @@
                 <View id="up">
                 <Label id="label1" />
                 <Label id="label2" />
-                                    <Picker id="picker" selectionIndicator="true" useSpinner="false">
+                    <Picker class="picker" id="picker" selectionIndicator="true" useSpinner="false">
                         <PickerColumn id="column1" width="30%"></PickerColumn>
                     </Picker>
                     
                                         <Label id="label3" />
-                                                            <Picker id="picker2" selectionIndicator="true" useSpinner="false">
+                     <Picker class="picker" id="picker2" selectionIndicator="true" useSpinner="false">
                         <PickerColumn id="column2" width="30%">
-                            <PickerRow title="10 minutes" />
-                            <PickerRow title="20 minutes" />
-                            <PickerRow title="30 minutes" />
-                            <PickerRow title="40 minutes" />
-                            <PickerRow title="50 minutes" />
-                            <PickerRow title="60 minutes" />
-                            <PickerRow title="70 minutes" />
-                            <PickerRow title="80 minutes" />
-                            <PickerRow title="90 minutes" />
-                            <PickerRow title="100 minutes" />
-                            <PickerRow title="110 minutes" />
-                            <PickerRow title="120 minutes" />
+                            <PickerRow color= "#0099ff" title="10 minutes" />
+                            <PickerRow color= "#0099ff" title="20 minutes" />
+                            <PickerRow color= "#0099ff" title="30 minutes" />
+                            <PickerRow color= "#0099ff" title="40 minutes" />
+                            <PickerRow color= "#0099ff" title="50 minutes" />
+                            <PickerRow color= "#0099ff" title="60 minutes" />
+                            <PickerRow color= "#0099ff" title="70 minutes" />
+                            <PickerRow color= "#0099ff" title="80 minutes" />
+                            <PickerRow color= "#0099ff" title="90 minutes" />
+                            <PickerRow color= "#0099ff" title="100 minutes" />
+                            <PickerRow color= "#0099ff" title="110 minutes" />
+                            <PickerRow color= "#0099ff" title="120 minutes" />
                         </PickerColumn>
                     </Picker>
                      <Label id="label4" />
 
-                    <Picker id="picker3" selectionIndicator="true" useSpinner="false">
+                    <Picker class="picker" id="picker3" selectionIndicator="true" useSpinner="false">
                         <PickerColumn id="column3" width="30%">
-                            <PickerRow title="2 divers" />
-                            <PickerRow title="3 divers" />
-                            <PickerRow title="4 divers" />
-                            <PickerRow title="5 divers" />
-                            <PickerRow title="6 divers" />
-                            <PickerRow title="7 divers" />
-                            <PickerRow title="8 divers" />
-                            <PickerRow title="9 divers" />
-                            <PickerRow title="10 divers" />
-                            <PickerRow title="11 divers" />
-                            <PickerRow title="12 divers" />
-                            <PickerRow title="13 divers" />
-                            <PickerRow title="14 divers" />
-                            <PickerRow title="15 divers" />
-                            <PickerRow title="16 divers" />
-                            <PickerRow title="17 divers" />
-                            <PickerRow title="18 divers" />
-                            <PickerRow title="19 divers" />
-                            <PickerRow title="20 divers" />
+                            <PickerRow color= "#0099ff" title="2 divers" />
+                            <PickerRow color= "#0099ff" title="3 divers" />
+                            <PickerRow color= "#0099ff" title="4 divers" />
+                            <PickerRow color= "#0099ff" title="5 divers" />
+                            <PickerRow color= "#0099ff" title="6 divers" />
+                            <PickerRow color= "#0099ff" title="7 divers" />
+                            <PickerRow color= "#0099ff" title="8 divers" />
+                            <PickerRow color= "#0099ff" title="9 divers" />
+                            <PickerRow color= "#0099ff" title="10 divers" />
+                            <PickerRow color= "#0099ff" title="11 divers" />
+                            <PickerRow color= "#0099ff" title="12 divers" />
+                            <PickerRow color= "#0099ff" title="13 divers" />
+                            <PickerRow color= "#0099ff" title="14 divers" />
+                            <PickerRow color= "#0099ff" title="15 divers" />
+                            <PickerRow color= "#0099ff" title="16 divers" />
+                            <PickerRow color= "#0099ff" title="17 divers" />
+                            <PickerRow color= "#0099ff" title="18 divers" />
+                            <PickerRow color= "#0099ff" title="19 divers" />
+                            <PickerRow color= "#0099ff" title="20 divers" />
                         </PickerColumn>
                     </Picker>
+                                        <Button id="speciesBtn" onClick="openSpecies"></Button>
                 </View>
-                <View id="mid">
 
 
 
-                   
-                </View>
-                <View id="down">
-                    <Button id="speciesBtn" onClick="openSpecies"></Button>
-                </View>
             </View>
         </Window>
     </Tab>

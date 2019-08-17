@@ -186,7 +186,16 @@ function Controller() {
         if (e.success == true) {
 
 
-          Ti.App.Properties.setObject('user', e.user.id);
+          Ti.App.Properties.setObject('id', e.user.id);
+          Ti.App.Properties.setObject('email', e.user.email);
+          Ti.App.Properties.setObject('points', e.user.points);
+          Ti.App.Properties.setObject('phone', e.user.phone);
+          Ti.App.Properties.setObject('note', e.user.note);
+          Ti.App.Properties.setObject('level', e.user.level);
+          Ti.App.Properties.setObject('name', e.user.userable.user.name);
+          Ti.App.Properties.setObject('gender', e.user.userable.user.gender);
+          Ti.App.Properties.setObject('country', e.user.userable.user.country);
+          Ti.App.Properties.setObject('b_day', e.user.userable.user.b_day);
 
           console.log("-- POST - " + url + " - user LOGGED IN");
           console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user'));

@@ -1,1 +1,1 @@
-module.exports = [{"isApi":true,"priority":1000.0087,"key":"Window","style":{backgroundImage:"/img/images/mainback.jpg",exitOnClose:false,navBarHidden:true,fullscreen:true,height:Ti.UI.FILL,width:Ti.UI.FILL,tabBarHidden:true,}}];
+module.exports = [{"isApi":true,"priority":1000.0076,"key":"Window","style":{backgroundImage:"/img/images/mainback.jpg",exitOnClose:false,navBarHidden:true,fullscreen:true,height:Ti.UI.FILL,width:Ti.UI.FILL,tabBarHidden:true,}}];

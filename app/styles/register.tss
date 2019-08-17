@@ -41,7 +41,7 @@ height : "100%",
 top : 20
 }
 ".input" : {
-top : 10,
+bottom : 10,
 left : "9%",
 width : "70%",
 textAlign : "center",
@@ -61,8 +61,7 @@ borderColor : "#0099ff",
 }
 
 "#email" : {
-passwordMask : true,
-hintText : L('pass_hintText', "EMAIL")
+hintText : L('email_hintText', "EMAIL")
 }
 "#pass" : {
 left : "5%",
@@ -102,6 +101,7 @@ borderColor : "#EEEEEE",
 	height : 50,
 }	
 "#password" : {
+passwordMask : true,
 hintText : L('pass_hintText', "PASSWORD"),
 }
 "#pass_confirm" : {
@@ -179,6 +179,33 @@ font : {
 	},
 color : "#0099ff",
 text : L('privacy_text', "I agree with terms and conditions:")
+}
+"#genderl" : {
+left:"9%",
+font : {
+	fontFamily : 'Raleway-Light',
+		fontSize : 18
+	},
+color : "#0099ff",
+text : L('privacy_text', "Gender:")
+}
+"#countryl" : {
+left:"9%",
+font : {
+	fontFamily : 'Raleway-Light',
+		fontSize : 18
+	},
+color : "#0099ff",
+text : L('privacy_text', "Country:")
+}
+"#birthl" : {
+left:"9%",
+font : {
+	fontFamily : 'Raleway-Light',
+		fontSize : 18
+	},
+color : "#0099ff",
+text : L('privacy_text', "Birthdate:")
 }
 "#terms" : {
 top : "0%",

@@ -117,7 +117,7 @@ function Controller() {
       text: Alloy.Globals.Names[i - 1],
       font: {
         fontFamily: 'Raleway-Bold',
-        fontSize: 24 },
+        fontSize: 22 },
 
       color: "#FFFFFF" });
 
@@ -155,6 +155,7 @@ function Controller() {
       getView().open();
     }
   }
+
 
   function openMain() {
     var main = Alloy.createController('main').getView();

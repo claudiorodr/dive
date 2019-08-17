@@ -61,7 +61,8 @@ function getTodoList() {
 			var spotter = spot.slice(1,-1);
 			var row = Ti.UI.createPickerRow({
 				title: spotter,
-				myId : i
+				myId : i,
+				color: "#0099ff"
 			});
 
 			$.column1.addRow(row);

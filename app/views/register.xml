@@ -14,11 +14,21 @@
 				<TextField class="input" id="first_name"></TextField>
 				<TextField class="input" id="last_name"></TextField>
 				<TextField class="input" id="phone" type="TI.UI.KEYBOARD_NUMBER_PAD"></TextField>
-				<TextField class="input" id="gender"></TextField>
+				<Label id="genderl"></Label> 
+                  <Picker class="input" id="gender" selectionIndicator="true" useSpinner="false">
+                        <PickerColumn id="column1" width="30%">
+                            <PickerRow color = "#0099ff" title="" />                        	
+                            <PickerRow color = "#0099ff" title="Masculine" />
+                            <PickerRow color = "#0099ff" title="Feminine" />
+
+                        </PickerColumn>
+                    </Picker>
+                    				<Label id="countryl"></Label> 
 				<Picker class="input" id="country" selectionIndicator="true" useSpinner="false">
-					<PickerColumn class="input" id="column1" width="30%">		
+					<PickerColumn id="column1" width="30%">		
 					</PickerColumn>
 				</Picker>
+								<Label id="birthl"></Label> 
 				<Picker id="birthday" class="input" type="Ti.UI.PICKER_TYPE_DATE">   
        			</Picker> 
 				<!--TextField class="input" id="note"></TextField-->
