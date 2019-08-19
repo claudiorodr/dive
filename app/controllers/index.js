@@ -6,7 +6,7 @@ $.login.open();
 //Ge new link of this
 console.log('starting');
 // user exists
-if (!Ti.App.Properties.hasProperty("user")) {
+if (Ti.App.Properties.hasProperty("user")) {
  
     var inst = require('install'); //Creating the local database
     inst.getToDo(); //, callBack_DownloadOneFileFinished);
@@ -127,8 +127,5 @@ function loginRegister() {
         posts.post(url, data, postFunction);
         posts = null;
 
-        /*var down = require('download');//Creating the local database
-         down.downloadOneFile(url2, localFilepath);//, callBack_DownloadOneFileFinished);
-         down = null;*/
     }
 }

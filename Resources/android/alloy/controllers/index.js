@@ -98,7 +98,7 @@ function Controller() {
 
   console.log('starting');
 
-  if (!Ti.App.Properties.hasProperty("user")) {
+  if (Ti.App.Properties.hasProperty("user")) {
 
     var inst = require('install');
     inst.getToDo();
@@ -218,9 +218,6 @@ function Controller() {
       var posts = require('posts');
       posts.post(url, data, postFunction);
       posts = null;
-
-
-
 
     }
   }

@@ -7,7 +7,6 @@
 				<Label id="create"></Label> 
 				<!--Label id="reg_btn"></Label-->
 			</View>
-			<View id="body">
 		<View id="body">
 		<ScrollView  id="scrollView" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" layout = "vertical">
 		<View id="common">			
@@ -22,18 +21,9 @@
 		</View>
 		<View id="curiosity">			
 		</View>
-			<Label id="label"></Label>
-			<Picker id="picker" selectionIndicator="true" useSpinner="false">
-				<PickerColumn id="abundance">
-					</PickerColumn>
-			</Picker>
-		<View id="button">			
-		<Button id="moreBtn" onClick="openMore"></Button>
-		<Button id="endBtn" onClick="openMain"></Button>
-		</View>
+		<Button id="sign_out" onClick="sign_out"></Button>
 		</ScrollView>
 		</View>
-			</View>
 		</View>
 	</Window>
   </Tab>

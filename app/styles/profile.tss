@@ -53,10 +53,24 @@ right : 0,
 height : "100%",
 top : 20
 
-// top : 0
-// right :
 }
 
+"#sign_out" : {
+left : "9%",
+top : "5%",
+width : "70%",
+textAlign : "center",
+font : {
+	fontFamily : 'Raleway-Light',
+	fontSize : 24
+},
+color : "white",
+title : "SIGN OUT",
+backgroundColor : "#0099ff",
+borderColor : "#EEEEEE",
+	borderRadius : 6,
+	height : 50,
+}
 
 "#common" : {
 	layout : "vertical",

@@ -237,7 +237,7 @@ var img = Ti.UI.createImageView({
 					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 					borderColor : "#0099ff",
 					borderRadius : 6,
-					height : 'auto',
+					height : Titanium.UI.FILL,
 					hintText : curiositier,
 					editable: false
                 });

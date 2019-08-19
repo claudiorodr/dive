@@ -86,11 +86,11 @@ function Controller() {
   { right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
 
   $.__views.scrollView.add($.__views.picker);
-  var __alloyId12 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  var __alloyId0 = [];$.__views.abundance = Ti.UI.createPickerColumn(
   { id: "abundance" });
 
-  __alloyId12.push($.__views.abundance);
-  $.__views.picker.add(__alloyId12);
+  __alloyId0.push($.__views.abundance);
+  $.__views.picker.add(__alloyId0);
   $.__views.button = Ti.UI.createView(
   { bottom: 0, height: "100", id: "button" });
 
@@ -350,7 +350,7 @@ function Controller() {
         borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
         borderColor: "#0099ff",
         borderRadius: 6,
-        height: 'auto',
+        height: Titanium.UI.FILL,
         hintText: curiositier,
         editable: false });
 
