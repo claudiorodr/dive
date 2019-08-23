@@ -38,18 +38,18 @@ function Controller() {
   { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieInfoWin", title: "Specie Details" });
 
   $.__views.specieInfoWin && $.addTopLevelView($.__views.specieInfoWin);
-  $.__views.__alloyId13 = Ti.UI.createView(
+  $.__views.__alloyId12 = Ti.UI.createView(
+  { id: "__alloyId12" });
+
+  $.__views.specieInfoWin.add($.__views.__alloyId12);
+  $.__views.__alloyId13 = Ti.UI.createLabel(
   { id: "__alloyId13" });
 
-  $.__views.specieInfoWin.add($.__views.__alloyId13);
-  $.__views.__alloyId14 = Ti.UI.createLabel(
-  { id: "__alloyId14" });
-
-  $.__views.__alloyId13.add($.__views.__alloyId14);
+  $.__views.__alloyId12.add($.__views.__alloyId13);
   $.__views.image = Ti.UI.createView(
   { id: "image" });
 
-  $.__views.__alloyId13.add($.__views.image);
+  $.__views.__alloyId12.add($.__views.image);
   exports.destroy = function () {};
 
 

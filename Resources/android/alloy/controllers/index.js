@@ -221,6 +221,19 @@ function Controller() {
 
     }
   }
+  function openIndex() {
+
+
+
+
+
+
+  }
+
+  $.login.addEventListener('androidback', function (e) {
+
+    openIndex();
+  });
 
 
 

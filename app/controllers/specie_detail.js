@@ -160,26 +160,6 @@ var img = Ti.UI.createImageView({
  
                $.science.add(ta2);
                
-               var ta3 = Titanium.UI.createTextField({
-					left : "9%",
-					width : "70%",
-					textAlign : "center",
-					font : {
-						fontFamily : 'Raleway-Light',
-						fontSize : 14
-					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
-					height : 'auto',
-					hintText : descriptioner,
-					editable: false
-                });
- 
-               $.description.add(ta3);
 
                 var ta4 = Titanium.UI.createTextField({
 					left : "9%",
@@ -223,6 +203,27 @@ var img = Ti.UI.createImageView({
 
                 $.size.add(ta5);
                 
+                var ta3 = Titanium.UI.createTextField({
+					left : "9%",
+					width : "70%",
+					textAlign : "center",
+					font : {
+						fontFamily : 'Raleway-Light',
+						fontSize : 14
+					},
+					color : "#0099ff",
+					hintTextColor : "gray",
+					backgroundColor : "#EEEEEE",
+					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					borderColor : "#0099ff",
+					borderRadius : 6,
+					height : Titanium.UI.SIZE,
+					hintText : descriptioner,
+					editable: false
+                });
+ 
+               $.description.add(ta3);
+                
                 var ta6 = Titanium.UI.createTextField({
 					left : "9%",
 					width : "70%",
@@ -237,7 +238,7 @@ var img = Ti.UI.createImageView({
 					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 					borderColor : "#0099ff",
 					borderRadius : 6,
-					height : Titanium.UI.FILL,
+					height : 'auto',// Titanium.UI.FILL,
 					hintText : curiositier,
 					editable: false
                 });
@@ -246,28 +247,32 @@ var img = Ti.UI.createImageView({
 
 			var row = Ti.UI.createPickerRow({
 				title: level, 
-				myId : i
+				myId : i,
+				color: "#0099ff"				
 			});
 
 			$.abundance.addRow(row);
 
 			var row2 = Ti.UI.createPickerRow({
 				title: level2, 
-				myId : i
+				myId : i,
+				color: "#0099ff"
 			});
 
 			$.abundance.addRow(row2);
 
 			var row3 = Ti.UI.createPickerRow({
 				title: level3, 
-				myId : i
+				myId : i,
+				color: "#0099ff"
 			});
 
 			$.abundance.addRow(row3);
 			
 			var row4 = Ti.UI.createPickerRow({
 				title: level4, 
-				myId : i
+				myId : i,
+				color: "#0099ff"
 			});
 
 			$.abundance.addRow(row4);

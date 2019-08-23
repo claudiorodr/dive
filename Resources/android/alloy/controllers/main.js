@@ -56,9 +56,7 @@ function Controller() {
 	var args = $.args;
 
 	function openMain() {
-		var main = Alloy.createController('main').getView();
-		main.open();
-		main = null;
+
 
 	}
 

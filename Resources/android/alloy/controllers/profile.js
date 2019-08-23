@@ -137,7 +137,7 @@ function Controller() {
   $.science.add(ll);
 
   var lll = Titanium.UI.createLabel({
-    text: 'Gneder:',
+    text: 'Country:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
@@ -149,7 +149,7 @@ function Controller() {
   $.description.add(lll);
 
   var a = Titanium.UI.createLabel({
-    text: 'Birthday:',
+    text: 'Gender:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
@@ -161,7 +161,7 @@ function Controller() {
   $.conserv.add(a);
 
   var aa = Titanium.UI.createLabel({
-    text: 'Country:',
+    text: 'Birthday:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
@@ -201,7 +201,7 @@ function Controller() {
     textAlign: "center",
     font: {
       fontFamily: 'Raleway-Light',
-      fontSize: 14 },
+      fontSize: '16' },
 
     color: "#0099ff",
     hintTextColor: "gray",
@@ -209,7 +209,7 @@ function Controller() {
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     borderColor: "#0099ff",
     borderRadius: 6,
-    height: 'auto',
+    height: 50,
     hintText: Ti.App.Properties.getObject('email'),
     editable: false });
 
@@ -222,7 +222,7 @@ function Controller() {
     textAlign: "center",
     font: {
       fontFamily: 'Raleway-Light',
-      fontSize: 14 },
+      fontSize: '16' },
 
     color: "#0099ff",
     hintTextColor: "gray",
@@ -230,12 +230,14 @@ function Controller() {
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     borderColor: "#0099ff",
     borderRadius: 6,
-    height: 'auto',
+    height: 50,
     hintText: Ti.App.Properties.getObject('name'),
     editable: false });
 
 
   $.science.add(ta2);
+
+  var country = Ti.App.Properties.getObject('country').charAt(0).toUpperCase() + Ti.App.Properties.getObject('country').slice(1);
 
   var ta3 = Titanium.UI.createTextField({
     left: "9%",
@@ -243,7 +245,7 @@ function Controller() {
     textAlign: "center",
     font: {
       fontFamily: 'Raleway-Light',
-      fontSize: 14 },
+      fontSize: '16' },
 
     color: "#0099ff",
     hintTextColor: "gray",
@@ -251,12 +253,21 @@ function Controller() {
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     borderColor: "#0099ff",
     borderRadius: 6,
-    height: 'auto',
-    hintText: Ti.App.Properties.getObject('country'),
+    height: 50,
+    hintText: country,
     editable: false });
 
 
   $.description.add(ta3);
+
+  var gender;
+
+  if (Ti.App.Properties.getObject('gender') == 'm') {
+    gender = "Masculine";
+  } else
+  {
+    gender = "Feminine";
+  }
 
   var ta4 = Titanium.UI.createTextField({
     left: "9%",
@@ -264,7 +275,7 @@ function Controller() {
     textAlign: "center",
     font: {
       fontFamily: 'Raleway-Light',
-      fontSize: 14 },
+      fontSize: '16' },
 
     color: "#0099ff",
     hintTextColor: "gray",
@@ -272,8 +283,8 @@ function Controller() {
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     borderColor: "#0099ff",
     borderRadius: 6,
-    height: 'auto',
-    hintText: Ti.App.Properties.getObject('gender'),
+    height: 50,
+    hintText: gender,
     editable: false });
 
 
@@ -285,7 +296,7 @@ function Controller() {
     textAlign: "center",
     font: {
       fontFamily: 'Raleway-Light',
-      fontSize: 14 },
+      fontSize: '16' },
 
     color: "#0099ff",
     hintTextColor: "gray",
@@ -293,7 +304,7 @@ function Controller() {
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     borderColor: "#0099ff",
     borderRadius: 6,
-    height: 'auto',
+    height: 50,
     hintText: Ti.App.Properties.getObject('b_day'),
     editable: false });
 
@@ -306,7 +317,7 @@ function Controller() {
     textAlign: "center",
     font: {
       fontFamily: 'Raleway-Light',
-      fontSize: 14 },
+      fontSize: '16' },
 
     color: "#0099ff",
     hintTextColor: "gray",
@@ -314,7 +325,7 @@ function Controller() {
     borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
     borderColor: "#0099ff",
     borderRadius: 6,
-    height: 'auto',
+    height: 50,
     hintText: Ti.App.Properties.getObject('points'),
     editable: false });
 

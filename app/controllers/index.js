@@ -129,3 +129,16 @@ function loginRegister() {
 
     }
 }
+function openIndex() {
+
+
+  //  var main = Alloy.createController('main').getView();
+  //  main.open();
+  //  main = null;
+   // img, l, ll, lll, ta1, ta2, ta3, specie_detail = null; 
+}
+
+$.login.addEventListener('androidback', function(e) {
+
+    openIndex();
+});

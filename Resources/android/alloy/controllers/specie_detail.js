@@ -83,24 +83,24 @@ function Controller() {
 
   $.__views.scrollView.add($.__views.label);
   $.__views.picker = Ti.UI.createPicker(
-  { right: "5%", selectionIndicator: true, font: { fontFamily: "Raleway-Bold" }, id: "picker", useSpinner: false });
+  { top: "2%", left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderColor: "#0099ff", borderRadius: 6, height: 40, id: "picker", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.picker);
-  var __alloyId0 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  var __alloyId11 = [];$.__views.abundance = Ti.UI.createPickerColumn(
   { id: "abundance" });
 
-  __alloyId0.push($.__views.abundance);
-  $.__views.picker.add(__alloyId0);
+  __alloyId11.push($.__views.abundance);
+  $.__views.picker.add(__alloyId11);
   $.__views.button = Ti.UI.createView(
-  { bottom: 0, height: "100", id: "button" });
+  { layout: "vertical", bottom: 0, height: Titanium.UI.SIZE, id: "button" });
 
   $.__views.scrollView.add($.__views.button);
   $.__views.moreBtn = Ti.UI.createButton(
-  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, top: 0, id: "moreBtn" });
+  { top: 10, font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "Add specie", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, left: "9%", id: "moreBtn" });
 
   $.__views.button.add($.__views.moreBtn);
   openMore ? $.addListener($.__views.moreBtn, 'click', openMore) : __defers['$.__views.moreBtn!click!openMore'] = true;$.__views.endBtn = Ti.UI.createButton(
-  { font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, bottom: 0, id: "endBtn" });
+  { bottom: "4%", font: { fontFamily: "Raleway-SemiBold", fontSize: 20 }, title: "End survey", width: "70%", color: "white", height: 40, backgroundColor: "#0099ff", borderColor: "#EEEEEE", borderRadius: 6, top: 5, left: "9%", id: "endBtn" });
 
   $.__views.button.add($.__views.endBtn);
   openMain ? $.addListener($.__views.endBtn, 'click', openMain) : __defers['$.__views.endBtn!click!openMain'] = true;exports.destroy = function () {};
@@ -273,26 +273,6 @@ function Controller() {
 
       $.science.add(ta2);
 
-      var ta3 = Titanium.UI.createTextField({
-        left: "9%",
-        width: "70%",
-        textAlign: "center",
-        font: {
-          fontFamily: 'Raleway-Light',
-          fontSize: 14 },
-
-        color: "#0099ff",
-        hintTextColor: "gray",
-        backgroundColor: "#EEEEEE",
-        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-        borderColor: "#0099ff",
-        borderRadius: 6,
-        height: 'auto',
-        hintText: descriptioner,
-        editable: false });
-
-
-      $.description.add(ta3);
 
       var ta4 = Titanium.UI.createTextField({
         left: "9%",
@@ -336,6 +316,27 @@ function Controller() {
 
       $.size.add(ta5);
 
+      var ta3 = Titanium.UI.createTextField({
+        left: "9%",
+        width: "70%",
+        textAlign: "center",
+        font: {
+          fontFamily: 'Raleway-Light',
+          fontSize: 14 },
+
+        color: "#0099ff",
+        hintTextColor: "gray",
+        backgroundColor: "#EEEEEE",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderColor: "#0099ff",
+        borderRadius: 6,
+        height: Titanium.UI.SIZE,
+        hintText: descriptioner,
+        editable: false });
+
+
+      $.description.add(ta3);
+
       var ta6 = Titanium.UI.createTextField({
         left: "9%",
         width: "70%",
@@ -350,7 +351,7 @@ function Controller() {
         borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
         borderColor: "#0099ff",
         borderRadius: 6,
-        height: Titanium.UI.FILL,
+        height: 'auto',
         hintText: curiositier,
         editable: false });
 
@@ -359,28 +360,32 @@ function Controller() {
 
       var row = Ti.UI.createPickerRow({
         title: level,
-        myId: i });
+        myId: i,
+        color: "#0099ff" });
 
 
       $.abundance.addRow(row);
 
       var row2 = Ti.UI.createPickerRow({
         title: level2,
-        myId: i });
+        myId: i,
+        color: "#0099ff" });
 
 
       $.abundance.addRow(row2);
 
       var row3 = Ti.UI.createPickerRow({
         title: level3,
-        myId: i });
+        myId: i,
+        color: "#0099ff" });
 
 
       $.abundance.addRow(row3);
 
       var row4 = Ti.UI.createPickerRow({
         title: level4,
-        myId: i });
+        myId: i,
+        color: "#0099ff" });
 
 
       $.abundance.addRow(row4);

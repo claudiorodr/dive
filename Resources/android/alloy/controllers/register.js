@@ -90,23 +90,23 @@ function Controller() {
   { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "GENDER"), id: "gender", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.gender);
-  var __alloyId5 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId4 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { color: "#ffffff", pullBackgroundColor: "#ffffff", id: "column1", width: "30%" });
 
-  __alloyId5.push($.__views.column1);
+  __alloyId4.push($.__views.column1);
+  $.__views.__alloyId5 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "", id: "__alloyId5" });
+
+  $.__views.column1.addRow($.__views.__alloyId5);
   $.__views.__alloyId6 = Ti.UI.createPickerRow(
-  { color: "#0099ff", title: "", id: "__alloyId6" });
+  { color: "#0099ff", title: "Masculine", id: "__alloyId6" });
 
   $.__views.column1.addRow($.__views.__alloyId6);
   $.__views.__alloyId7 = Ti.UI.createPickerRow(
-  { color: "#0099ff", title: "Masculine", id: "__alloyId7" });
+  { color: "#0099ff", title: "Feminine", id: "__alloyId7" });
 
   $.__views.column1.addRow($.__views.__alloyId7);
-  $.__views.__alloyId8 = Ti.UI.createPickerRow(
-  { color: "#0099ff", title: "Feminine", id: "__alloyId8" });
-
-  $.__views.column1.addRow($.__views.__alloyId8);
-  $.__views.gender.add(__alloyId5);
+  $.__views.gender.add(__alloyId4);
   $.__views.countryl = Ti.UI.createLabel(
   { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Country:"), id: "countryl" });
 
@@ -115,11 +115,11 @@ function Controller() {
   { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.country);
-  var __alloyId9 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId8 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { color: "#ffffff", pullBackgroundColor: "#ffffff", id: "column1", width: "30%" });
 
-  __alloyId9.push($.__views.column1);
-  $.__views.country.add(__alloyId9);
+  __alloyId8.push($.__views.column1);
+  $.__views.country.add(__alloyId8);
   $.__views.birthl = Ti.UI.createLabel(
   { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Birthdate:"), id: "birthl" });
 
