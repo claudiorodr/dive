@@ -73,8 +73,7 @@
 		text:'Insert the abundance of the fish:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
-		//left:"10%",
-		top:"5%",
+		top:"3%",
 		width:300,
 		height:Titanium.UI.SIZE,
 	}

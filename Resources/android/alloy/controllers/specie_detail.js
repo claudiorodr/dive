@@ -79,18 +79,18 @@ function Controller() {
 
   $.__views.scrollView.add($.__views.curiosity);
   $.__views.label = Ti.UI.createLabel(
-  { text: "Insert the abundance of the fish:", font: { fontFamily: "Raleway-Bold", fontSize: 14 }, top: "5%", width: 300, height: Titanium.UI.SIZE, id: "label" });
+  { text: "Insert the abundance of the fish:", font: { fontFamily: "Raleway-Bold", fontSize: 14 }, top: "3%", width: 300, height: Titanium.UI.SIZE, id: "label" });
 
   $.__views.scrollView.add($.__views.label);
   $.__views.picker = Ti.UI.createPicker(
   { top: "2%", left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderColor: "#0099ff", borderRadius: 6, height: 40, id: "picker", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.picker);
-  var __alloyId11 = [];$.__views.abundance = Ti.UI.createPickerColumn(
+  var __alloyId0 = [];$.__views.abundance = Ti.UI.createPickerColumn(
   { id: "abundance" });
 
-  __alloyId11.push($.__views.abundance);
-  $.__views.picker.add(__alloyId11);
+  __alloyId0.push($.__views.abundance);
+  $.__views.picker.add(__alloyId0);
   $.__views.button = Ti.UI.createView(
   { layout: "vertical", bottom: 0, height: Titanium.UI.SIZE, id: "button" });
 
@@ -151,7 +151,7 @@ function Controller() {
   $.description.add(lll);
 
   var a = Titanium.UI.createLabel({
-    text: 'Conservation Status:',
+    text: 'Size:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
@@ -163,7 +163,7 @@ function Controller() {
   $.conserv.add(a);
 
   var aa = Titanium.UI.createLabel({
-    text: 'Size:',
+    text: 'Conservation Status:',
     font: { fontFamily: 'Raleway-Bold',
       fontSize: 14 },
     left: "10%",
@@ -316,7 +316,7 @@ function Controller() {
 
       $.size.add(ta5);
 
-      var ta3 = Titanium.UI.createTextField({
+      var ta3 = Titanium.UI.createTextArea({
         left: "9%",
         width: "70%",
         textAlign: "center",
@@ -337,7 +337,7 @@ function Controller() {
 
       $.description.add(ta3);
 
-      var ta6 = Titanium.UI.createTextField({
+      var ta6 = Titanium.UI.createTextArea({
         left: "9%",
         width: "70%",
         textAlign: "center",
@@ -351,7 +351,7 @@ function Controller() {
         borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
         borderColor: "#0099ff",
         borderRadius: 6,
-        height: 'auto',
+        height: Titanium.UI.SIZE,
         hintText: curiositier,
         editable: false });
 

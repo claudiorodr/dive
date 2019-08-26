@@ -38,7 +38,7 @@ var args = $.args;
 	$.description.add(lll);
 	
 		var a = Titanium.UI.createLabel({
-		text:'Conservation Status:',
+		text:'Size:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
 		left:"10%",
@@ -50,7 +50,7 @@ var args = $.args;
 	$.conserv.add(a);
 	
 	var aa = Titanium.UI.createLabel({
-		text:'Size:',
+		text:'Conservation Status:',
 		font:{fontFamily: 'Raleway-Bold',
 			  fontSize:14},
 		left:"10%",
@@ -203,7 +203,7 @@ var img = Ti.UI.createImageView({
 
                 $.size.add(ta5);
                 
-                var ta3 = Titanium.UI.createTextField({
+                var ta3 = Titanium.UI.createTextArea({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -224,7 +224,7 @@ var img = Ti.UI.createImageView({
  
                $.description.add(ta3);
                 
-                var ta6 = Titanium.UI.createTextField({
+                var ta6 = Titanium.UI.createTextArea({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -238,7 +238,7 @@ var img = Ti.UI.createImageView({
 					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 					borderColor : "#0099ff",
 					borderRadius : 6,
-					height : 'auto',// Titanium.UI.FILL,
+					height : Titanium.UI.SIZE,
 					hintText : curiositier,
 					editable: false
                 });
