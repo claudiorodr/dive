@@ -9,14 +9,14 @@ exports.getToDo = function() {
         timeout: 1000,
     });
     //Here you have to change it for your local ip
-    sendit.open("GET", "http://backend.tigerwhale.com/api/dive/image");
+    sendit.open("GET", "http://backend.tigerwhale.com/api/image/dive");
     sendit.send();
 
 
     //Function to be called upon a successful response 
     sendit.onload = function() {
         //Emptying the data to refresh the view 
-        //Parsing into JSON fromat
+        //Parsing into JSON format
         var data = JSON.parse(this.responseText);
 
         downloadImages = function(data) {

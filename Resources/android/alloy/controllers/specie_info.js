@@ -28,37 +28,37 @@ function Controller() {
   var exports = {};
   var __defers = {};
 
+  // Generated code that must be executed before all UI and/or
+  // controller code. One example is all model and collection
+  // declarations from markup.
 
 
-
-
-
-
+  // Generated UI code
   $.__views.specieInfoWin = Ti.UI.createWindow(
   { backgroundImage: "/img/images/mainback.jpg", exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "specieInfoWin", title: "Specie Details" });
 
   $.__views.specieInfoWin && $.addTopLevelView($.__views.specieInfoWin);
-  $.__views.__alloyId12 = Ti.UI.createView(
-  { id: "__alloyId12" });
+  $.__views.__alloyId8 = Ti.UI.createView(
+  { id: "__alloyId8" });
 
-  $.__views.specieInfoWin.add($.__views.__alloyId12);
-  $.__views.__alloyId13 = Ti.UI.createLabel(
-  { id: "__alloyId13" });
+  $.__views.specieInfoWin.add($.__views.__alloyId8);
+  $.__views.__alloyId9 = Ti.UI.createLabel(
+  { id: "__alloyId9" });
 
-  $.__views.__alloyId12.add($.__views.__alloyId13);
+  $.__views.__alloyId8.add($.__views.__alloyId9);
   $.__views.image = Ti.UI.createView(
   { id: "image" });
 
-  $.__views.__alloyId12.add($.__views.image);
+  $.__views.__alloyId8.add($.__views.image);
   exports.destroy = function () {};
 
-
-
-
+  // make all IDed elements in $.__views available right on the $ in a
+  // controller's internal code. Externally the IDed elements will
+  // be accessed with getView().
   _.extend($, $.__views);
 
-
-
+  // Controller code directly from the developer's controller file
+  // Arguments passed into this controller can be accessed via the `$.args` object directly or:
   var args = $.args;
 
   var img = Ti.UI.createImageView({
@@ -110,7 +110,7 @@ function Controller() {
 
     scrollView.addEventListener('scroll', function (e)
     {
-      activeView = e.view;
+      activeView = e.view; // the object handle to the view that is about to become visible
       i = e.currentPage;
       Titanium.API.info("scroll called - current index " + i + ' active view ' + activeView);
     });
@@ -1885,15 +1885,16 @@ function Controller() {
     openMain();
   });
 
+  // Generated code that must be executed after all UI and
+  // controller code. One example deferred event handlers whose
+  // functions are not defined until after the controller code
+  // is executed.
 
 
-
-
-
-
-
-
+  // Extend the $ instance with all functions and properties
+  // defined on the exports object.
   _.extend($, exports);
 }
 
 module.exports = Controller;
+//# sourceMappingURL=file://C:\Users\claud\Documents\dive/build/map/Resources\android\alloy\controllers\specie_info.js.map

@@ -37,7 +37,7 @@ function getTodoList() {
 	//Function to be called upon a successful response 
 	sendit.onload = function () { 
 		//Emptying the data to refresh the view 
-		//Parsing into JSON fromat
+		//Parsing into JSON format
 		var json = JSON.parse(this.responseText);
 		if (!json) {
 			Titanium.API.info('Error - Null return!');
@@ -48,7 +48,7 @@ function getTodoList() {
 		var pos;
 		
 		for (pos = 0; pos < jsonsites.length; pos++) {
-			//Pushing into array evry value			
+			//Pushing into array every value			
 			Alloy.Globals.Sites.push(jsonsites[pos].name);
 
 		}
@@ -91,7 +91,7 @@ function getTodoList2() {
     //Function to be called upon a successful response 
     sendit.onload = function() {
         //Emptying the data to refresh the view 
-        //Parsing into JSON fromat
+        //Parsing into JSON format
         var json = JSON.parse(this.responseText);
         if (!json) {
             Titanium.API.info('Error - Null return!');
@@ -147,7 +147,7 @@ function getTodoList3() {
     //Function to be called upon a successful response 
     sendit.onload = function() {
         //Emptying the data to refresh the view 
-        //Parsing into JSON fromat
+        //Parsing into JSON format
         var json = JSON.parse(this.responseText);
         if (!json) {
             Titanium.API.info('Error - Null return!');
@@ -159,7 +159,7 @@ function getTodoList3() {
         var pos;
 
         for (pos = 0; pos < jsonname.length; pos++) {
-            //Pushing into array evry value			
+            //Pushing into array every value			
             Alloy.Globals.Level.push(jsonname[pos].level_1);
             Alloy.Globals.Level2.push(jsonname[pos].level_2);
             Alloy.Globals.Level3.push(jsonname[pos].level_3);
@@ -174,7 +174,7 @@ function getTodoList3() {
 
 // 1. prepare data from db
 // 2. create rows from db values
-// 3. incremeting each row with the db values
+// 3. incrementing each row with the db values
 //4. showing data in picker row
 
 function openSpecies() {
@@ -191,10 +191,17 @@ function openSpecies() {
 }
 
 function openMain() { 
-    var main = Alloy.createController('main').getView();
+    var main = Alloy.createController('survey').getView();
     main.open();
     main = null;
 
+}
+
+function sign_out() {
+    Ti.App.Properties.removeProperty("user");
+    var login = Alloy.createController('index').getView();
+    login.open();
+    login = null;
 }
 
 $.surveyWin.addEventListener('androidback', function(e) {

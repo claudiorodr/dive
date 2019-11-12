@@ -61,17 +61,17 @@ var args = $.args;
 	
 	$.size.add(aa);
 	
-		var aaa = Titanium.UI.createLabel({
-		text:'Curiosity:',
-		font:{fontFamily: 'Raleway-Bold',
-			  fontSize:14},
-		left:"10%",
-		top:0,
-		width:300,
-		height:'auto'
-	});
+	// 	var aaa = Titanium.UI.createLabel({
+	// 	text:'Curiosity:',
+	// 	font:{fontFamily: 'Raleway-Bold',
+	// 		  fontSize:14},
+	// 	left:"10%",
+	// 	top:0,
+	// 	width:300,
+	// 	height:'auto'
+	// });
 	
-	$.curiosity.add(aaa);
+	// $.curiosity.add(aaa);
 var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, args.img +'.png');
 var img = Ti.UI.createImageView({
 		top : "0%",
@@ -105,20 +105,20 @@ var img = Ti.UI.createImageView({
             var curiositier = curiosity.slice(1,-1); 
             
             var level = JSON.stringify(Ti.App.Properties.getList('myLevel')[i]);
-			//var leveler = level.slice(1,-1);
+			var leveler = level.slice(1,-1);
 			
 			var level2 = JSON.stringify(Ti.App.Properties.getList('myLevel2')[i]);
-			//var leveler2 = level2.slice(1,-1);
+			var leveler2 = level2.slice(1,-1);
 			
 			var level3 = JSON.stringify(Ti.App.Properties.getList('myLevel3')[i]);
-			//var leveler3 = level3.slice(1,-1);
+			var leveler3 = level3.slice(1,-1);
 			
 			var level4 = JSON.stringify(Ti.App.Properties.getList('myLevel4')[i]);
-			//var leveler4 = level4.slice(1,-1);
+			var leveler4 = level4.slice(1,-1);
              
             if (args.img == i+1) {
                
-                var ta1 = Titanium.UI.createTextField({
+                var ta1 = Titanium.UI.createLabel({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -126,20 +126,20 @@ var img = Ti.UI.createImageView({
 						fontFamily : 'Raleway-Light',
 						fontSize : 14
 					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
+					// color : "#0099ff",
+					// hintTextColor : "gray",
+					// backgroundColor : "#EEEEEE",
+					// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					// borderColor : "#0099ff",
+					// borderRadius : 6,
 					height : 'auto',
-					hintText : namer,
-					editable: false
+					text : namer,
+					// editable: false
                 });
 
                 $.common.add(ta1);
 
-                var ta2 = Titanium.UI.createTextField({
+                var ta2 = Titanium.UI.createLabel({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -147,21 +147,21 @@ var img = Ti.UI.createImageView({
 						fontFamily : 'Raleway-Light',
 						fontSize : 14
 					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
+					// color : "#0099ff",
+					// hintTextColor : "gray",
+					// backgroundColor : "#EEEEEE",
+					// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					// borderColor : "#0099ff",
+					// borderRadius : 6,
 					height : 'auto',
-					hintText : sciencer,
-					editable: false
+					text : sciencer,
+					// editable: false
                 });
  
                $.science.add(ta2);
                
 
-                var ta4 = Titanium.UI.createTextField({
+                var ta4 = Titanium.UI.createLabel({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -169,20 +169,20 @@ var img = Ti.UI.createImageView({
 						fontFamily : 'Raleway-Light',
 						fontSize : 14
 					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
+					// color : "#0099ff",
+					// hintTextColor : "gray",
+					// backgroundColor : "#EEEEEE",
+					// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					// borderColor : "#0099ff",
+					// borderRadius : 6,
 					height : 'auto',
-					hintText : sizer,
-					editable: false
+					text : sizer,
+					// editable: false
                 });
 
                 $.conserv.add(ta4);
 
-                var ta5 = Titanium.UI.createTextField({
+                var ta5 = Titanium.UI.createLabel({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -190,20 +190,20 @@ var img = Ti.UI.createImageView({
 						fontFamily : 'Raleway-Light',
 						fontSize : 14
 					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
+					// color : "#0099ff",
+					// hintTextColor : "gray",
+					// backgroundColor : "#EEEEEE",
+					// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					// borderColor : "#0099ff",
+					// borderRadius : 6,
 					height : 'auto',
-					hintText : conservtioner,
-					editable: false
+					text : conservtioner,
+					// editable: false
                 });
 
                 $.size.add(ta5);
                 
-                var ta3 = Titanium.UI.createTextArea({
+                var ta3 = Titanium.UI.createLabel({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -211,20 +211,20 @@ var img = Ti.UI.createImageView({
 						fontFamily : 'Raleway-Light',
 						fontSize : 14
 					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
+					// color : "#0099ff",
+					// hintTextColor : "gray",
+					// backgroundColor : "#EEEEEE",
+					// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					// borderColor : "#0099ff",
+					// borderRadius : 6,
 					height : Titanium.UI.SIZE,
-					hintText : descriptioner,
-					editable: false
+					text : descriptioner,
+					// editable: false
                 });
  
                $.description.add(ta3);
                 
-                var ta6 = Titanium.UI.createTextArea({
+                var ta6 = Titanium.UI.createLabel({
 					left : "9%",
 					width : "70%",
 					textAlign : "center",
@@ -232,21 +232,21 @@ var img = Ti.UI.createImageView({
 						fontFamily : 'Raleway-Light',
 						fontSize : 14
 					},
-					color : "#0099ff",
-					hintTextColor : "gray",
-					backgroundColor : "#EEEEEE",
-					borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-					borderColor : "#0099ff",
-					borderRadius : 6,
+					// color : "#0099ff",
+					// hintTextColor : "gray",
+					// backgroundColor : "#EEEEEE",
+					// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+					// borderColor : "#0099ff",
+					// borderRadius : 6,
 					height : Titanium.UI.SIZE,
-					hintText : curiositier,
-					editable: false
+					text : curiositier,
+					// editable: false
                 });
 
-                $.curiosity.add(ta6);
+                // $.curiosity.add(ta6);
 
 			var row = Ti.UI.createPickerRow({
-				title: level, 
+				title: leveler, 
 				myId : i,
 				color: "#0099ff"				
 			});
@@ -254,7 +254,7 @@ var img = Ti.UI.createImageView({
 			$.abundance.addRow(row);
 
 			var row2 = Ti.UI.createPickerRow({
-				title: level2, 
+				title: leveler2, 
 				myId : i,
 				color: "#0099ff"
 			});
@@ -262,7 +262,7 @@ var img = Ti.UI.createImageView({
 			$.abundance.addRow(row2);
 
 			var row3 = Ti.UI.createPickerRow({
-				title: level3, 
+				title: leveler3, 
 				myId : i,
 				color: "#0099ff"
 			});
@@ -270,7 +270,7 @@ var img = Ti.UI.createImageView({
 			$.abundance.addRow(row3);
 			
 			var row4 = Ti.UI.createPickerRow({
-				title: level4, 
+				title: leveler4, 
 				myId : i,
 				color: "#0099ff"
 			});
@@ -325,7 +325,7 @@ function insertData() {
   var selectedRow = $.picker.getSelectedRow(0).title;
   
     var params = ({    	
-	"user_id": Ti.App.Properties.getObject('user'), //Ti.App.Properties.getObject('user').id,
+	"user_id": "1", //Ti.App.Properties.getObject('user'), Ti.App.Properties.getObject('user').id,
     "creature_id": args.img,
     "abundance_value": selectedRow, //Alloy.Globals.Species[4].match(/\d/g).join(""),
     "number_diver": parseInt(survey[2]),
@@ -335,9 +335,11 @@ function insertData() {
     "date": d + " "+ x
     });
    Ti.App.Properties.setList('myParams',params);
+   console.log(params);
+   
    request.send(params);
   
-	//Clean of parameteres
+	//Clean of parameters
   
     params = ({ 
     "user_id": "",
@@ -356,19 +358,37 @@ function insertData() {
 
 function openMore() {
 
-    var selectedRow3 = $.picker.getSelectedRow(0).title;
+	
+	var selectedRow3 = $.picker.getSelectedRow(0).title;
     var species = Alloy.createController('species').getView();
     species.open();
     species = null;
     //img, l, ll, lll, ta1, ta2, ta3, specie_detail = null;
     Alloy.Globals.Species.push(args.img, selectedRow3);
-
+	
     survey = Alloy.Globals.Species.slice(0, 3);
-
+	
     insertData();
     Alloy.Globals.Species = Alloy.Globals.Species.slice(0, 3);
+	
+	alert("Specie Added!");
 
+}
+function openMoreBack() {
 
+	
+	var selectedRow3 = $.picker.getSelectedRow(0).title;
+    var species = Alloy.createController('species').getView();
+    species.open();
+    species = null;
+    //img, l, ll, lll, ta1, ta2, ta3, specie_detail = null;
+    Alloy.Globals.Species.push(args.img, selectedRow3);
+	
+    survey = Alloy.Globals.Species.slice(0, 3);
+	
+    insertData();
+    Alloy.Globals.Species = Alloy.Globals.Species.slice(0, 3);
+	
 }
 
 function openMain() {
@@ -382,7 +402,7 @@ function openMain() {
     insertData();
     //Inserting into HTTP request from Backend
 
-    var main = Alloy.createController('main').getView();
+    var main = Alloy.createController('survey').getView();
     main.open();
     main = null;
    // img, l, ll, lll, ta1, ta2, ta3, specie_detail = null; 
@@ -391,6 +411,6 @@ function openMain() {
 $.specieDetailWin.addEventListener('androidback', function(e) {
     species = null;
     //img, l, ll, lll, ta1, ta2, ta3, specie_detail = null;
-    openMore();
+    openMoreBack();
 });
 

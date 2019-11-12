@@ -7,14 +7,14 @@ $.login.open();
 console.log('starting');
 // user exists
 if (Ti.App.Properties.hasProperty("user")) {
- 
+
     var inst = require('install'); //Creating the local database
     inst.getToDo(); //, callBack_DownloadOneFileFinished);
     inst = null;
 
 
     console.log('has user');
-    var main = Alloy.createController("main").getView();
+    var main = Alloy.createController("survey").getView();
     main.open();
 
     // user does not exist
@@ -64,8 +64,8 @@ function loginRegister() {
         var url = "api/login";
         var url2 = "http://seasurface.tigerwhale.com/db.sqlite";
         var data = {
-            email: "admin@admin.wave", //$.email.value.replace(/ /g,''),
-            password: "admin" //$.pass.value.replace(/ /g,''),
+            email: $.email.value, //$.email.value.replace(/ /g,''),
+            password: $.pass.value //$.pass.value.replace(/ /g,''),
             //remember_token : "",//To be added on the backend
             //device_data : AlloyGlobals.DeviceData
         };
@@ -113,7 +113,7 @@ function loginRegister() {
                 inst = null;
 
                 // open main
-                var main = Alloy.createController("main").getView();
+                var main = Alloy.createController("survey").getView();
                 main.open();
             }
             //}
@@ -129,16 +129,12 @@ function loginRegister() {
 
     }
 }
+
 function openIndex() {
-
-
-  //  var main = Alloy.createController('main').getView();
-  //  main.open();
-  //  main = null;
-   // img, l, ll, lll, ta1, ta2, ta3, specie_detail = null; 
+    var main = Alloy.createController('index').getView();
+    main.open();
 }
 
-$.login.addEventListener('androidback', function(e) {
-
+$.login.addEventListener('androidback', function (e) {
     openIndex();
 });

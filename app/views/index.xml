@@ -15,7 +15,6 @@
 				</View>
 				<Button id="log_in" onClick="loginRegister"></Button>
 			</View>
-
 		</View>
 	</Window>
 </Alloy>

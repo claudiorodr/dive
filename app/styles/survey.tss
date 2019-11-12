@@ -63,7 +63,7 @@
 	shadowColor : "#aaa",
 	text : "Please, insert the following information about your dive:",
 	textAlign : "Ti.UI.TEXT_ALIGNMENT_CENTER",
-	top : "25%",
+	top : "15%",
 	font: {
 		fontFamily: 'Raleway-Bold', fontSize: 16
 	}
@@ -156,6 +156,23 @@ borderColor : "#0099ff",
 	},
 	color : "white",
 	title : "START SURVEY",
+	backgroundColor : "#0099ff",
+	borderColor : "#EEEEEE",
+	borderRadius : 6,
+	height : 50,
+}
+"#sign_out" : {
+	//left : "25%",
+	top : "5%",
+	bottom: "5%",
+	width : "55%",
+	textAlign : "center",
+	font : {
+		fontFamily : 'Raleway-Light',
+		fontSize : 24
+	},
+	color : "white",
+	title : "LOG OUT",
 	backgroundColor : "#0099ff",
 	borderColor : "#EEEEEE",
 	borderRadius : 6,

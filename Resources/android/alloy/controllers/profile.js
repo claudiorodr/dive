@@ -28,12 +28,12 @@ function Controller() {
   var exports = {};
   var __defers = {};
 
+  // Generated code that must be executed before all UI and/or
+  // controller code. One example is all model and collection
+  // declarations from markup.
 
 
-
-
-
-
+  // Generated UI code
   $.__views.register = Ti.UI.createWindow(
   { backgroundColor: "white", navBarHidden: true, tabBarHidden: true, fullscreen: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "register" });
 
@@ -95,13 +95,13 @@ function Controller() {
   $.__views.surveyTab && $.addTopLevelView($.__views.surveyTab);
   exports.destroy = function () {};
 
-
-
-
+  // make all IDed elements in $.__views available right on the $ in a
+  // controller's internal code. Externally the IDed elements will
+  // be accessed with getView().
   _.extend($, $.__views);
 
-
-
+  // Controller code directly from the developer's controller file
+  // Arguments passed into this controller can be accessed via the `$.args` object directly or:
   var args = $.args;
 
   function sign_out() {
@@ -109,13 +109,14 @@ function Controller() {
     var login = Alloy.createController('index').getView();
     login.open();
     login = null;
-
   }
 
   var l = Titanium.UI.createLabel({
     text: 'Email:',
-    font: { fontFamily: 'Raleway-Bold',
+    font: {
+      fontFamily: 'Raleway-Bold',
       fontSize: 14 },
+
     left: "10%",
     top: 0,
     width: 300,
@@ -126,8 +127,10 @@ function Controller() {
 
   var ll = Titanium.UI.createLabel({
     text: 'Name:',
-    font: { fontFamily: 'Raleway-Bold',
+    font: {
+      fontFamily: 'Raleway-Bold',
       fontSize: 14 },
+
     left: "10%",
     top: 0,
     width: 300,
@@ -138,8 +141,10 @@ function Controller() {
 
   var lll = Titanium.UI.createLabel({
     text: 'Country:',
-    font: { fontFamily: 'Raleway-Bold',
+    font: {
+      fontFamily: 'Raleway-Bold',
       fontSize: 14 },
+
     left: "10%",
     top: 0,
     width: 300,
@@ -150,8 +155,10 @@ function Controller() {
 
   var a = Titanium.UI.createLabel({
     text: 'Gender:',
-    font: { fontFamily: 'Raleway-Bold',
+    font: {
+      fontFamily: 'Raleway-Bold',
       fontSize: 14 },
+
     left: "10%",
     top: 0,
     width: 300,
@@ -162,8 +169,10 @@ function Controller() {
 
   var aa = Titanium.UI.createLabel({
     text: 'Birthday:',
-    font: { fontFamily: 'Raleway-Bold',
+    font: {
+      fontFamily: 'Raleway-Bold',
       fontSize: 14 },
+
     left: "10%",
     top: 0,
     width: 300,
@@ -174,8 +183,10 @@ function Controller() {
 
   var aaa = Titanium.UI.createLabel({
     text: 'Points:',
-    font: { fontFamily: 'Raleway-Bold',
+    font: {
+      fontFamily: 'Raleway-Bold',
       fontSize: 14 },
+
     left: "10%",
     top: 0,
     width: 300,
@@ -183,17 +194,17 @@ function Controller() {
 
 
   $.curiosity.add(aaa);
-
-
-
-
-
-
-
-
-
-
-
+  /*   
+                                                              Ti.App.Properties.setObject('points', e.user.points);
+                                                              Ti.App.Properties.setObject('phone', e.user.phone);
+                                                              Ti.App.Properties.setObject('note', e.user.note);
+                                                              Ti.App.Properties.setObject('level', e.user.level);
+                                                              Ti.App.Properties.setObject('name', e.user.userable.user.name);
+                                                              Ti.App.Properties.setObject('gender', e.user.userable.user.gender);
+                                                              Ti.App.Properties.setObject('country', e.user.userable.user.country);
+                                                              Ti.App.Properties.setObject('b_day', e.user.userable.user.b_day);
+                                                              
+                                                              */
 
   var ta1 = Titanium.UI.createTextField({
     left: "9%",
@@ -264,8 +275,7 @@ function Controller() {
 
   if (Ti.App.Properties.getObject('gender') == 'm') {
     gender = "Masculine";
-  } else
-  {
+  } else {
     gender = "Feminine";
   }
 
@@ -332,15 +342,16 @@ function Controller() {
 
   $.curiosity.add(ta6);
 
-
-
-
-
+  // Generated code that must be executed after all UI and
+  // controller code. One example deferred event handlers whose
+  // functions are not defined until after the controller code
+  // is executed.
   __defers['$.__views.sign_out!click!sign_out'] && $.addListener($.__views.sign_out, 'click', sign_out);
 
-
-
+  // Extend the $ instance with all functions and properties
+  // defined on the exports object.
   _.extend($, exports);
 }
 
 module.exports = Controller;
+//# sourceMappingURL=file://C:\Users\claud\Documents\dive/build/map/Resources\android\alloy\controllers\profile.js.map

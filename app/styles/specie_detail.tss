@@ -126,7 +126,8 @@ borderColor : "#0099ff",
 	backgroundColor: "#0099ff",
 	borderColor: "#EEEEEE",
 	borderRadius: 6,
-	top : 5,
+	top : 10,
 	left : "9%",
+	bottom: 5
 	}
 	

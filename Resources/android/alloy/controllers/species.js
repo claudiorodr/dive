@@ -28,12 +28,12 @@ function Controller() {
   var exports = {};
   var __defers = {};
 
+  // Generated code that must be executed before all UI and/or
+  // controller code. One example is all model and collection
+  // declarations from markup.
 
 
-
-
-
-
+  // Generated UI code
   $.__views.species = Ti.UI.createWindow(
   { exitOnClose: false, navBarHidden: true, fullscreen: true, height: Ti.UI.FILL, width: Ti.UI.FILL, tabBarHidden: true, id: "species" });
 
@@ -44,13 +44,13 @@ function Controller() {
   $.__views.species.add($.__views.speciesTable);
   select ? $.addListener($.__views.speciesTable, 'click', select) : __defers['$.__views.speciesTable!click!select'] = true;exports.destroy = function () {};
 
-
-
-
+  // make all IDed elements in $.__views available right on the $ in a
+  // controller's internal code. Externally the IDed elements will
+  // be accessed with getView().
   _.extend($, $.__views);
 
-
-
+  // Controller code directly from the developer's controller file
+  // passed arguments
   var args = $.args;
 
   var columnCounter = 0;
@@ -61,7 +61,7 @@ function Controller() {
 
   var row,left,container,img,text = '';
 
-
+  // prepare
 
 
   for (var i = 1; i < 19; i++) {
@@ -71,7 +71,7 @@ function Controller() {
         className: "creature",
         top: 0,
         left: 0,
-
+        // width: 400,
         height: Ti.UI.SIZE });
 
       creatureData.push(row);
@@ -89,19 +89,19 @@ function Controller() {
 
     row.add(container);
     var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, i + '.png');
-
+    // creature
     img = Ti.UI.createImageView({
       id: i,
-
+      //top : 10,
       width: "100%",
-
+      // height: 200,
       image: file,
-      verticalAlign: 'center' });
-
-
+      verticalAlign: 'center'
+      // title : creatures_array[i-1]~		
+    });
     container.add(img);
-
-
+    // view, bottom 0 width 100%, height 25%, background black 90%
+    // label white
 
     container2 = Ti.UI.createView({
       bottom: 0,
@@ -111,9 +111,9 @@ function Controller() {
       backgroundColor: 'black' });
 
 
-
+    // title
     text = Ti.UI.createLabel({
-
+      //value : "Olá",
       text: Alloy.Globals.Names[i - 1],
       font: {
         fontFamily: 'Raleway-Bold',
@@ -129,11 +129,11 @@ function Controller() {
     if (columnCounter == 3) {
       columnCounter = 0;
     }
-  }
+  } // eof for
 
-
+  // set
   $.speciesTable.setData(creatureData);
-
+  // clear
   creatureData = [];
   creatureData = null;
 
@@ -143,13 +143,13 @@ function Controller() {
     if (e.source.id) {
       console.log(e.source.id);
 
-
+      //clear
       img, row, speciesTable = null;
 
-
+      // close
       $.species.close();
 
-
+      // open
       Alloy.createController('specie_detail', {
         img: e.source.id }).
       getView().open();
@@ -158,7 +158,7 @@ function Controller() {
 
 
   function openMain() {
-    var main = Alloy.createController('main').getView();
+    var main = Alloy.createController('survey').getView();
     main.open();
     main = null;
 
@@ -169,20 +169,21 @@ function Controller() {
     row,
     speciesTable = null;
 
-
+    // close
     $.species.close();
     openMain();
   });
 
-
-
-
-
+  // Generated code that must be executed after all UI and
+  // controller code. One example deferred event handlers whose
+  // functions are not defined until after the controller code
+  // is executed.
   __defers['$.__views.speciesTable!click!select'] && $.addListener($.__views.speciesTable, 'click', select);
 
-
-
+  // Extend the $ instance with all functions and properties
+  // defined on the exports object.
   _.extend($, exports);
 }
 
 module.exports = Controller;
+//# sourceMappingURL=file://C:\Users\claud\Documents\dive/build/map/Resources\android\alloy\controllers\species.js.map

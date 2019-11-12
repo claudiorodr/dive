@@ -1,8 +1,0 @@
-<Alloy>
-	<TabGroup id = "speciesWin" tabsBackgroundColor="#0" barImage = "/dive/app/assets/android/118761.png" title = "Wave" >
-		<!--ActionBar id  = "actionBar" /-->
-		<Require src="survey"/>
-		<Require src="sites"/> 
-		<Require src="profile"/>
-	</TabGroup>
-</Alloy>

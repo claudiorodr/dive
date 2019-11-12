@@ -28,12 +28,12 @@ function Controller() {
   var exports = {};
   var __defers = {};
 
+  // Generated code that must be executed before all UI and/or
+  // controller code. One example is all model and collection
+  // declarations from markup.
 
 
-
-
-
-
+  // Generated UI code
   $.__views.register = Ti.UI.createWindow(
   { backgroundColor: "white", navBarHidden: true, tabBarHidden: true, fullscreen: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "register" });
 
@@ -79,7 +79,7 @@ function Controller() {
 
   $.__views.scrollView.add($.__views.last_name);
   $.__views.phone = Ti.UI.createTextField(
-  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "PHONE"), id: "phone", type: "TI.UI.KEYBOARD_NUMBER_PAD" });
+  { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "PHONE"), id: "phone" });
 
   $.__views.scrollView.add($.__views.phone);
   $.__views.genderl = Ti.UI.createLabel(
@@ -90,23 +90,23 @@ function Controller() {
   { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#0099ff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, hintText: L('email_hintText', "GENDER"), id: "gender", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.gender);
-  var __alloyId4 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId0 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { color: "#ffffff", pullBackgroundColor: "#ffffff", id: "column1", width: "30%" });
 
-  __alloyId4.push($.__views.column1);
-  $.__views.__alloyId5 = Ti.UI.createPickerRow(
-  { color: "#0099ff", title: "", id: "__alloyId5" });
+  __alloyId0.push($.__views.column1);
+  $.__views.__alloyId1 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "", id: "__alloyId1" });
 
-  $.__views.column1.addRow($.__views.__alloyId5);
-  $.__views.__alloyId6 = Ti.UI.createPickerRow(
-  { color: "#0099ff", title: "Masculine", id: "__alloyId6" });
+  $.__views.column1.addRow($.__views.__alloyId1);
+  $.__views.__alloyId2 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "Masculine", id: "__alloyId2" });
 
-  $.__views.column1.addRow($.__views.__alloyId6);
-  $.__views.__alloyId7 = Ti.UI.createPickerRow(
-  { color: "#0099ff", title: "Feminine", id: "__alloyId7" });
+  $.__views.column1.addRow($.__views.__alloyId2);
+  $.__views.__alloyId3 = Ti.UI.createPickerRow(
+  { color: "#0099ff", title: "Feminine", id: "__alloyId3" });
 
-  $.__views.column1.addRow($.__views.__alloyId7);
-  $.__views.gender.add(__alloyId4);
+  $.__views.column1.addRow($.__views.__alloyId3);
+  $.__views.gender.add(__alloyId0);
   $.__views.countryl = Ti.UI.createLabel(
   { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Country:"), id: "countryl" });
 
@@ -115,11 +115,11 @@ function Controller() {
   { bottom: 10, left: "9%", width: "70%", textAlign: "center", font: { fontFamily: "Raleway-Light", fontSize: 16 }, color: "#ffffff", hintTextColor: "gray", backgroundColor: "#EEEEEE", borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, borderColor: "#0099ff", borderRadius: 6, height: 50, accessibilityValue: "Country", pullBackgroundColor: "#ffffff", id: "country", selectionIndicator: true, useSpinner: false });
 
   $.__views.scrollView.add($.__views.country);
-  var __alloyId8 = [];$.__views.column1 = Ti.UI.createPickerColumn(
+  var __alloyId4 = [];$.__views.column1 = Ti.UI.createPickerColumn(
   { color: "#ffffff", pullBackgroundColor: "#ffffff", id: "column1", width: "30%" });
 
-  __alloyId8.push($.__views.column1);
-  $.__views.country.add(__alloyId8);
+  __alloyId4.push($.__views.column1);
+  $.__views.country.add(__alloyId4);
   $.__views.birthl = Ti.UI.createLabel(
   { left: "9%", font: { fontFamily: "Raleway-Light", fontSize: 18 }, color: "#0099ff", text: L('privacy_text', "Birthdate:"), id: "birthl" });
 
@@ -162,13 +162,13 @@ function Controller() {
   $.__views.scrollView.add($.__views.linkContainer);
   exports.destroy = function () {};
 
-
-
-
+  // make all IDed elements in $.__views available right on the $ in a
+  // controller's internal code. Externally the IDed elements will
+  // be accessed with getView().
   _.extend($, $.__views);
 
-
-
+  // Controller code directly from the developer's controller file
+  // Arguments passed into this controller can be accessed via the `$.args` object directly or:
   var args = $.args;
 
   $.birthday.value = new Date();
@@ -181,23 +181,23 @@ function Controller() {
     },
     timeout: 1000 });
 
-
+  //Here you have to change it for your local ip  	
   sendit.open("GET", "http://backend.tigerwhale.com/api/country");
   sendit.send();
 
 
-
+  //Function to be called upon a successful response 
   sendit.onload = function () {
-
-
+    //Emptying the data to refresh the view 
+    //Parsing into JSON format
     var json = JSON.parse(this.responseText);
     if (!json) {
       Titanium.API.info('Error - Null return!');
       return;
     }
-
+    //Saving into var values from php page
     var i;
-
+    //Saving into var values from php page
     var jsoncountries = json.countries;
 
     for (i = 0; i < jsoncountries.length; i++) {
@@ -213,13 +213,13 @@ function Controller() {
         hintText: L('email_hintText', "COUNTRY"),
         hintTextColor: "gray",
         backgroundColor: "#EEEEEE",
-        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, //iOS only
         borderRadius: 0,
         borderColor: "#000080",
         borderWidth: 1,
-        height: 50,
-        returnKeyType: Titanium.UI.RETURNKEY_DONE });
-
+        height: 50
+        //returnKeyType: Titanium.UI.RETURNKEY_NEXT
+      });
       $.column1.addRow(row);
     }
   };
@@ -239,54 +239,65 @@ function Controller() {
 
   function register_user() {
 
-
+    // store to user object
     Ti.App.Properties.setObject('user', {
       "userable_type": "UserPerson",
-
-      "email": "claudio.duarte.98@live.com.pt",
-      "password": "blablabla",
-      "first_name": "claudio",
-      "last_name": "rodrigues",
-      "phone": "964039199",
+      "email": $.email.value,
+      "password": $.password.value,
+      "first_name": $.first_name.value,
+      "last_name": $.last_name.value,
+      "phone": $.phone.value,
       "gender": "F",
-      "country": "Portugal",
+      "country": $.country.getSelectedRow(0).title,
       "b_day": "1998-08-08",
-      "note": "blablabla" });
+      "note": " None " });
 
 
 
 
+    // make a HTTP request
 
     var url = "api/register";
     var data = Ti.App.Properties.getObject('user');
+    console.log(data);
 
     var postFunction = function postFunction(e) {
       alert("registered");
+      //if (!Alloy.Globals.checkErrors(e)) {
+      //alert("registered");
 
 
-
-
-
+      // REGISTER
       if (e.success == true) {
 
-
+        // set user 
         Ti.App.Properties.setObject('user', e);
         console.log("-- POST - " + url + " - user REGISTERED");
         console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
 
+        // create db
+        //var db = require('db'); //Creating the local database
+        //db.create();
+        //db = null;
 
-
-
-
-
-
+        // open info
         alert("registered");
+
+        function openIndex() {
+          var main = Alloy.createController('survey').getView();
+          main.open();
+          main = null;
+        }
+
+        openIndex();
+        //Rederecting the vieew to the main view, from the indez file
+
 
       }
 
+      //}
 
-
-
+      // CLEAR
       url = null;
       data = null;
       postFunction = null;
@@ -298,17 +309,18 @@ function Controller() {
   }
 
 
+  //$.email.value = $.first_name.value = $.last_name.value = $.password.value = $.pass_confirm.value = $.phone.value = $.gender.value= $.country.value= $.b_day.value= $.note.value = "claudio.rodrigues98@mail.com.pt";
 
-
-
-
-
-
+  // Generated code that must be executed after all UI and
+  // controller code. One example deferred event handlers whose
+  // functions are not defined until after the controller code
+  // is executed.
   __defers['$.__views.sign_up!click!register_user'] && $.addListener($.__views.sign_up, 'click', register_user);
 
-
-
+  // Extend the $ instance with all functions and properties
+  // defined on the exports object.
   _.extend($, exports);
 }
 
 module.exports = Controller;
+//# sourceMappingURL=file://C:\Users\claud\Documents\dive/build/map/Resources\android\alloy\controllers\register.js.map

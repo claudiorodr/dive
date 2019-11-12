@@ -28,12 +28,12 @@ function Controller() {
   var exports = {};
   var __defers = {};
 
+  // Generated code that must be executed before all UI and/or
+  // controller code. One example is all model and collection
+  // declarations from markup.
 
 
-
-
-
-
+  // Generated UI code
   $.__views.login = Ti.UI.createWindow(
   { backgroundColor: "white", navBarHidden: true, tabBarHidden: true, fullscreen: true, orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT], id: "login" });
 
@@ -84,36 +84,36 @@ function Controller() {
   $.__views.body.add($.__views.log_in);
   loginRegister ? $.addListener($.__views.log_in, 'click', loginRegister) : __defers['$.__views.log_in!click!loginRegister'] = true;exports.destroy = function () {};
 
-
-
-
+  // make all IDed elements in $.__views available right on the $ in a
+  // controller's internal code. Externally the IDed elements will
+  // be accessed with getView().
   _.extend($, $.__views);
 
-
+  // Controller code directly from the developer's controller file
   Ti.App.Properties.setString("serverUrl", "http://backend.tigerwhale.com/");
 
-
+  // open login
   $.login.open();
 
-
+  //Ge new link of this
   console.log('starting');
-
+  // user exists
   if (Ti.App.Properties.hasProperty("user")) {
 
-    var inst = require('install');
-    inst.getToDo();
+    var inst = require('install'); //Creating the local database
+    inst.getToDo(); //, callBack_DownloadOneFileFinished);
     inst = null;
 
 
     console.log('has user');
-    var main = Alloy.createController("main").getView();
+    var main = Alloy.createController("survey").getView();
     main.open();
 
-
+    // user does not exist
   } else {
     console.log('creating user');
     console.log("-- index() - creating folders");
-
+    // species
     var specieFolder = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'species');
     if (!specieFolder.exists()) {
       specieFolder.createDirectory();
@@ -122,7 +122,7 @@ function Controller() {
       console.log("-- index() - CUSTOM folder already exist");
     }
 
-
+    // profile
     var profileFolder = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'profile');
     if (!profileFolder.exists()) {
       profileFolder.createDirectory();
@@ -143,48 +143,48 @@ function Controller() {
     $.email.blur();
     $.pass.blur();
 
-
+    // NET NO
     if (!Ti.Network.online) {
       var alerts = require('alerts');
       alerts.show(L('alert_internet', "Please check your internet connection"));
       alerts = null;
 
-
+      // NET OK
     } else {
 
-
+      // LOGIN
       var url = "api/login";
       var url2 = "http://seasurface.tigerwhale.com/db.sqlite";
       var data = {
-        email: "admin@admin.wave",
-        password: "admin" };
-
-
-
+        email: $.email.value, //$.email.value.replace(/ /g,''),
+        password: $.pass.value //$.pass.value.replace(/ /g,''),
+        //remember_token : "",//To be added on the backend
+        //device_data : AlloyGlobals.DeviceData
+      };
       var localFilepath = Ti.Filesystem.applicationDataDirectory + "bd.sqlite";
       var postFunction = function postFunction(e) {
-
-
+        //if (!Alloy.Globals.checkErrors(e)) {
+        // REGISTER
         if (e.register == true) {
 
-
+          // set user
           Ti.App.Properties.setObject('user', e);
           console.log("-- POST - " + url + " - user REGISTERED");
           console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user').id);
 
-
+          // create db
           var db = require('database');
-
+          //Creating the local database
           db.create();
           db = null;
 
-
+          // open info
           alert("registered");
         }
 
-
+        // LOGIN
         if (e.success == true) {
-
+          // set user
 
           Ti.App.Properties.setObject('id', e.user.id);
           Ti.App.Properties.setObject('email', e.user.email);
@@ -200,17 +200,17 @@ function Controller() {
           console.log("-- POST - " + url + " - user LOGGED IN");
           console.log("-- POST - " + url + " - user.id: " + Ti.App.Properties.getObject('user'));
 
-          var inst = require('install');
-          inst.getToDo();
+          var inst = require('install'); //Creating the local database
+          inst.getToDo(); //, callBack_DownloadOneFileFinished);
           inst = null;
 
-
-          var main = Alloy.createController("main").getView();
+          // open main
+          var main = Alloy.createController("survey").getView();
           main.open();
         }
-
-
-
+        //}
+        // =====
+        // CLEAR
         url = null;
         data = null;
         postFunction = null;
@@ -221,29 +221,26 @@ function Controller() {
 
     }
   }
+
   function openIndex() {
-
-
-
-
-
-
+    var main = Alloy.createController('index').getView();
+    main.open();
   }
 
   $.login.addEventListener('androidback', function (e) {
-
     openIndex();
   });
 
-
-
-
-
+  // Generated code that must be executed after all UI and
+  // controller code. One example deferred event handlers whose
+  // functions are not defined until after the controller code
+  // is executed.
   __defers['$.__views.logo!click!loginRegister'] && $.addListener($.__views.logo, 'click', loginRegister);__defers['$.__views.register!click!register'] && $.addListener($.__views.register, 'click', register);__defers['$.__views.log_in!click!loginRegister'] && $.addListener($.__views.log_in, 'click', loginRegister);
 
-
-
+  // Extend the $ instance with all functions and properties
+  // defined on the exports object.
   _.extend($, exports);
 }
 
 module.exports = Controller;
+//# sourceMappingURL=file://C:\Users\claud\Documents\dive/build/map/Resources\android\alloy\controllers\index.js.map

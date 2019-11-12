@@ -49,7 +49,7 @@ for (var i = 1; i < 19; i++) {
     });
     container.add(img);
     	// view, bottom 0 width 100%, height 25%, background black 90%
-    	// label white coor
+    	// label white
     	
 	    container2 = Ti.UI.createView({  
 	        bottom: 0,
@@ -106,7 +106,7 @@ function select(e) {
 
  
 function openMain() { 
-    var main = Alloy.createController('main').getView();
+    var main = Alloy.createController('survey').getView();
     main.open();
     main = null;
 
